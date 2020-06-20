@@ -1,0 +1,27 @@
+Lista com os principais comandos para versionar arquivos e subir para o Git Hub
+
+git init - inicia um repositório
+
+git add - adiciona um arquivo ao git
+
+git commit -m - adiciona um ponto na linha do tempo . Descreve o que faz aquela linha do código que foi alterada.
+
+git commit -m "Mensagem "
+
+git log - visualiza os pontos da linha do tempo
+
+git status - informa o estado das alterações do nosso projeto
+
+git show - apresenta um determinado ponto na história
+
+git branch - gerencia novas linhas do tempo
+
+git checkout manipula as linhas do tempo
+
+git merge - une as linhas do tempo
+
+git push - envia as alterações locais para o repositório remoto
+
+git pull - puxa as atualizações do repositorio remoto para o repositório local
+
+git clone - clona um repositório remoto
