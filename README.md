@@ -50,10 +50,13 @@ Bases de dados
 
 |Base de dados   |Endereço na web   |Resumo e descrição de uso    |
 |---|---|---|
-| Base 1  |Cepagri da Unicamp   |   |
-| Base 2  |Cetesb   | https://cetesb.sp.gov.br/ar/dados-horarios/  |
+| Base 1 - Cepagri da Unicamp  |  |Essa foi a principal base de dados utilizada no projeto, nessa base foram aplicadas técnicas para completar os dados faltantes, foram realizados cálculos para encontrar os indicadores humidex, onda de calor, onda de frio.   |
+| Base 2  - Cetesb  |https://cetesb.sp.gov.br/ar/dados-horarios/  | Essa base de dados foi utilizada para efeitos de comparações entre os três primeiros meses de quarentena devido ao Covid 19 e o mesmo período do ano passado  |
 Ferramentas
-
+| Ferramenta  | Endereço web  | Descrição de uso  |
+|---|---|---|
+|   |   |   |
+|   |   |   |
 
 Metodologia
 
