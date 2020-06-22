@@ -1,6 +1,6 @@
-Projeto < Clima e saúde>
+h1 Projeto < Clima e saúde>
 
-Project < Climatic and Healthy>
+h1 Project < Climatic and Healthy>
 
 Descrição resumida do projeto :
 
@@ -33,41 +33,45 @@ Video do projeto
 https://drive.google.com/file/d/162rskPRvc0Ap1H90L5hTd58whU9q7zAJ/view?usp=sharing
 
 
-Introdução e motivação
+1. Introdução e motivação
 
 
 
 
-Pergunta de pesquisa
+2. Pergunta de pesquisa
 
 É possível a identificação de condições climáticas saudáveis  a  partir de dados de temperatura e umidade ?
 
-Objetivos do projeto
+3. Objetivos do projeto
 
-Recursos e métodos
+4. Recursos e métodos
 
-Bases de dados
+5. Bases de dados
 
 |Base de dados   |Endereço na web   |Resumo e descrição de uso    |
 |---|---|---|
 | Base 1 - Cepagri da Unicamp  |  |Essa foi a principal base de dados utilizada no projeto, nessa base foram aplicadas técnicas para completar os dados faltantes, foram realizados cálculos para encontrar os indicadores humidex, onda de calor, onda de frio.   |
 | Base 2  - Cetesb  |https://cetesb.sp.gov.br/ar/dados-horarios/  | Essa base de dados foi utilizada para efeitos de comparações entre os três primeiros meses de quarentena devido ao Covid 19 e o mesmo período do ano passado  |
-Ferramentas
+
+
+6.Ferramentas
+
+
 | Ferramenta  | Endereço web  | Descrição de uso  |
 |---|---|---|
 |   |   |   |
 |   |   |   |
 
-Metodologia
+7. Metodologia
 
-Detalhamento do projeto
+8. Detalhamento do projeto
 
-Evolução do projeto
+9. Evolução do projeto
 
-Resultados e discussões
+10. Resultados e discussões
 
-Conclusões
+11. Conclusões
 
-Trabalhos futuros
+12. Trabalhos futuros
 
 Referências
