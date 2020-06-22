@@ -1,16 +1,16 @@
-Projeto < Clima e sa˙de>
+Projeto < Clima e sa√∫de>
 
 Project < Climatic and Healthy>
 
-DescriÁ„o resumida do projeto :
+Descri√ß√£o resumida do projeto :
 
-O presente projeto consiste na an·lise de dados de temperatura e umidade a fim de poder encontrar condiÁıes clim·ticas saud·veis que contribuam para 
+O presente projeto consiste na an√°lise de dados de temperatura e umidade a fim de poder encontrar condi√ß√µes clim√°ticas saud√°veis que contribuam para 
 o bem estar das pessoas que vivem na cidade de Campinas SP.
-Para realizaÁ„o desse projeto foram utilizadas duas bases de dados principais : A base de dados da Cepagri que possui dados de temperatura e umidade
-no perÌodo de 1997 a 2018 e a base de dados da Cetesb nos meses de marÁo a maio de 2020.
-Foi realizado  o prÈ processamento dos dados  para corrigir os dados faltantes da base de dados e foram realizados c·lculos para encontrar trÍs
-indicadores que caracterizam o conforto de uma pessoa com relaÁ„o ao ambiente, s„o eles : humidex, ondas de calor, ondas de frio.
-ApÛs ter encontrado os indicadores foram aplicados algoritmos de clusterizaÁ„o para identificar condiÁıes saud·veis de clima que contribuam para o bem estar das pessoas.
+Para realiza√ß√£o desse projeto foram utilizadas duas bases de dados principais : A base de dados da Cepagri que possui dados de temperatura e umidade
+no per√≠odo de 1997 a 2018 e a base de dados da Cetesb nos meses de mar√ßo a maio de 2020.
+Foi realizado  o pr√© processamento dos dados  para corrigir os dados faltantes da base de dados e foram realizados c√°lculos para encontrar tr√™s
+indicadores que caracterizam o conforto de uma pessoa com rela√ß√£o ao ambiente, s√£o eles : humidex, ondas de calor, ondas de frio.
+Ap√≥s ter encontrado os indicadores foram aplicados algoritmos de clusteriza√ß√£o para identificar condi√ß√µes saud√°veis de clima que contribuam para o bem estar das pessoas.
 
 Abstract :
 
@@ -33,21 +33,25 @@ Video do projeto
 https://drive.google.com/file/d/162rskPRvc0Ap1H90L5hTd58whU9q7zAJ/view?usp=sharing
 
 
-IntroduÁ„o e motivaÁ„o
+Introdu√ß√£o e motiva√ß√£o
 
 
 
 
 Pergunta de pesquisa
 
-… possÌvel a identificaÁ„o de condiÁıes clim·ticas saud·veis  a  partir de dados de temperatura e umidade ?
+√â poss√≠vel a identifica√ß√£o de condi√ß√µes clim√°ticas saud√°veis  a  partir de dados de temperatura e umidade ?
 
 Objetivos do projeto
 
-Recursos e mÈtodos
+Recursos e m√©todos
 
 Bases de dados
 
+|Base de dados   |Endere√ßo na web   |Resumo e descri√ß√£o de uso    |
+|---|---|---|
+| Base 1  |Cepagri da Unicamp   |   |
+| Base 2  |Cetesb   | https://cetesb.sp.gov.br/ar/dados-horarios/  |
 Ferramentas
 
 
@@ -55,12 +59,12 @@ Metodologia
 
 Detalhamento do projeto
 
-EvoluÁ„o do projeto
+Evolu√ß√£o do projeto
 
-Resultados e discussıes
+Resultados e discuss√µes
 
-Conclusıes
+Conclus√µes
 
 Trabalhos futuros
 
-ReferÍncias
+Refer√™ncias
