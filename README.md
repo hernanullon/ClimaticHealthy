@@ -1,8 +1,8 @@
  # **Projeto < Clima e saúde>**
 
-# ** Project < Climatic and Healthy> **
+ **Project < Climatic and Healthy>**
 
-Descrição resumida do projeto :
+## Descrição resumida do projeto :
 
 O presente projeto consiste na análise de dados de temperatura e umidade a fim de poder encontrar condições climáticas saudáveis que contribuam para 
 o bem estar das pessoas que vivem na cidade de Campinas SP.
@@ -12,7 +12,7 @@ Foi realizado  o pré processamento dos dados  para corrigir os dados faltantes 
 indicadores que caracterizam o conforto de uma pessoa com relação ao ambiente, são eles : humidex, ondas de calor, ondas de frio.
 Após ter encontrado os indicadores foram aplicados algoritmos de clusterização para identificar condições saudáveis de clima que contribuam para o bem estar das pessoas.
 
-Abstract :
+## Abstract :
 
 The present project consists of analyzing temperature and humidity data in order to find healthy climatic conditions that contribute to
 the welfare of people living in the city of Campinas SP.
@@ -23,30 +23,30 @@ indicators that characterize a person's comfort in relation to the environment a
 After finding the indicators, clustering algorithms were applied to identify healthy climate conditions that contribute to people's well-being.
 
 
-Equipe :
+## Equipe :
 Daniel Filipe Vieira RA : 262720
 Ruben Hernan Alcivar Ullon
 
 
-Video do projeto
+## Video do projeto
 
 https://drive.google.com/file/d/162rskPRvc0Ap1H90L5hTd58whU9q7zAJ/view?usp=sharing
 
 
-1. Introdução e motivação
+## 1. Introdução e motivação
 
 
 
 
-2. Pergunta de pesquisa
+## 2. Pergunta de pesquisa
 
 É possível a identificação de condições climáticas saudáveis  a  partir de dados de temperatura e umidade ?
 
-3. Objetivos do projeto
+## 3. Objetivos do projeto
 
-4. Recursos e métodos
+## 4. Recursos e métodos
 
-5. Bases de dados
+## 5. Bases de dados
 
 |Base de dados   |Endereço na web   |Resumo e descrição de uso    |
 |---|---|---|
@@ -54,7 +54,7 @@ https://drive.google.com/file/d/162rskPRvc0Ap1H90L5hTd58whU9q7zAJ/view?usp=shari
 | Base 2  - Cetesb  |https://cetesb.sp.gov.br/ar/dados-horarios/  | Essa base de dados foi utilizada para efeitos de comparações entre os três primeiros meses de quarentena devido ao Covid 19 e o mesmo período do ano passado  |
 
 
-6. Ferramentas
+## 6. Ferramentas
 
 
 | Ferramenta  | Endereço web  | Descrição de uso  |
@@ -62,16 +62,16 @@ https://drive.google.com/file/d/162rskPRvc0Ap1H90L5hTd58whU9q7zAJ/view?usp=shari
 |   |   |   |
 |   |   |   |
 
-7. Metodologia
+## 7. Metodologia
 
-8. Detalhamento do projeto
+## 8. Detalhamento do projeto
 
-9. Evolução do projeto
+## 9. Evolução do projeto
 
-10. Resultados e discussões
+## 10. Resultados e discussões
 
-11. Conclusões
+## 11. Conclusões
 
-12. Trabalhos futuros
+## 12. Trabalhos futuros
 
-Referências
+* Referências
