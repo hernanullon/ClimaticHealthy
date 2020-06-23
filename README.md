@@ -36,7 +36,7 @@ https://drive.google.com/file/d/162rskPRvc0Ap1H90L5hTd58whU9q7zAJ/view?usp=shari
 ## 1. Introdução e motivação
 
 
-
+![Ambiente](https://github.com/hernanullon/ClimaticHealthy/blob/master/ambiente%20.png)
 
 ## 2. Pergunta de pesquisa
 
