@@ -56,7 +56,7 @@ E a partir do cálculo desses indicadores realizar a classificação (clusteriza
 Na figura 2 é possível visualizar os principais problemas ocasionados pelas ondas de calor 
 
 
-![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/ambiente%20.png)
+![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/ilhas%20de%20calor.jpg)
 
 ## 2. Pergunta de pesquisa
 
