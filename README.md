@@ -46,7 +46,17 @@ Humidex, ondas de calor, ondas de frio.
 E a partir do cálculo desses indicadores realizar a classificação (clusterização) dos dados utilizados para se identificar condições climáticas saudáveis a partir de dados de temperatura e umidade e assim poder fazer recomendações para as pessoas dos cuidados que devem ser tomados para evitar que condições climáticas desfavoráveis como a presença de ondas de calor , ondas de frio e umidade relativa do ar baixa afetem a saúde das pessoas.
 
 
-![Ambiente](https://github.com/hernanullon/ClimaticHealthy/blob/master/ambiente%20.png)
+![Figura 1](https://github.com/hernanullon/ClimaticHealthy/blob/master/ambiente%20.png)
+
+
+
+
+
+
+Na figura 2 é possível visualizar os principais problemas ocasionados pelas ondas de calor 
+
+
+![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/ambiente%20.png)
 
 ## 2. Pergunta de pesquisa
 
