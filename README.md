@@ -1,6 +1,6 @@
- # **Projeto < Clima e saúde>**
+ # Projeto < Clima e saúde>
 
- **Project < Climatic and Healthy>**
+ Project < Climatic and Healthy>
 
 ## Descrição resumida do projeto :
 
@@ -25,6 +25,7 @@ After finding the indicators, clustering algorithms were applied to identify hea
 
 ## Equipe :
 Daniel Filipe Vieira RA : 262720
+
 Ruben Hernan Alcivar Ullon
 
 
