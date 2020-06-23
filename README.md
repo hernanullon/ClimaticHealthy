@@ -1,6 +1,6 @@
  # Projeto < Clima e saúde>
 
- Project < Climatic and Healthy>
+## Project < Climatic and Healthy>
 
 ## Descrição resumida do projeto :
 
@@ -49,6 +49,8 @@ E a partir do cálculo desses indicadores realizar a classificação (clusteriza
 ![Figura 1](https://github.com/hernanullon/ClimaticHealthy/blob/master/ambiente%20.png)
 
 
+                           Figura 1 - Ambiente
+
 
 
 
@@ -57,6 +59,10 @@ Na figura 2 é possível visualizar os principais problemas ocasionados pelas on
 
 
 ![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/ilhas%20de%20calor.jpg)
+
+
+
+                  Figura 2 - Problemas ocasionados pela presença das ilhas de calor
 
 ## 2. Pergunta de pesquisa
 
