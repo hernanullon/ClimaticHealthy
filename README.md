@@ -46,7 +46,7 @@ https://drive.google.com/file/d/162rskPRvc0Ap1H90L5hTd58whU9q7zAJ/view?usp=shari
 
 ## 4. Recursos e métodos
 
-## 5. Bases de dados
+* 4.1. Bases de dados
 
 |Base de dados   |Endereço na web   |Resumo e descrição de uso    |
 |---|---|---|
@@ -54,7 +54,7 @@ https://drive.google.com/file/d/162rskPRvc0Ap1H90L5hTd58whU9q7zAJ/view?usp=shari
 | Base 2  - Cetesb  |https://cetesb.sp.gov.br/ar/dados-horarios/  | Essa base de dados foi utilizada para efeitos de comparações entre os três primeiros meses de quarentena devido ao Covid 19 e o mesmo período do ano passado  |
 
 
-## 6. Ferramentas
+* 4.2 Ferramentas
 
 
 | Ferramenta  | Endereço web  | Descrição de uso  |
@@ -62,16 +62,16 @@ https://drive.google.com/file/d/162rskPRvc0Ap1H90L5hTd58whU9q7zAJ/view?usp=shari
 |   |   |   |
 |   |   |   |
 
-## 7. Metodologia
+* 4.3. Metodologia
 
-## 8. Detalhamento do projeto
+## 5. Detalhamento do projeto
 
-## 9. Evolução do projeto
+## 6. Evolução do projeto
 
-## 10. Resultados e discussões
+## 7. Resultados e discussões
 
-## 11. Conclusões
+## 8. Conclusões
 
-## 12. Trabalhos futuros
+## 9. Trabalhos futuros
 
 * Referências
