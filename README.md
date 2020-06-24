@@ -4,12 +4,12 @@
 
 ## Descrição resumida do projeto :
 
-O presente projeto consiste na análise de dados de temperatura e umidade a fim de poder encontrar condições climáticas saudáveis que contribuam para 
+Este projeto consiste na análise de dados de temperatura e umidade para mapear condições climáticas saudáveis que contribuam para 
 o bem estar das pessoas que vivem na cidade de Campinas SP.
-Para realização desse projeto foram utilizadas duas bases de dados principais : A base de dados da Cepagri que possui dados de temperatura e umidade
+Para realização deste projeto foram utilizadas duas bases de dados principais : A base de dados da Cepagri que possui dados de temperatura e umidade
 no período de 1997 a 2018 e a base de dados da Cetesb nos meses de março a maio de 2020.
-Foi realizado  o pré processamento dos dados  para corrigir os dados faltantes da base de dados e foram realizados cálculos para encontrar três
-indicadores que caracterizam o conforto de uma pessoa com relação ao ambiente, são eles : humidex, ondas de calor, ondas de frio.
+Foi realizado  o pré processamento dos dados  para correção os dados faltantes em ambas as bases e foram realizados cálculos para encontrar três
+indicadores que caracterizam o conforto térmico de uma pessoa com relação ao ambiente, são eles : humidex, ondas de calor, ondas de frio.
 Após ter encontrado os indicadores foram aplicados algoritmos de clusterização para identificar condições saudáveis de clima que contribuam para o bem estar das pessoas.
 
 ## Abstract :
@@ -37,12 +37,11 @@ https://drive.google.com/file/d/162rskPRvc0Ap1H90L5hTd58whU9q7zAJ/view?usp=shari
 ## 1. Introdução e motivação
 
 
-Um tema muito recorrente hoje em dia  são as mudanças climáticas que o mundo vem sofrendo ao longo do tempo. Aquecimento global, efeito estufa e derretimento de geleiras
+Um tema muito recorrente atualmente são as mudanças climáticas que o mundo vem sofrendo ao longo do tempo. Aquecimento global, efeito estufa e derretimento de geleiras
 polares são efeitos associados ao tema em questão.
 A atividade humana está  diretamente ligada á essas alterações climáticas aumentando a concentração de gases tóxicos como dióxido de carbono na atmosfera devido a queima de combustíveis fósseis e de florestas  contribuindo para o aumento do efeito estufa.
 Por outro lado essas mudanças climáticas afetam diretamente a saúde das pessoas como por exemplo em períodos de maior estresse térmico (longos períodos com temperaturas muito baixas ou muito altas) ou acidentes naturais como enchentes e tempestades e também de forma indireta afetando a qualidade do ar , da água , interferindo nos vetores de transmissão de doenças [4].
-Partindo desse principio que as mudanças climáticas afetam diretamente a saúde humana o presente projeto pretende calcular três indicadores principais :
-Humidex, ondas de calor, ondas de frio.
+Partindo desse principio que as mudanças climáticas afetam diretamente a saúde humana o presente projeto pretende calcular três indicadores principais através das medidas coletadas de temperatura e umidade : Humidex, ondas de calor, ondas de frio.
 
 
 
@@ -64,13 +63,13 @@ Na figura 2 é possível visualizar os principais problemas ocasionados pelas on
 
                      Figura 2 - Problemas ocasionados pela presença das ilhas de calor
                      
-Partindo desse contexto o presente projeto utiliza duas bases de dados, a base principal do projeto foi cedida pelo Cepagri, a Cepagri coleta dados de temperatura, umidade, direção do vento, intensidade de radição solar através de uma estação meteorológica que fica localizada dentro do Campus da Unicamp em Campinas SP .
-E uma segunda base de dados disponível no site da  Cetesb também foi utilizada para comparar os dados de temperatura e umidade nos meses de março a maio de 2020 com os dados dessas mesmas variáveis no periodo de 2017 a 2018.
+Partindo deste contexto este projeto utiliza duas bases de dados, a base principal do projeto foi cedida pelo Centro de Pesquisas Meteorológicas e Climáticas aplicada a Agricultura (Cepagri), a Cepagri coleta dados de temperatura, umidade, direção do vento, intensidade de radição solar através de uma estação meteorológica que fica localizada dentro do Campus da Universidade Estadual de Campinas (Unicamp), na cidade de Campinas SP .
+E uma segunda base de dados disponível no site da  Companhia Ambiental do Estado de São Paulo (Cetesb) também foi utilizada para comparar os dados de temperatura e umidade nos meses de março a maio de 2020 com os dados referentes a estas mesmas variáveis no periodo de 2017 a 2018.
 
-Nos escolhemos os meses de março a maio de 2020 para comparar se houve alterações climáticas em virtude do isolamento social devido a pandemia do Covid 19.
-Após selecionar os datasets para o projeto foram aplicadas técnicas para limpeza desses dados e aplicou -se a metodologia KDD (Knowledge Discovery in Databases – KDD) para obtenção do conhecimento a partir dos dados e assim poder calcular três principais indicadores de condições climáticas: Humidex, ilhas de calor, ilhas de frio.
+A escolha do período de março a maio de 2020 para analisar  se houve alterações climáticas, justifica-se  em virtude do isolamento social devido a pandemia causada pelo Covid 19.
+Após a escolha dos datasets para o projeto foram estudadas e aplicadas técnicas para limpeza destes dados e por fim, aplicou -se a metodologia KDD (Knowledge Discovery in Databases – KDD) para obter conhecimento a partir dos dados (tais como níveis de temperatura e umidade ) e assim  calcular três principais indicadores de condições climáticas: Humidex, ilhas de calor, ilhas de frio.
 
-E a partir do cálculo desses indicadores realizar a classificação (clusterização) dos dados utilizados para se identificar condições climáticas saudáveis a partir de dados de temperatura e umidade e assim poder fazer recomendações para as pessoas dos cuidados que devem ser tomados para evitar que condições climáticas desfavoráveis como a presença de ondas de calor , ondas de frio e umidade relativa do ar baixa afetem a saúde das pessoas.
+A partir do cálculo destes indicadores realizar a classificação (clusterização) dos dados utilizados para se identificar condições climáticas saudáveis a partir de dados de temperatura e umidade e assim poder fazer recomendações para as pessoas dos cuidados que devem ser considerados para evitar que condições climáticas desfavoráveis como a presença de ondas de calor , ondas de frio e umidade relativa do ar baixa afetem a saúde das pessoas.
 
 
 
@@ -95,7 +94,7 @@ desfavoráveis.
 |Base de dados   |Endereço na web   |Resumo e descrição de uso    |
 |---|---|---|
 | Base 1 - Cepagri da Unicamp  |  |Essa foi a principal base de dados utilizada no projeto, nessa base foram aplicadas técnicas para completar os dados faltantes, foram realizados cálculos para encontrar os indicadores humidex, onda de calor, onda de frio.   |
-| Base 2  - Cetesb  |https://cetesb.sp.gov.br/ar/dados-horarios/  | Essa base de dados foi utilizada para efeitos de comparações entre os três primeiros meses de quarentena devido ao Covid 19 e o mesmo período do ano passado  |
+| Base 2  - Cetesb  |https://cetesb.sp.gov.br/ar/dados-horarios/  | Esta base de dados foi utilizada para efeitos de comparações entre os três primeiros meses de quarentena devido ao Covid 19 e o mesmo período do ano passado  |
 
 
 * 4.2 Ferramentas
