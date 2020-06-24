@@ -43,13 +43,13 @@ A atividade humana está  diretamente ligada á essas alterações climáticas a
 Por outro lado essas mudanças climáticas afetam diretamente a saúde das pessoas como por exemplo em períodos de maior estresse térmico (longos períodos com temperaturas muito baixas ou muito altas) ou acidentes naturais como enchentes e tempestades e também de forma indireta afetando a qualidade do ar , da água , interferindo nos vetores de transmissão de doenças [4].
 Partindo desse principio que as mudanças climáticas afetam diretamente a saúde humana o presente projeto pretende calcular três indicadores principais :
 Humidex, ondas de calor, ondas de frio.
-E a partir do cálculo desses indicadores realizar a classificação (clusterização) dos dados utilizados para se identificar condições climáticas saudáveis a partir de dados de temperatura e umidade e assim poder fazer recomendações para as pessoas dos cuidados que devem ser tomados para evitar que condições climáticas desfavoráveis como a presença de ondas de calor , ondas de frio e umidade relativa do ar baixa afetem a saúde das pessoas.
+
 
 
 ![Figura 1](https://github.com/hernanullon/ClimaticHealthy/blob/master/ambiente%20.png)
 
 
-                           Figura 1 - Ambiente
+                                       Figura 1 - Ambiente
 
 
 
@@ -62,13 +62,31 @@ Na figura 2 é possível visualizar os principais problemas ocasionados pelas on
 
 
 
-                  Figura 2 - Problemas ocasionados pela presença das ilhas de calor
+                     Figura 2 - Problemas ocasionados pela presença das ilhas de calor
+                     
+Partindo desse contexto o presente projeto utiliza duas bases de dados, a base principal do projeto foi cedida pelo Cepagri, a Cepagri coleta dados de temperatura, umidade, direção do vento, intensidade de radição solar através de uma estação meteorológica que fica localizada dentro do Campus da Unicamp em Campinas SP .
+E uma segunda base de dados disponível no site da  Cetesb também foi utilizada para comparar os dados de temperatura e umidade nos meses de março a maio de 2020 com os dados dessas mesmas variáveis no periodo de 2017 a 2018.
+
+Nos escolhemos os meses de março a maio de 2020 para comparar se houve alterações climáticas em virtude do isolamento social devido a pandemia do Covid 19.
+Após selecionar os datasets para o projeto foram aplicadas técnicas para limpeza desses dados e aplicou -se a metodologia KDD (Knowledge Discovery in Databases – KDD) para obtenção do conhecimento a partir dos dados e assim poder calcular três principais indicadores de condições climáticas: Humidex, ilhas de calor, ilhas de frio.
+
+E a partir do cálculo desses indicadores realizar a classificação (clusterização) dos dados utilizados para se identificar condições climáticas saudáveis a partir de dados de temperatura e umidade e assim poder fazer recomendações para as pessoas dos cuidados que devem ser tomados para evitar que condições climáticas desfavoráveis como a presença de ondas de calor , ondas de frio e umidade relativa do ar baixa afetem a saúde das pessoas.
+
+
 
 ## 2. Pergunta de pesquisa
 
 É possível a identificação de condições climáticas saudáveis  a  partir de dados de temperatura e umidade ?
 
 ## 3. Objetivos do projeto
+
+* Realizar a análise exploratória dos dados de temperatura e umidade da base de dados do Cepagri e da Cetesb utilizando a técnica KDD
+
+* Cálculo dos indicadores como humidex, ondas de calor, ondas de frio.
+
+* Realizar a clusterização dos dados de acordo com os indicadores calculados e assim poder fazer recomendações de hábitos saudáveis para os dias de condições climáticas 
+desfavoráveis.
+
 
 ## 4. Recursos e métodos
 
@@ -101,3 +119,20 @@ Na figura 2 é possível visualizar os principais problemas ocasionados pelas on
 ## 9. Trabalhos futuros
 
 * Referências
+
+[1] As cidades que queremos Disponível em : https://www.isglobal.org/es/
+J. L. GEIRINHAS, R. M. TRIGO, R. LIBONATI, AND L. F. PERES, Climatic Characterization of Heat
+Waves in Brazil, Anuário do Instituto de Geociências - UFRJ, 41 (2018), pp. 333–350.
+Climate change and human health - risks and responses. 
+Disponível em < https://apps.who.int/iris/bitstream/handle/10665/44133/9789241598187_eng.pdf;jsessionid=F45966ED878C58D6CC7129FFE87DF3B0?sequence=1>
+
+S. RUSSO, A. DOSIO, R. G. GRAVERSEN, J. SILLMANN, H. CARRAO, M. B. DUNBAR, A. SINGLETON,
+P. MONTAGNA, P. BARBOLA, AND J. V. VOGT, Magnitude of extreme heat waves in present climate and
+their projection in a warming world, Journal of Geophysical Research: Atmospheres, 119 (2014),
+pp. 12,500–12,512.
+
+I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
+on Climate Change Geneva, IPCC Secretariat, (2001).
+
+W. H. ORGANIZATION, ed., Climate Change and Human Health - Risks and Responses, Genève, 2004.
+OCLC: 254297040.
