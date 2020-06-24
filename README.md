@@ -125,13 +125,20 @@ Waves in Brazil, Anuário do Instituto de Geociências - UFRJ, 41 (2018), pp. 33
 Climate change and human health - risks and responses. 
 Disponível em < https://apps.who.int/iris/bitstream/handle/10665/44133/9789241598187_eng.pdf;jsessionid=F45966ED878C58D6CC7129FFE87DF3B0?sequence=1>
 
-S. RUSSO, A. DOSIO, R. G. GRAVERSEN, J. SILLMANN, H. CARRAO, M. B. DUNBAR, A. SINGLETON,
+[2] S. RUSSO, A. DOSIO, R. G. GRAVERSEN, J. SILLMANN, H. CARRAO, M. B. DUNBAR, A. SINGLETON,
 P. MONTAGNA, P. BARBOLA, AND J. V. VOGT, Magnitude of extreme heat waves in present climate and
 their projection in a warming world, Journal of Geophysical Research: Atmospheres, 119 (2014),
 pp. 12,500–12,512.
 
-I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
+[3] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
 on Climate Change Geneva, IPCC Secretariat, (2001).
 
-W. H. ORGANIZATION, ed., Climate Change and Human Health - Risks and Responses, Genève, 2004.
+[4] W. H. ORGANIZATION, ed., Climate Change and Human Health - Risks and Responses, Genève, 2004.
 OCLC: 254297040.
+
+
+[5] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
+on Climate Change Geneva, IPCC Secretariat, (2001).
+
+[6] U. FAYYAD, G. PIATETSKY-SHAPIRO, AND P. SMYTH, From data mining to knowledge discovery in
+databases, AI magazine, 17 (1996), pp. 37–37.
