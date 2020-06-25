@@ -98,7 +98,9 @@ desfavoráveis.
 
 
 * 4.2 Ferramentas
+A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dadps e pode ser ilustrada na figura 3
 
+![Figura 3](https://github.com/hernanullon/ClimaticHealthy/blob/master/ilhas%20de%20calor.jpg)
 
 | Ferramenta  | Endereço web  | Descrição de uso  |
 |---|---|---|
@@ -106,6 +108,8 @@ desfavoráveis.
 |   |   |   |
 
 * 4.3. Metodologia
+
+
 
 ## 5. Detalhamento do projeto
 
