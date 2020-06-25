@@ -89,6 +89,7 @@ desfavoráveis.
 
 ## 4. Recursos e métodos
 
+
 * 4.1. Bases de dados
 
 |Base de dados   |Endereço na web   |Resumo e descrição de uso    |
@@ -107,6 +108,19 @@ desfavoráveis.
 
 * 4.3. Metodologia
 
+A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados e pode ser ilustrada na figura 3
+
+![Figura 3](https://github.com/hernanullon/ClimaticHealthy/blob/master/Processo%20KDD%20.jpg)
+
+
+                                 Figura 3 - Processo de estração do conhecimento a partir do processo KDD 
+
+Etapa 1 - Entendimento do problema - Nesta etapa o objetivo principal é entender o motivo que justifica a escolha do processo KDD, portanto a pergunta de pesquisa é quem guiará o processo  do ponto de vista do que ou quem utilizará esse conhecimento. Neste projeto esta etapa foi cumprida por meio de reuniões da dupla e pesquisas na literatura para encontrar bases teóricas sobre os problemas ocasionados pelas mudanças climáticas na saúde humana.
+
+Etapa 2 - Criação da base alvo  - Para realização deste projeto conforme citado anteriormente foram utilizadas duas bases de dados.
+A base fornecida pelo Cepagri com medidas de temperatura , umidade, radiação solar no período de 1997 a 2018 e uma base de dados fornecida pela Cetesb contendo dados de temperatura , umidade nos meses de março, abril, maio de 2020.
+
+
 ## 5. Detalhamento do projeto
 
 ## 6. Evolução do projeto
@@ -117,7 +131,7 @@ desfavoráveis.
 
 ## 9. Trabalhos futuros
 
-* Referências
+## 10.  Referências
 
 [1] As cidades que queremos Disponível em : https://www.isglobal.org/es/
 J. L. GEIRINHAS, R. M. TRIGO, R. LIBONATI, AND L. F. PERES, Climatic Characterization of Heat
