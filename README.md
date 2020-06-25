@@ -89,6 +89,7 @@ desfavoráveis.
 
 ## 4. Recursos e métodos
 
+
 * 4.1. Bases de dados
 
 |Base de dados   |Endereço na web   |Resumo e descrição de uso    |
@@ -98,9 +99,7 @@ desfavoráveis.
 
 
 * 4.2 Ferramentas
-A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dadps e pode ser ilustrada na figura 3
 
-![Figura 3](https://github.com/hernanullon/ClimaticHealthy/blob/master/ilhas%20de%20calor.jpg)
 
 | Ferramenta  | Endereço web  | Descrição de uso  |
 |---|---|---|
@@ -109,6 +108,12 @@ A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , qu
 
 * 4.3. Metodologia
 
+A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados e pode ser ilustrada na figura 3
+
+![Figura 3](https://github.com/hernanullon/ClimaticHealthy/blob/master/Processo%20KDD%20.jpg)
+
+
+                                 Figura 3 - Processo de estração do conhecimento a partir do processo KDD 
 
 
 ## 5. Detalhamento do projeto
@@ -121,7 +126,7 @@ A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , qu
 
 ## 9. Trabalhos futuros
 
-* Referências
+## 10.  Referências
 
 [1] As cidades que queremos Disponível em : https://www.isglobal.org/es/
 J. L. GEIRINHAS, R. M. TRIGO, R. LIBONATI, AND L. F. PERES, Climatic Characterization of Heat
