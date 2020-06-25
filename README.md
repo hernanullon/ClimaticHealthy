@@ -117,6 +117,8 @@ A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , qu
 
 Etapa 1 - Entendimento do problema - Nesta etapa o objetivo principal é entender o motivo que justifica a escolha do processo KDD, portanto a pergunta de pesquisa é quem guiará o processo  do ponto de vista do que ou quem utilizará esse conhecimento. Neste projeto esta etapa foi cumprida por meio de reuniões da dupla e pesquisas na literatura para encontrar bases teóricas sobre os problemas ocasionados pelas mudanças climáticas na saúde humana.
 
+Etapa 2 - Criação da base alvo  - Para realização deste projeto conforme citado anteriormente foram utilizadas duas bases de dados.
+A base fornecida pelo Cepagri com medidas de temperatura , umidade, radiação solar no período de 1997 a 2018 e uma base de dados fornecida pela Cetesb contendo dados de temperatura , umidade nos meses de março, abril, maio de 2020.
 
 
 ## 5. Detalhamento do projeto
