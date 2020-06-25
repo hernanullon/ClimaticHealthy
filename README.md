@@ -115,6 +115,9 @@ A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , qu
 
                                  Figura 3 - Processo de estração do conhecimento a partir do processo KDD 
 
+Etapa 1 - Entendimento do problema - Nesta etapa o objetivo principal é entender o motivo que justifica a escolha do processo KDD, portanto a pergunta de pesquisa é quem guiará o processo  do ponto de vista do que ou quem utilizará esse conhecimento. Neste projeto esta etapa foi cumprida por meio de reuniões da dupla e pesquisas na literatura para encontrar bases teóricas sobre os problemas ocasionados pelas mudanças climáticas na saúde humana.
+
+
 
 ## 5. Detalhamento do projeto
 
