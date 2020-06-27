@@ -130,6 +130,32 @@ Etapa 4 - Transformation -
 Nesta etapa foi realizada uma transformação dos dados, realizou -se o cálculo do indicador Humidex, e a partir desse cálculo foi possível classificar a condição climática em função desse indicador como : Confortable (confortável ) , some disconfort (algum desconforto)
 
 O humidex foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar .
+
+O humidex é definido pela fórmula:
+H = T + (0:555:[E 􀀀 10]); (2)
+onde T é a temperatura em Graus Celsius e E é a pressão de vapor de água em milibars.
+A pressão de vapor é descrita pela fórmula:
+E = 6:11:e5417:7530:( 1
+273:16􀀀 1
+td+273:16 )
+
+água para que haja condensação em unidades de graus Celsius.
+Utilizamos uma aproximação para o ponto de orvalho (td) que leva em consideração a temperatura e
+a umidade relativa, descrita em [9], conforme apresentado na equação (4).
+td = T 􀀀
+100 􀀀 RH
+5
+; (4)
+onde T é a temperatura e RH é a umidade relativa
+
+ 
+ 
+ 
+ 
+
+ 
+
+
 Ele pode ser classificado conforme a tabela 1
 
 |Valor de humidex    |Sensação térmica             |   
