@@ -115,10 +115,70 @@ A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , qu
 
                                  Figura 3 - Processo de estração do conhecimento a partir do processo KDD 
 
-Etapa 1 - Entendimento do problema - Nesta etapa o objetivo principal é entender o motivo que justifica a escolha do processo KDD, portanto a pergunta de pesquisa é quem guiará o processo  do ponto de vista do que ou quem utilizará esse conhecimento. Neste projeto esta etapa foi cumprida por meio de reuniões da dupla e pesquisas na literatura para encontrar bases teóricas sobre os problemas ocasionados pelas mudanças climáticas na saúde humana.
+Etapa 1 -  Entendimento do problema - Nesta etapa o objetivo principal é entender o motivo que justifica a escolha do processo KDD, portanto a pergunta de pesquisa é quem guiará o processo  do ponto de vista do que ou quem utilizará esse conhecimento. Neste projeto esta etapa foi cumprida por meio de reuniões da dupla e pesquisas na literatura para encontrar bases teóricas sobre os problemas ocasionados pelas mudanças climáticas na saúde humana.
 
-Etapa 2 - Criação da base alvo  - Para realização deste projeto conforme citado anteriormente foram utilizadas duas bases de dados.
-A base fornecida pelo Cepagri com medidas de temperatura , umidade, radiação solar no período de 1997 a 2018 e uma base de dados fornecida pela Cetesb contendo dados de temperatura , umidade nos meses de março, abril, maio de 2020.
+Etapa 2 - Selection (Seleção)  - Nesta etapa foi feita a seleção do período do dataset que seria utilizado para realizar a análise.
+Para o dataset fornecido pela Cepagri foram  escolhidos os meses de janeiro a dezembro para os anos de 2017 e 2018 , já para o dataset da Cetesb foram escolhido os meses de março, abril e maio e as variáveis selecionadas em ambas as bases  foram temperatura e umidade
+
+
+Etapa 3 - Preprocess - Após a etapa de seleção dos datasets foi realizado um pré processamento utilizando a técnica de interpolação dos valores no ano de 2017 e 2018 para completar os valores faltantes de temperatura e umidade da base fornecida
+pelo Cepagri.
+Foi implementado um algoritmo para apresentar a data em um formato adequado como por exemplo 26/06/2020 já que no dataset o formato da data era Dia Juliano                       103025 non-null int64.
+Foi plotado em um gráfico as variaveis de temperatura e umidade para visualização da distribuição destas variáveis, foram cálculadas algumas estatisticas dos dados como média, desvio padrão.
+
+Etapa 4 - Transformation - 
+Nesta etapa foi realizada uma transformação dos dados, realizou -se o cálculo do indicador Humidex, e a partir desse cálculo foi possível classificar a condição climática em função desse indicador como : Confortable (confortável ) , some disconfort (algum desconforto)
+
+O humidex foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar .
+
+O humidex é definido pela fórmula:
+H = T + (0:555:[E 􀀀 10]); (2)
+onde T é a temperatura em Graus Celsius e E é a pressão de vapor de água em milibars.
+A pressão de vapor é descrita pela fórmula:
+E = 6:11:e5417:7530:( 1
+273:16􀀀 1
+td+273:16 )
+
+água para que haja condensação em unidades de graus Celsius.
+Utilizamos uma aproximação para o ponto de orvalho (td) que leva em consideração a temperatura e
+a umidade relativa, descrita em [9], conforme apresentado na equação (4).
+td = T 􀀀
+100 􀀀 RH
+5
+; (4)
+onde T é a temperatura e RH é a umidade relativa
+
+ 
+ 
+ 
+ 
+
+ 
+
+
+Ele pode ser classificado conforme a tabela 1
+
+|Valor de humidex    |Sensação térmica             |   
+|---                 |---                          |
+| Menor que 29       |Sem desconforto              |   
+| De 30 a 39         |Desconforto ameno            |   
+  De 40 a 45           |Desconforto, evitar esforço  |
+  Acima de 45          |  Perigo                     |
+  Acima de 54          |  Insolação iminente         |
+
+
+
+ 
+ 
+ 
+
+
+
+
+
+Etapa 5 - Data mining - 
+
+Etapa 6 - Knowledge Discovery - 
 
 
 ## 5. Detalhamento do projeto
