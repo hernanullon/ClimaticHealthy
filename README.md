@@ -7,21 +7,20 @@
 Este projeto consiste na análise de dados de temperatura e umidade para mapear condições climáticas saudáveis que contribuam para 
 o bem estar das pessoas que vivem na cidade de Campinas SP.
 Para realização deste projeto foram utilizadas duas bases de dados principais : A base de dados da Cepagri que possui dados de temperatura e umidade
-no período de 1997 a 2018 e a base de dados da Cetesb nos meses de março a maio de 2020.
+no período de 1997 a 2018 e a base de dados da Cetesb nos meses de janeiro a maio de 2020.
 Foi realizado  o pré processamento dos dados  para correção os dados faltantes em ambas as bases e foram realizados cálculos para encontrar três
 indicadores que caracterizam o conforto térmico de uma pessoa com relação ao ambiente, são eles : humidex, ondas de calor, ondas de frio.
 Após ter encontrado os indicadores foram aplicados algoritmos de clusterização para identificar condições saudáveis de clima que contribuam para o bem estar das pessoas.
 
 ## Abstract :
 
-The present project consists of analyzing temperature and humidity data in order to find healthy climatic conditions that contribute to
+This project consists of analyzing temperature and humidity data to map healthy climatic conditions that contribute to
 the welfare of people living in the city of Campinas SP.
 To carry out this project, two main databases were used: The Cepagri database, which has temperature and humidity data
-from 1997 to 2018 and the Cetesb database from March to May 2020.
-Data pre-processing was performed to correct missing data from the database and calculations were performed to find three
-indicators that characterize a person's comfort in relation to the environment are: humidex, heat waves, cold waves.
+from 1997 to 2018 and the Cetesb database from January to May 2020.
+Pre-processing of data was performed to correct missing data in both databases and calculations were performed to find three
+Indicators that characterize a person's thermal comfort in relation to the environment are: humidex, heat waves, cold waves.
 After finding the indicators, clustering algorithms were applied to identify healthy climate conditions that contribute to people's well-being.
-
 
 ## Equipe :
 Daniel Filipe Vieira RA : 262720
@@ -66,7 +65,7 @@ Na figura 2 é possível visualizar os principais problemas ocasionados pelas on
 Partindo deste contexto este projeto utiliza duas bases de dados, a base principal do projeto foi cedida pelo Centro de Pesquisas Meteorológicas e Climáticas aplicada a Agricultura (Cepagri), a Cepagri coleta dados de temperatura, umidade, direção do vento, intensidade de radição solar através de uma estação meteorológica que fica localizada dentro do Campus da Universidade Estadual de Campinas (Unicamp), na cidade de Campinas SP .
 E uma segunda base de dados disponível no site da  Companhia Ambiental do Estado de São Paulo (Cetesb) também foi utilizada para comparar os dados de temperatura e umidade nos meses de março a maio de 2020 com os dados referentes a estas mesmas variáveis no periodo de 2017 a 2018.
 
-A escolha do período de março a maio de 2020 para analisar  se houve alterações climáticas, justifica-se  em virtude do isolamento social devido a pandemia causada pelo Covid 19.
+A escolha do período de janeiro a maio de 2020 para analisar  se houve alterações climáticas, justifica-se  em virtude do isolamento social devido a pandemia causada pelo Covid 19.
 Após a escolha dos datasets para o projeto foram estudadas e aplicadas técnicas para limpeza destes dados e por fim, aplicou -se a metodologia KDD (Knowledge Discovery in Databases – KDD) para obter conhecimento a partir dos dados (tais como níveis de temperatura e umidade ) e assim  calcular três principais indicadores de condições climáticas: Humidex, ilhas de calor, ilhas de frio.
 
 A partir do cálculo destes indicadores realizar a classificação (clusterização) dos dados utilizados para se identificar condições climáticas saudáveis a partir de dados de temperatura e umidade e assim poder fazer recomendações para as pessoas dos cuidados que devem ser considerados para evitar que condições climáticas desfavoráveis como a presença de ondas de calor , ondas de frio e umidade relativa do ar baixa afetem a saúde das pessoas.
@@ -95,7 +94,7 @@ desfavoráveis.
 |Base de dados   |Endereço na web   |Resumo e descrição de uso    |
 |---|---|---|
 | Base 1 - Cepagri da Unicamp  |  |Essa foi a principal base de dados utilizada no projeto, nessa base foram aplicadas técnicas para completar os dados faltantes, foram realizados cálculos para encontrar os indicadores humidex, onda de calor, onda de frio.   |
-| Base 2  - Cetesb  |https://cetesb.sp.gov.br/ar/dados-horarios/  | Esta base de dados foi utilizada para efeitos de comparações entre os três primeiros meses de quarentena devido ao Covid 19 e o mesmo período do ano passado  |
+| Base 2  - Cetesb  |https://cetesb.sp.gov.br/ar/dados-horarios/  | Esta base de dados foi utilizada para efeitos de comparações entre os meses de janeiro  maio de 2020  e o mesmo período do ano passado  |
 
 
 * 4.2 Ferramentas
@@ -118,7 +117,7 @@ A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , qu
 Etapa 1 -  Entendimento do problema - Nesta etapa o objetivo principal é entender o motivo que justifica a escolha do processo KDD, portanto a pergunta de pesquisa é quem guiará o processo  do ponto de vista do que ou quem utilizará esse conhecimento. Neste projeto esta etapa foi cumprida por meio de reuniões da dupla e pesquisas na literatura para encontrar bases teóricas sobre os problemas ocasionados pelas mudanças climáticas na saúde humana.
 
 Etapa 2 - Selection (Seleção)  - Nesta etapa foi feita a seleção do período do dataset que seria utilizado para realizar a análise.
-Para o dataset fornecido pela Cepagri foram  escolhidos os meses de janeiro a dezembro para os anos de 2017 e 2018 , já para o dataset da Cetesb foram escolhido os meses de março, abril e maio e as variáveis selecionadas em ambas as bases  foram temperatura e umidade
+Para o dataset fornecido pela Cepagri foram  escolhidos os meses de janeiro a dezembro para os anos de 2017 e 2018 , já para o dataset da Cetesb foram escolhido os meses de janeiro, fevereiro, março, abril e maio e as variáveis selecionadas em ambas as bases  foram temperatura e umidade
 
 
 Etapa 3 - Preprocess - Após a etapa de seleção dos datasets foi realizado um pré processamento utilizando a técnica de interpolação dos valores no ano de 2017 e 2018 para completar os valores faltantes de temperatura e umidade da base fornecida
@@ -176,14 +175,16 @@ Ele pode ser classificado conforme a tabela 1
 
 
 
-Etapa 5 - Data mining - 
+Etapa 5 - Data mining - Nesta etapa após realizar o pré processamento e a transformação dos dados dos datasets colocando esses dados num formato mais adequado para realizar a análise, foi criado atributos para clusterizar os dados de acordo com cada um dos  indicadores calculados humidex, ondas de frio e ondas de calor.
+Após clusterizar os dados de temperatura e umidade, foi realizado o treinamento do aprendizado de máquina com 70 % dos dados e 30 % dos dados foi usado para testar a aprendizagem de máquina.
 
-Etapa 6 - Knowledge Discovery - 
-
+Etapa 6 - Knowledge Discovery - Nesta etapa utilizou -se  o conhecimento obtido a partir do dataset para classificar os dados de temperatura e umidade conforme o aprendizado na etapa de data mining.
 
 ## 5. Detalhamento do projeto
 
 ## 6. Evolução do projeto
+
+Inicialmente  nossa intenção era de realizar o projeto com dados de poluição do ar atmosférico e classificar o ar de acordo com a quantidade de polentes no ar, porém diante da dificuldade em achar datasets com esse tipo de dados, optamos por trabalhar com dados de temperatura e umidade, uma vez que estão disponíveis pela Cepagri e no site da Cetesb.
 
 ## 7. Resultados e discussões
 
