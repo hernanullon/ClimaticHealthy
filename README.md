@@ -37,9 +37,9 @@ https://drive.google.com/file/d/162rskPRvc0Ap1H90L5hTd58whU9q7zAJ/view?usp=shari
 
 
 Um tema muito recorrente atualmente são as mudanças climáticas que o mundo vem sofrendo ao longo do tempo. Aquecimento global, efeito estufa e derretimento de geleiras
-polares são efeitos associados ao tema em questão.
-A atividade humana está  diretamente ligada á essas alterações climáticas aumentando a concentração de gases tóxicos como dióxido de carbono na atmosfera devido a queima de combustíveis fósseis e de florestas  contribuindo para o aumento do efeito estufa.
-Por outro lado essas mudanças climáticas afetam diretamente a saúde das pessoas como por exemplo em períodos de maior estresse térmico (longos períodos com temperaturas muito baixas ou muito altas) ou acidentes naturais como enchentes e tempestades e também de forma indireta afetando a qualidade do ar , da água , interferindo nos vetores de transmissão de doenças [4].
+polares são efeitos associados ao tema em questão [1].
+A atividade humana está  diretamente ligada á essas alterações climáticas aumentando a concentração de gases tóxicos como dióxido de carbono na atmosfera devido a queima de combustíveis fósseis e de florestas  contribuindo para o aumento do efeito estufa [2].
+Por outro lado essas mudanças climáticas afetam diretamente a saúde das pessoas como por exemplo em períodos de maior estresse térmico (longos períodos com temperaturas muito baixas ou muito altas) ou acidentes naturais como enchentes e tempestades e também de forma indireta afetando a qualidade do ar , da água , interferindo nos vetores de transmissão de doenças [3].
 Partindo desse principio que as mudanças climáticas afetam diretamente a saúde humana o presente projeto pretende calcular três indicadores principais através das medidas coletadas de temperatura e umidade : Humidex, ondas de calor, ondas de frio.
 
 
@@ -68,7 +68,7 @@ E uma segunda base de dados disponível no site da  Companhia Ambiental do Estad
 A escolha do período de janeiro a maio de 2020 para analisar  se houve alterações climáticas, justifica-se  em virtude do isolamento social devido a pandemia causada pelo Covid 19.
 Após a escolha dos datasets para o projeto foram estudadas e aplicadas técnicas para limpeza destes dados e por fim, aplicou -se a metodologia KDD (Knowledge Discovery in Databases – KDD) para obter conhecimento a partir dos dados (tais como níveis de temperatura e umidade ) e assim  calcular três principais indicadores de condições climáticas: Humidex, ilhas de calor, ilhas de frio.
 
-A partir do cálculo destes indicadores realizar a classificação (clusterização) dos dados utilizados para se identificar condições climáticas saudáveis a partir de dados de temperatura e umidade e assim poder fazer recomendações para as pessoas dos cuidados que devem ser considerados para evitar que condições climáticas desfavoráveis como a presença de ondas de calor , ondas de frio e umidade relativa do ar baixa afetem a saúde das pessoas.
+A partir do cálculo destes indicadores realizar a classificação (clusterização) dos dados utilizados para se identificar condições climáticas saudáveis a partir de dados de temperatura e umidade e assim poder fazer recomendações para as pessoas dos cuidados que devem ser considerados para evitar que condições climáticas desfavoráveis como a presença de ondas de calor , ondas de frio e umidade relativa do ar baixa afetem a saúde das pessoas .
 
 
 
@@ -107,7 +107,8 @@ desfavoráveis.
 
 * 4.3. Metodologia
 
-A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados e pode ser ilustrada na figura 3
+A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados[7].
+E pode ser ilustrada na figura 3
 
 ![Figura 3](https://github.com/hernanullon/ClimaticHealthy/blob/master/Processo%20KDD%20.jpg)
 
@@ -128,7 +129,7 @@ Foi plotado em um gráfico as variaveis de temperatura e umidade para visualiza�
 Etapa 4 - Transformation - 
 Nesta etapa foi realizada uma transformação dos dados, realizou -se o cálculo do indicador Humidex, e a partir desse cálculo foi possível classificar a condição climática em função desse indicador como : Confortable (confortável ) , some disconfort (algum desconforto)
 
-O humidex foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar .
+O humidex foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar  [6].
 
 O humidex é definido pela fórmula:
 H = T + (0:555:[E - 10]); (2)
@@ -139,7 +140,7 @@ E = 6:11.e^5417:7530:( 1 /273.16 -  1 /td+ 273.16)
 
 água para que haja condensação em unidades de graus Celsius.
 Utilizamos uma aproximação para o ponto de orvalho (td) que leva em consideração a temperatura e
-a umidade relativa, descrita em [9], conforme apresentado na equação (4).
+a umidade relativa, descrita em [7].
 td = T - 100 - RH/5
 Onde T é a temperatura e RH é a umidade relativa
 
@@ -190,11 +191,13 @@ Inicialmente  nossa intenção era de realizar o projeto com dados de poluição
 
 ## 10.  Referências
 
-[1] As cidades que queremos Disponível em : https://www.isglobal.org/es/
 
-[2] J. L. GEIRINHAS, R. M. TRIGO, R. LIBONATI, AND L. F. PERES, Climatic Characterization of Heat
-Waves in Brazil, Anuário do Instituto de Geociências - UFRJ, 41 (2018), pp. 333–350.
-Climate change and human health - risks and responses. 
+
+
+[1] As cidades que queremos Disponível em : <https://www.isglobal.org/es/ciudadesquequeremos?gclid=Cj0KCQjw1Iv0BRDaARIsAGTWD1s8PaszWCMZQG9CKFIHkiV-2PVh2Q8oZ8vWFKcxVEHfRHLJwXDFVOQaAvi8EALw_wcB#efectossalud>
+
+[2] W. H. ORGANIZATION, ed., Climate Change and Human Health - Risks and Responses, Genève, 2004.
+OCLC: 254297040.
 Disponível em < https://apps.who.int/iris/bitstream/handle/10665/44133/9789241598187_eng.pdf;jsessionid=F45966ED878C58D6CC7129FFE87DF3B0?sequence=1>
 
 [3] S. RUSSO, A. DOSIO, R. G. GRAVERSEN, J. SILLMANN, H. CARRAO, M. B. DUNBAR, A. SINGLETON,
@@ -202,22 +205,21 @@ P. MONTAGNA, P. BARBOLA, AND J. V. VOGT, Magnitude of extreme heat waves in pres
 their projection in a warming world, Journal of Geophysical Research: Atmospheres, 119 (2014),
 pp. 12,500–12,512.
 
-[4] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
+[3] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
 on Climate Change Geneva, IPCC Secretariat, (2001).
 
-[5] W. H. ORGANIZATION, ed., Climate Change and Human Health - Risks and Responses, Genève, 2004.
-OCLC: 254297040.
 
-[6] J. A. OROSA, M. COSTA, RODRÍGUEZ-FERNÁNDEZ, AND G. ROSHAN, Effect of climate change on outdoor
+
+[4] J. A. OROSA, M. COSTA, RODRÍGUEZ-FERNÁNDEZ, AND G. ROSHAN, Effect of climate change on outdoor
 thermal comfort in humid climates, Journal of Environmental Health Science and Engineering,
 12 (2014), p. 46
 
-[7] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
-on Climate Change Geneva, IPCC Secretariat, (2001).
 
-[8] U. FAYYAD, G. PIATETSKY-SHAPIRO, AND P. SMYTH, From data mining to knowledge discovery in
+[5] U. FAYYAD, G. PIATETSKY-SHAPIRO, AND P. SMYTH, From data mining to knowledge discovery in
 databases, AI magazine, 17 (1996), pp. 37–37.
 
-[9] Ueda  Hideki Lucas  Projeto Clima e saúde : Análise de dados climáticos
+[6] Ueda  Hideki Lucas  Projeto Clima e saúde : Análise de dados climáticos
 
-
+[7] M. G. LAWRENCE, The Relationship between Relative Humidity and the Dewpoint Temperature in Moist
+Air: A Simple Conversion and Applications, Bulletin of the American Meteorological Society, 86
+(2005), pp. 225–234.
