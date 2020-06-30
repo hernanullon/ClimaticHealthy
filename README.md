@@ -131,21 +131,17 @@ Nesta etapa foi realizada uma transformação dos dados, realizou -se o cálculo
 O humidex foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar .
 
 O humidex é definido pela fórmula:
-H = T + (0:555:[E 􀀀 10]); (2)
+H = T + (0:555:[E - 10]); (2)
 onde T é a temperatura em Graus Celsius e E é a pressão de vapor de água em milibars.
 A pressão de vapor é descrita pela fórmula:
-E = 6:11:e5417:7530:( 1
-273:16􀀀 1
-td+273:16 )
+E = 6:11.e^5417:7530:( 1 /273.16 -  1 /td+ 273.16)
+
 
 água para que haja condensação em unidades de graus Celsius.
 Utilizamos uma aproximação para o ponto de orvalho (td) que leva em consideração a temperatura e
 a umidade relativa, descrita em [9], conforme apresentado na equação (4).
-td = T 􀀀
-100 􀀀 RH
-5
-; (4)
-onde T é a temperatura e RH é a umidade relativa
+td = T - 100 - RH/5
+Onde T é a temperatura e RH é a umidade relativa
 
  
  
@@ -195,25 +191,33 @@ Inicialmente  nossa intenção era de realizar o projeto com dados de poluição
 ## 10.  Referências
 
 [1] As cidades que queremos Disponível em : https://www.isglobal.org/es/
-J. L. GEIRINHAS, R. M. TRIGO, R. LIBONATI, AND L. F. PERES, Climatic Characterization of Heat
+
+[2] J. L. GEIRINHAS, R. M. TRIGO, R. LIBONATI, AND L. F. PERES, Climatic Characterization of Heat
 Waves in Brazil, Anuário do Instituto de Geociências - UFRJ, 41 (2018), pp. 333–350.
 Climate change and human health - risks and responses. 
 Disponível em < https://apps.who.int/iris/bitstream/handle/10665/44133/9789241598187_eng.pdf;jsessionid=F45966ED878C58D6CC7129FFE87DF3B0?sequence=1>
 
-[2] S. RUSSO, A. DOSIO, R. G. GRAVERSEN, J. SILLMANN, H. CARRAO, M. B. DUNBAR, A. SINGLETON,
+[3] S. RUSSO, A. DOSIO, R. G. GRAVERSEN, J. SILLMANN, H. CARRAO, M. B. DUNBAR, A. SINGLETON,
 P. MONTAGNA, P. BARBOLA, AND J. V. VOGT, Magnitude of extreme heat waves in present climate and
 their projection in a warming world, Journal of Geophysical Research: Atmospheres, 119 (2014),
 pp. 12,500–12,512.
 
-[3] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
+[4] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
 on Climate Change Geneva, IPCC Secretariat, (2001).
 
-[4] W. H. ORGANIZATION, ed., Climate Change and Human Health - Risks and Responses, Genève, 2004.
+[5] W. H. ORGANIZATION, ed., Climate Change and Human Health - Risks and Responses, Genève, 2004.
 OCLC: 254297040.
 
+[6] J. A. OROSA, M. COSTA, RODRÍGUEZ-FERNÁNDEZ, AND G. ROSHAN, Effect of climate change on outdoor
+thermal comfort in humid climates, Journal of Environmental Health Science and Engineering,
+12 (2014), p. 46
 
-[5] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
+[7] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
 on Climate Change Geneva, IPCC Secretariat, (2001).
 
-[6] U. FAYYAD, G. PIATETSKY-SHAPIRO, AND P. SMYTH, From data mining to knowledge discovery in
+[8] U. FAYYAD, G. PIATETSKY-SHAPIRO, AND P. SMYTH, From data mining to knowledge discovery in
 databases, AI magazine, 17 (1996), pp. 37–37.
+
+[9] Ueda  Hideki Lucas  Projeto Clima e saúde : Análise de dados climáticos
+
+
