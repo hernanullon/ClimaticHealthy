@@ -186,13 +186,15 @@ date_time = datetime.strptime(jdate, fmt)
 ~~~
 Após foi realizado um pré processamento utilizando a técnica de interpolação dos valores no ano de 2017 e 2018 para completar os valores faltantes de temperatura e umidade da base fornecida pelo Cepagri. Um exemplo da perda de dados é amostrada na Figura 4.
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/missing_data.PNG" align="middle" width="500">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/missing_data.PNG" align="middle" width="600">
 
 Por outro lado, a detecção de outliers foi realizada apenas para dados extremamente anômalos, pois se nosso estudo se basear na busca por condições climáticas extremas incomuns, um processo como o boxplot nos deixaria sem informações relevantes. Portanto, apenas através de estatisticas como a visualização da distribuição das variáveis, média e desvio padrão, tais problemas foram identificados.
 
 __Etapa 4 - Transformation -__ Essa etapa começou com a integração dos 2 conjuntos de dados mencionados anteriormente, já pensando no que seriam os grupos de treinamento e teste dos algoritmos de aprendizado de máquina. Na Figura 6, podemos visualizar a integração.
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/transformation_integration.PNG" align="middle" width="500">
+<center>
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/transformation_integration.PNG" align="middle" width="600">
+</center>
 
 Posteriormente, novos parâmetros, como o índice Humidex, foram calculados para cada medição de temperatura e umidade, usando o seguinte segmento de código:
 ~~~python
