@@ -42,7 +42,7 @@ Partindo desse principio que as mudanças climáticas afetam diretamente a saúd
 
 
 
-![Figura 1](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ambiente%20.png)
+![Figura 1](./figuras/ambiente .png)
 
 
                                        Figura 1 - Ambiente
@@ -54,7 +54,7 @@ Partindo desse principio que as mudanças climáticas afetam diretamente a saúd
 Na figura 2 é possível visualizar os principais problemas ocasionados pelas ondas de calor.
 
 
-![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/ilhas%20de%20calor.jpg)
+![Figura 2](./figuras/ilhas de calor.jpg)
 
 
 
@@ -108,7 +108,7 @@ Toda a análise foi feita na ferramenta de notebook jupyter na linguagem de prog
 A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados[7].
 E pode ser ilustrada na figura 3
 
-![Figura 3](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/Processo%20KDD%20.jpg)
+![Figura 3](./figuras/Processo KDD .jpg)
 
 
                                  Figura 3 - Processo de estração do conhecimento a partir do processo KDD 
@@ -206,6 +206,12 @@ O algoritmo K-Means precisa ajustar certos parâmetros, como métrica de distân
 
 Eles garantiram o melhor desempenho no conjunto de dados, com um coeficiente de silhueta de 0.7351. 
 
+__Etapa 6 - Extract Knowledge -__ Esta etapa usou o conhecimento adquirido com o agrupamento para fazer uma classificação precoce do tipo de dia que as pessoas experimentariam. O processo de treinamento desse algoritmo utilizou os dados rotulados dos anos de 2017 e 2018 e foi testado com os dias de 2020. Esse algoritmo consiste em dois parâmetros de ajuste: lambda e cost, com a combinação destes foi procurado o Trade-off de sacrificar a precisão pelo tempo mínimo (t) para classificar uma série temporal corretamente. 
+
+O processo para determinar a classificação temprana de uma série temporal é mostrado na Figura 9.
+
+![Figura 9](./figuras/algorithm_EC.PNG)
+
 ## 6. Evolução do projeto
 
 Inicialmente  nossa intenção era de realizar o projeto com dados de poluição do ar atmosférico e classificar o ar de acordo com a quantidade de polentes no ar, porém diante da dificuldade em achar datasets com esse tipo de dados, optamos por trabalhar com dados de temperatura e umidade, uma vez que estão disponíveis pela Cepagri e no site da Cetesb.
@@ -225,9 +231,6 @@ Um resultado da clusterização é mostrado na Figura 9.
 
 ![Figura 9](./figuras/clustering_series_temporales.PNG)
 
-__Etapa 6 - Extract Knowledge -__ Nesta etapa utilizou -se  o conhecimento obtido a partir do dataset para classificar os dados de temperatura e umidade conforme o aprendizado na etapa de data mining.
-
-Após clusterizar os dados de temperatura e umidade, foi realizado o treinamento do aprendizado de máquina com 70 % dos dados e 30 % dos dados foi usado para testar a aprendizagem de máquina.
 
 ## 8. Conclusões
 
