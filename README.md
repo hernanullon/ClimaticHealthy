@@ -286,6 +286,12 @@ Como parte da validação desse processo de clusterização, foi aplicado o algo
 
 _Figura 13. Redução de dimensionalidade com t-SNE do dataframe de 48 colunas para 2, onde os pontos vermelhos representam os dias de desconforto e o azul de conforto._
 
+Outro dos padrões encontrados na clusterização foi a progressiva diminuição e aumento dos dias com desconforto ao longo de um ano, mas o mais importante a destacar foi o comportamento desses dias no ano 2020, onde podemos ver que o número de dias confortável cresceu rapidamente nos meses de abril e maio, onde talvez possamos relacionar esse comportamento devido ao isolamento social devido à pandemia.
+
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/humidex_max_mes_comfort.png" width="600">
+
+_Figura 14. Gráfico de barras representando os dias de conforto com a cor azul e vermelho para aqueles de desconforto nos anos 2017,2018 e 2020._
+
 
 ## 8. Conclusões
 
