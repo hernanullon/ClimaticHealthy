@@ -266,6 +266,7 @@ Já nesta primeira visualização, podemos ver certo comportamento repetitivo en
 <figure>
   <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/spiralogra_temperatura.png" align="center" width="500">
 </figure>
+
 _Figura 11 - Espiralograma de los anos 2017 y 2018, para las temperaturas máximas en cada hora del día,  con las temperaturas más altas durante el día en el intervalo de 13h hasta 17h._
 
 
