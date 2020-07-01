@@ -37,12 +37,12 @@ https://drive.google.com/file/d/162rskPRvc0Ap1H90L5hTd58whU9q7zAJ/view?usp=shari
 Um tema muito recorrente atualmente são as mudanças climáticas que o mundo vem sofrendo ao longo do tempo. Aquecimento global, efeito estufa e derretimento de geleiras
 polares são efeitos associados ao tema em questão [1].
 A atividade humana está  diretamente ligada á essas alterações climáticas aumentando a concentração de gases tóxicos como dióxido de carbono na atmosfera devido a queima de combustíveis fósseis e de florestas  contribuindo para o aumento do efeito estufa [2].
-Por outro lado essas mudanças climáticas afetam diretamente a saúde das pessoas como por exemplo em períodos de maior estresse térmico (longos períodos com temperaturas muito baixas ou muito altas) ou acidentes naturais como enchentes e tempestades e também de forma indireta afetando a qualidade do ar , da água , interferindo nos vetores de transmissão de doenças [3].
+Por outro lado essas mudanças climáticas afetam diretamente a saúde das pessoas como por exemplo em períodos de maior estresse térmico (longos períodos com temperaturas muito baixas ou muito altas) ou acidentes naturais como enchentes e tempestades e também de forma indireta afetando a qualidade do ar , da água , interferindo nos vetores de transmissão de doenças [4].
 Partindo desse principio que as mudanças climáticas afetam diretamente a saúde humana o presente projeto pretende calcular indicadores através das medidas coletadas de temperatura e umidade : Humidex, ondas de calor.
 
 
 
-![Figura 1](./figuras/ambiente .png)
+![Figura 1](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ambiente%20.png)
 
 
                                        Figura 1 - Ambiente
@@ -54,7 +54,7 @@ Partindo desse principio que as mudanças climáticas afetam diretamente a saúd
 Na figura 2 é possível visualizar os principais problemas ocasionados pelas ondas de calor.
 
 
-![Figura 2](./figuras/ilhas de calor.jpg)
+![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ilhas%20de%20calor.jpg)
 
 
 
@@ -105,10 +105,10 @@ Toda a análise foi feita na ferramenta de notebook jupyter na linguagem de prog
 
 * 4.3. Metodologia
 
-A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados[7].
+A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados[6].
 E pode ser ilustrada na figura 3
 
-![Figura 3](./figuras/Processo KDD .jpg)
+![Figura 3](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/Processo%20KDD%20.jpg)
 
 
                                  Figura 3 - Processo de estração do conhecimento a partir do processo KDD 
@@ -117,7 +117,7 @@ Com base nessa metodologia, __técnicas estatísticas__ como histogramas e medid
 
 Posteriormente, já em fase de transformação, novos parâmetros foram calculados, como os índices Humidex e as ondas de calor. Para os quais foram considerados os seguintes critérios:
 
-O __Humidex__ foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar  [6].
+O __Humidex__ foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar  [7].
 
 O humidex é definido pela fórmula:
 H = T + (0:555:[E - 10]); (2)
@@ -127,7 +127,7 @@ E = 6:11.e^5417:7530:( 1 /273.16 -  1 /td+ 273.16)
 
 água para que haja condensação em unidades de graus Celsius.
 Utilizamos uma aproximação para o ponto de orvalho (td) que leva em consideração a temperatura e
-a umidade relativa, descrita em [7].
+a umidade relativa, descrita em [8].
 td = T - 100 - RH/5
 Onde T é a temperatura e RH é a umidade relativa
 
@@ -140,6 +140,28 @@ Ele pode ser classificado conforme a tabela 1
   De 40 a 45           |Desconforto, evitar esforço  |
   Acima de 45          |  Perigo                     |
   Acima de 54          |  Insolação iminente         |
+  
+  
+  ## Ondas de calor 
+  
+Na literatura não existe um consenso na definição de ondas de calor , podendo ser definida como temperaturas que excedem 35 ºC . ou de forma mais flexivel como um período de dias consecutivos com temperaturas acima do percentil 95.
+
+Para o estudo em questão utilizaremos o indice CTXP90  (valor do corte a partir do P90 de temperaturas máximas em um intervalo de 15 dias e o Heat Wave Magnitude Index (HWMI) 
+Com base nos indices CTXP90 e HDWI apresentados , respectivamente em [3] e [9] adotou - se como definição de onda de calor um período de 2 ou mais dias consecutivos com temperaturas máximas acima do percentil 90 de temperaturas em uma janela de 30 dias centrada no dia de avaliação  calculada no histórico de 22 anos disponiveis Para a marcação de dias de calor  seguiu -se o seguinte algoritmo:
+
+1 - Para cada dia d calcula -se o percentil 90 (P90(d)) das temperaturas máximas situadas no intervalo de dias [d -15, d+15] para todos os anos da base.
+
+2 - Percorre -se todas as observações da base até que se chegue a condição:
+
+Se a temperatura máxima dos dias d, d +1 e d +2 forem maiores que P90(d), P90 (d+1) e P90(d+2) , entao em d inicia -se uma onda de calor.
+
+
+
+3 - Encontrado um inicio de onda de calor define -se i = 0
+Enquanto a temperatura máxima em d+2 +i for maior que  P90(d + 2 + i ) marca -se d+2 + i como uma onda de calor e incrementa -se i (i = i+1)
+
+4 - OS passos 2 e 3 são repetidos até que todas as observações da base estejam marcadas como ondas de calor ou não.
+
 
 Como as informações que temos são definidas em função do tempo, os algoritmos de __aprendizado de máquina__ foram adaptados para reconhecer padrões e comportamentos na forma de __séries temporais__.
 
@@ -233,15 +255,22 @@ Acreditamos que o estudo é relevante devido à sua capacidade de adaptação a 
 
 ## 7. Resultados e discussões
 
+Para entrar em contexto com os resultados do estudo, mostraremos o conjunto de dados com as informações dos anos de 2017 e 2018 das temperaturas em função do tempo, adicionando uma classificação de cores para os intervalos de umidade.
+
+
+
 Um resultado da clusterização é mostrado na Figura 9.
 
-![Figura 9](./figuras/clustering_series_temporales.PNG)
+![Figura 11](./figuras/clustering_series_temporales.PNG)
 
 
 ## 8. Conclusões
 
 ## 9. Trabalhos futuros
 
+Para trabalhos futuros pretendemos aplicar o algoritmo de clusterização para encontrar condições saudáveis a partir de dados coletados de concentrações de CO2, CO emitidos por  um ônibus convencional e por um ônibus elétrico para se realizar a comparação das condições do ar atmosférico de uma região a partir da substituição de um ônibus convencional 
+por um ônibus elétrico.
+  
 ## 10.  Referências
 
 
@@ -258,21 +287,24 @@ P. MONTAGNA, P. BARBOLA, AND J. V. VOGT, Magnitude of extreme heat waves in pres
 their projection in a warming world, Journal of Geophysical Research: Atmospheres, 119 (2014),
 pp. 12,500–12,512.
 
-[3] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
+[4] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
 on Climate Change Geneva, IPCC Secretariat, (2001).
 
 
 
-[4] J. A. OROSA, M. COSTA, RODRÍGUEZ-FERNÁNDEZ, AND G. ROSHAN, Effect of climate change on outdoor
+[5] J. A. OROSA, M. COSTA, RODRÍGUEZ-FERNÁNDEZ, AND G. ROSHAN, Effect of climate change on outdoor
 thermal comfort in humid climates, Journal of Environmental Health Science and Engineering,
 12 (2014), p. 46
 
 
-[5] U. FAYYAD, G. PIATETSKY-SHAPIRO, AND P. SMYTH, From data mining to knowledge discovery in
+[6] U. FAYYAD, G. PIATETSKY-SHAPIRO, AND P. SMYTH, From data mining to knowledge discovery in
 databases, AI magazine, 17 (1996), pp. 37–37.
 
-[6] Ueda  Hideki Lucas  Projeto Clima e saúde : Análise de dados climáticos
+[7] Ueda  Hideki Lucas  Projeto Clima e saúde : Análise de dados climáticos
 
-[7] M. G. LAWRENCE, The Relationship between Relative Humidity and the Dewpoint Temperature in Moist
+[8] M. G. LAWRENCE, The Relationship between Relative Humidity and the Dewpoint Temperature in Moist
 Air: A Simple Conversion and Applications, Bulletin of the American Meteorological Society, 86
 (2005), pp. 225–234.
+
+[9] J. L. GEIRINHAS, R. M. TRIGO, R. LIBONATI, AND L. F. PERES, Climatic Characterization of Heat
+Waves in Brazil, Anuário do Instituto de Geociências - UFRJ, 41 (2018), pp. 333–350.
