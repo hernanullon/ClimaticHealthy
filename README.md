@@ -7,7 +7,7 @@ o bem estar das pessoas que vivem na cidade de Campinas SP.
 Para realização deste projeto foram utilizadas duas bases de dados principais : A base de dados da Cepagri que possui dados de temperatura e umidade
 no período de 1997 a 2018 e a base de dados da Cetesb nos meses de janeiro a maio de 2020.
 Foi realizado  o pré processamento dos dados  para correção os dados faltantes em ambas as bases e foram realizados cálculos para encontrar três
-indicadores que caracterizam o conforto térmico de uma pessoa com relação ao ambiente, são eles : humidex, ondas de calor, ondas de frio.
+indicadores que caracterizam o conforto térmico de uma pessoa com relação ao ambiente, são eles : humidex, ondas de calor.
 Após ter encontrado os indicadores foram aplicados algoritmos de clusterização para identificar condições saudáveis de clima que contribuam para o bem estar das pessoas.
 
 ## Abstract :
@@ -17,7 +17,7 @@ the welfare of people living in the city of Campinas SP.
 To carry out this project, two main databases were used: The Cepagri database, which has temperature and humidity data
 from 1997 to 2018 and the Cetesb database from January to May 2020.
 Pre-processing of data was performed to correct missing data in both databases and calculations were performed to find three
-Indicators that characterize a person's thermal comfort in relation to the environment are: humidex, heat waves, cold waves.
+Indicators that characterize a person's thermal comfort in relation to the environment are: humidex, heat waves.
 After finding the indicators, clustering algorithms were applied to identify healthy climate conditions that contribute to people's well-being.
 
 ## Equipe :
@@ -64,9 +64,9 @@ Partindo deste contexto este projeto utiliza duas bases de dados, a base princip
 E uma segunda base de dados disponível no site da  Companhia Ambiental do Estado de São Paulo (Cetesb) também foi utilizada para comparar os dados de temperatura e umidade nos meses de março a maio de 2020 com os dados referentes a estas mesmas variáveis no periodo de 2017 a 2018.
 
 A escolha do período de janeiro a maio de 2020 para analisar  se houve alterações climáticas, justifica-se  em virtude do isolamento social devido a pandemia causada pelo Covid 19.
-Após a escolha dos datasets para o projeto foram estudadas e aplicadas técnicas para limpeza destes dados e por fim, aplicou -se a metodologia KDD (Knowledge Discovery in Databases – KDD) para obter conhecimento a partir dos dados (tais como níveis de temperatura e umidade ) e assim  calcular três principais indicadores de condições climáticas: Humidex, ilhas de calor, ilhas de frio.
+Após a escolha dos datasets para o projeto foram estudadas e aplicadas técnicas para limpeza destes dados e por fim, aplicou -se a metodologia KDD (Knowledge Discovery in Databases – KDD) para obter conhecimento a partir dos dados (tais como níveis de temperatura e umidade ) e assim  calcular os dois principais indicadores de condições climáticas: Humidex, ilhas de calor.
 
-A partir do cálculo destes indicadores realizar a classificação (clusterização) dos dados utilizados para se identificar condições climáticas saudáveis a partir de dados de temperatura e umidade e assim poder fazer recomendações para as pessoas dos cuidados que devem ser considerados para evitar que condições climáticas desfavoráveis como a presença de ondas de calor , ondas de frio e umidade relativa do ar baixa afetem a saúde das pessoas .
+A partir do cálculo destes indicadores realizar a classificação (clusterização) dos dados utilizados para se identificar condições climáticas saudáveis a partir de dados de temperatura e umidade e assim poder fazer recomendações para as pessoas dos cuidados que devem ser considerados para evitar que condições climáticas desfavoráveis como a presença de ondas de calor e  do humidex afetem a saúde das pessoas .
 
 
 
@@ -98,14 +98,14 @@ A partir do cálculo destes indicadores realizar a classificação (clusterizaç
 
 Toda a análise foi feita na ferramenta de notebook jupyter na linguagem de programação Python (Versão 3.6), no entanto, vale mencionar as bibliotecas externas usadas no projeto:
 
-| bibliotecas  | Endereço web  | Descrição de uso  |
+| Bibliotecas  | Endereço web  | Descrição de uso  |
 |---|---|---|
 | tslearn  | https://tslearn.readthedocs.io/en/stable/index.html  |   |
 | scikit-learn  | https://scikit-learn.org/stable/  |   |
 
 * 4.3. Metodologia
 
-A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados[7].
+A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados[5].
 E pode ser ilustrada na figura 3
 
 ![Figura 3](https://github.com/hernanullon/ClimaticHealthy/blob/master/Processo%20KDD%20.jpg)
@@ -145,19 +145,17 @@ Como as informações que temos são definidas em função do tempo, os algoritm
 
 ## 5. Detalhamento do projeto
 
-Etapa 1 -  Entendimento do problema - Nesta etapa o objetivo principal é entender o motivo que justifica a escolha do processo KDD, portanto a pergunta de pesquisa é quem guiará o processo  do ponto de vista do que ou quem utilizará esse conhecimento. Neste projeto esta etapa foi cumprida por meio de reuniões da dupla e pesquisas na literatura para encontrar bases teóricas sobre os problemas ocasionados pelas mudanças climáticas na saúde humana.
+__Etapa 1 -__  Entendimento do problema - Nesta etapa o objetivo principal é entender o motivo que justifica a escolha do processo KDD, portanto a pergunta de pesquisa é quem guiará o processo  do ponto de vista do que ou quem utilizará esse conhecimento. Neste projeto esta etapa foi cumprida por meio de reuniões da dupla e pesquisas na literatura para encontrar bases teóricas sobre os problemas ocasionados pelas mudanças climáticas na saúde humana.
 
-Etapa 2 - Selection (Seleção)  - Nesta etapa foi feita a seleção do período do dataset que seria utilizado para realizar a análise.
+__Etapa 2 - Selection (Seleção)  -__ Nesta etapa foi feita a seleção do período do dataset que seria utilizado para realizar a análise.
 Para o dataset fornecido pela Cepagri foram  escolhidos os meses de janeiro a dezembro para os anos de 2017 e 2018 , já para o dataset da Cetesb foram escolhido os meses de janeiro, fevereiro, março, abril e maio e as variáveis selecionadas em ambas as bases  foram temperatura e umidade
 
-\begin{center}
 ![Figura 5 Base de dados da Cepagri](./figuras/DB_cepagri.PNG)
 ![Figura 6 Base de dados da Cetesb](./figuras/DB_cetesb.PNG)
-\end{center}
 
 Link de notebook 1 [Selection]
 
-Etapa 3 - Preprocess - Para uma análise de séries temporais, é muito importante que cada um dos registros tenha sua data e hora em que essas informações foram registradas. O formato da data e hora do conjunto de dados foi dividido em três campos: Ano, Dia Juliano e Hora-Minuto. Portanto, foi necessário aplicar um algoritmo que alterasse esse formato para: __AAAA/mm/dd HH:MM__, a técnica utilizada foi baseada no seguente codigo:
+__Etapa 3 - Preprocess -__ Para uma análise de séries temporais, é muito importante que cada um dos registros tenha sua data e hora em que essas informações foram registradas. O formato da data e hora do conjunto de dados foi dividido em três campos: Ano, Dia Juliano e Hora-Minuto. Portanto, foi necessário aplicar um algoritmo que alterasse esse formato para: __AAAA/mm/dd HH:MM__, a técnica utilizada foi baseada no seguente codigo:
 ~~~python
 from datetime import datetime
 jdate = year+'-'+julian_day+'-'+hour+'-'+minute
@@ -168,11 +166,21 @@ Após foi realizado um pré processamento utilizando a técnica de interpolaçã
 
 ![Figura 5](./figuras/missing_data.PNG)
 
+Por outro lado, a detecção de outliers foi realizada apenas para dados extremamente anômalos, pois se nosso estudo se basear na busca por condições climáticas extremas incomuns, um processo como o boxplot nos deixaria sem informações relevantes. Portanto, apenas através de estatisticas como a visualização da distribuição das variáveis, média e desvio padrão, tais problemas foram identificados.
 
-Foi plotado em um gráfico as variaveis de temperatura e umidade para visualização da distribuição destas variáveis, foram cálculadas algumas estatisticas dos dados como média, desvio padrão.
+__Etapa 4 - Transformation -__ Essa etapa começou com a integração dos 2 conjuntos de dados mencionados anteriormente, já pensando no que seriam os grupos de treinamento e teste dos algoritmos de aprendizado de máquina. Na Figura 6, podemos visualizar a integração.
 
-Etapa 4 - Transformation - 
-Nesta etapa foi realizada uma transformação dos dados, realizou -se o cálculo do indicador Humidex, e a partir desse cálculo foi possível classificar a condição climática em função desse indicador como : Confortable (confortável ) , some disconfort (algum desconforto)
+![Figura 6](./figuras/transformation_integration.PNG)
+
+Posteriormente, novos parâmetros, como o índice Humidex, foram calculados para cada medição de temperatura e umidade, usando o seguinte segmento de código:
+~~~python
+def get_humidex(T,H):
+    z = 6.112*(10**((7.5*T)/(237.7+T)))*(H/100)
+    return T+((5/9)*(z-10))
+~~~
+A partir desse cálculo foi possível classificar a condição climática em função desse indicador como : Confortable (confortável ) , some disconfort (algum desconforto). No entanto, os dados do Humidex precisavam ser preparados para um processo posterior de aprendizado de máquina, em que cada linha do Dataframe representaria uma data e cada coluna o valor para cada hora ao longo do dia, ou seja, cada linha formaria uma série temporal. Um exemplo é amostrado na Figura 7.
+
+![Figura 6](./figuras/transformation_humidex.PNG)
 
 Etapa 5 - Data mining - Nesta etapa após realizar o pré processamento e a transformação dos dados dos datasets colocando esses dados num formato mais adequado para realizar a análise, foi criado atributos para clusterizar os dados de acordo com cada um dos  indicadores calculados humidex, ondas de frio e ondas de calor.
 Após clusterizar os dados de temperatura e umidade, foi realizado o treinamento do aprendizado de máquina com 70 % dos dados e 30 % dos dados foi usado para testar a aprendizagem de máquina.
