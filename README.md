@@ -220,6 +220,12 @@ Em seguida, foram realizadas pesquisas sobre indicadores baseados em temperatura
 
 De acordo com a escala dos valores Humidex, esperávamos encontrar 4 grupos no processo de agrupamento, mas percebemos que os valores Humidex foram encontrados nas 2 faixas menores (Menos de 29, Sem desconforto)(De 30 a 39, Desconforto ameno), poucos valores permaneceram em (De 40 a 45, Desconforto, evitar esforço) e nenhum (Acima de 45, Perigo). Por isso, entendemos que nas avaliações do melhor valor de K, a clusterização com dois grupos superou os demais.
 
+|Nivel    |Quantidade             |   
+|---      |---                    | 
+|comfortable       |  14717|
+|great discomfort  |    199|
+|some discomfort   |   6252|
+
 Quando obtivemos os resultados do agrupamento, tentamos ir além do simples reconhecimento de padrões e procurar uma maneira de ajudar as pessoas no futuro de uma maneira mais eficiente. Por isso, decidimos usar o conhecimento obtido pelo processo de agrupamento para criar um classificador inicial que nos permitisse rotular o tipo de dia que as pessoas experimentariam com base nas temperaturas e umidade das primeiras 12 horas do dia. Esse resultado seria de grande importância para as pessoas se conscientizarem quando saírem para fazer algum esforço físico.
 
 Acreditamos que o estudo é relevante devido à sua capacidade de adaptação a qualquer outra região ou cidade, utilizando apenas dados de temperatura e umidade.
