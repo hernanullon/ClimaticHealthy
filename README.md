@@ -140,6 +140,28 @@ Ele pode ser classificado conforme a tabela 1
   De 40 a 45           |Desconforto, evitar esforço  |
   Acima de 45          |  Perigo                     |
   Acima de 54          |  Insolação iminente         |
+  
+  
+  ## Ondas de calor 
+  
+Na literatura não existe um consenso na definição de ondas de calor , podendo ser definida como temperaturas que excedem 35 ºC . ou de forma mais flexivel como um período de dias consecutivos com temperaturas acima do percentil 95.
+
+Para o estudo em questão utilizaremos o indice CTXP90  (valor do corte a partir do P90 de temperaturas máximas em um intervalo de 15 dias e o Heat Wave Magnitude Index (HWMI) 
+Com base nos indices CTXP90 e HDWI apresentados , respectivamente em [3] e [8] adotou - se como definição de onda de calor um período de 2 ou mais dias consecutivos com temperaturas máximas acima do percentil 90 de temperaturas em uma janela de 30 dias centrada no dia de avaliação  calculada no histórico de 22 anos disponiveis Para a marcação de dias de calor  seguiu -se o seguinte algoritmo:
+
+1 - Para cada dia d calcula -se o percentil 90 (P90(d)) das temperaturas máximas situadas no intervalo de dias [d -15, d+15] para todos os anos da base.
+
+2 - Percorre -se todas as observações da base até que se chegue a condição:
+
+Se a temperatura máxima dos dias d, d +1 e d +2 forem maiores que P90(d), P90 (d+1) e P90(d+2) , entao em d inicia -se uma onda de calor.
+
+
+
+3 - Encontrado um inicio de onda de calor define -se i = 0
+Enquanto a temperatura máxima em d+2 +i for maior que  P90(d + 2 + i ) marca -se d+2 + i como uma onda de calor e incrementa -se i (i = i+1)
+
+4 - OS passos 2 e 3 são repetidos até que todas as observações da base estejam marcadas como ondas de calor ou não.
+
 
 Como as informações que temos são definidas em função do tempo, os algoritmos de __aprendizado de máquina__ foram adaptados para reconhecer padrões e comportamentos na forma de __séries temporais__.
 
@@ -280,3 +302,6 @@ databases, AI magazine, 17 (1996), pp. 37–37.
 [7] M. G. LAWRENCE, The Relationship between Relative Humidity and the Dewpoint Temperature in Moist
 Air: A Simple Conversion and Applications, Bulletin of the American Meteorological Society, 86
 (2005), pp. 225–234.
+
+[8] J. L. GEIRINHAS, R. M. TRIGO, R. LIBONATI, AND L. F. PERES, Climatic Characterization of Heat
+Waves in Brazil, Anuário do Instituto de Geociências - UFRJ, 41 (2018), pp. 333–350.
