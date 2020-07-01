@@ -42,7 +42,7 @@ Partindo desse principio que as mudanças climáticas afetam diretamente a saúd
 
 
 
-![Figura 1](https://github.com/hernanullon/ClimaticHealthy/blob/master/ambiente%20.png)
+![Figura 1](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ambiente%20.png)
 
 
                                        Figura 1 - Ambiente
@@ -54,7 +54,7 @@ Partindo desse principio que as mudanças climáticas afetam diretamente a saúd
 Na figura 2 é possível visualizar os principais problemas ocasionados pelas ondas de calor.
 
 
-![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/ilhas%20de%20calor.jpg)
+![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ilhas%20de%20calor.jpg)
 
 
 
@@ -91,7 +91,8 @@ A partir do cálculo destes indicadores realizar a classificação (clusterizaç
 |Base de dados   |Endereço na web   |Resumo e descrição de uso    |
 |---|---|---|
 | Base 1 - Cepagri da Unicamp  |  |Essa foi a principal base de dados utilizada no projeto, nessa base foram aplicadas técnicas para completar os dados faltantes, foram realizados cálculos para encontrar os indicadores humidex, onda de calor, onda de frio.   |
-| Base 2  - Cetesb  |https://cetesb.sp.gov.br/ar/dados-horarios/  | Esta base de dados foi utilizada para efeitos de comparações entre os meses de janeiro  maio de 2020  e o mesmo período do ano passado  |
+| Base 2  - Cetesb  |https://cetesb.sp.gov.br/ar/dados-horarios/  | Esta base de dados foi utilizada para efeitos de comparações entre os meses de janeiro  maio de 2020  e os
+anos de 2017 e 2018|
 
 
 * 4.2 Ferramentas
@@ -105,10 +106,10 @@ Toda a análise foi feita na ferramenta de notebook jupyter na linguagem de prog
 
 * 4.3. Metodologia
 
-A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados[5].
+A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados[6].
 E pode ser ilustrada na figura 3
 
-![Figura 3](https://github.com/hernanullon/ClimaticHealthy/blob/master/Processo%20KDD%20.jpg)
+![Figura 3](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/Processo%20KDD%20.jpg)
 
 
                                  Figura 3 - Processo de estração do conhecimento a partir do processo KDD 
@@ -117,7 +118,7 @@ Com base nessa metodologia, __técnicas estatísticas__ como histogramas e medid
 
 Posteriormente, já em fase de transformação, novos parâmetros foram calculados, como os índices Humidex e as ondas de calor. Para os quais foram considerados os seguintes critérios:
 
-O __Humidex__ foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar  [6].
+O __Humidex__ foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar  [5].
 
 O humidex é definido pela fórmula:
 H = T + (0:555:[E - 10]); (2)
@@ -140,6 +141,26 @@ Ele pode ser classificado conforme a tabela 1
   De 40 a 45           |Desconforto, evitar esforço  |
   Acima de 45          |  Perigo                     |
   Acima de 54          |  Insolação iminente         |
+
+Ondas de calor 
+
+Na literatura não existe um consenso na definição de ondas de calor , podendo ser definida como temperaturas que excedem 35 ºC . ou de forma mais flexivel como um período de dias consecutivos com temperaturas acima do percentil 95.
+
+Para o estudo em questão utilizaremos o indice CTXP90  (valor do corte a partir do P90 de temperaturas máximas em um intervalo de 15 dias e o Heat Wave Magnitude Index (HWMI) 
+Com base nos indices CTXP90 e HDWI apresentados , respectivamente em [3] e [9] adotou - se como definição de onda de calor um período de 2 ou mais dias consecutivos com temperaturas máximas acima do percentil 90 de temperaturas em uma janela de 30 dias centrada no dia de avaliação  calculada no histórico de 22 anos disponiveis Para a marcação de dias de calor  seguiu -se o seguinte algoritmo:
+
+1 - Para cada dia d calcula -se o percentil 90 (P90(d)) das temperaturas máximas situadas no intervalo de dias [d -15, d+15] para todos os anos da base.
+
+2 - Percorre -se todas as observações da base até que se chegue a condição:
+
+Se a temperatura máxima dos dias d, d +1 e d +2 forem maiores que P90(d), P90 (d+1) e P90(d+2) , entao em d inicia -se uma onda de calor.
+
+
+
+3 - Encontrado um inicio de onda de calor define -se i = 0
+Enquanto a temperatura máxima em d+2 +i for maior que  P90(d + 2 + i ) marca -se d+2 + i como uma onda de calor e incrementa -se i (i = i+1)
+
+4 - OS passos 2 e 3 são repetidos até que todas as observações da base estejam marcadas como ondas de calor ou não.
 
 Como as informações que temos são definidas em função do tempo, os algoritmos de __aprendizado de máquina__ foram adaptados para reconhecer padrões e comportamentos na forma de __séries temporais__.
 
@@ -213,21 +234,26 @@ P. MONTAGNA, P. BARBOLA, AND J. V. VOGT, Magnitude of extreme heat waves in pres
 their projection in a warming world, Journal of Geophysical Research: Atmospheres, 119 (2014),
 pp. 12,500–12,512.
 
-[3] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
+[4] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
 on Climate Change Geneva, IPCC Secretariat, (2001).
 
 
 
-[4] J. A. OROSA, M. COSTA, RODRÍGUEZ-FERNÁNDEZ, AND G. ROSHAN, Effect of climate change on outdoor
+[5] J. A. OROSA, M. COSTA, RODRÍGUEZ-FERNÁNDEZ, AND G. ROSHAN, Effect of climate change on outdoor
 thermal comfort in humid climates, Journal of Environmental Health Science and Engineering,
 12 (2014), p. 46
 
 
-[5] U. FAYYAD, G. PIATETSKY-SHAPIRO, AND P. SMYTH, From data mining to knowledge discovery in
+[6] U. FAYYAD, G. PIATETSKY-SHAPIRO, AND P. SMYTH, From data mining to knowledge discovery in
 databases, AI magazine, 17 (1996), pp. 37–37.
 
-[6] Ueda  Hideki Lucas  Projeto Clima e saúde : Análise de dados climáticos
+[7] Ueda  Hideki Lucas  Projeto Clima e saúde : Análise de dados climáticos
 
-[7] M. G. LAWRENCE, The Relationship between Relative Humidity and the Dewpoint Temperature in Moist
+[8] M. G. LAWRENCE, The Relationship between Relative Humidity and the Dewpoint Temperature in Moist
 Air: A Simple Conversion and Applications, Bulletin of the American Meteorological Society, 86
 (2005), pp. 225–234.
+
+[9] J. L. GEIRINHAS, R. M. TRIGO, R. LIBONATI, AND L. F. PERES, Climatic Characterization of Heat
+Waves in Brazil, Anuário do Instituto de Geociências - UFRJ, 41 (2018), pp. 333–350.
+
+
