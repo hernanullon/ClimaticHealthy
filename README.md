@@ -263,7 +263,7 @@ Para entrar em contexto com os resultados do estudo, mostraremos o conjunto de d
 Já nesta primeira visualização, podemos ver certo comportamento repetitivo entre esses dois anos. Portanto, esse grupo de dados foi transferido para um formato de série temporal, onde realizamos um diagrama em espiral, que demonstrou um padrão repetitivo das horas com as temperaturas mais altas nos dois anos.
 
 <figure>
-  <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/spiralogra_temperatura.png" align="center" width="400">
+  <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/spiralogra_temperatura.png" align="center" width="500">
 </figure>
 
 _Figura 11. Spiralogram dos anos de 2017 e 2018, para as temperaturas máximas a cada hora do dia, com as temperaturas mais altas durante o dia no intervalo das 13:00 às 17:00._
@@ -279,6 +279,13 @@ TimeSeriesKMeans(init='random', max_iter=20, metric='softdtw',
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/clustering_series_temporales.PNG" align="center" width="700">
 
 _Figura 12. Agrupamento de séries temporais para a variável Humidex nos anos 2017,2018 e 2020. As curvas vermelhas representam os dias da classe 0 (desconforto) e o azul da classe 1 (sem desconforto)._
+
+
+
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/TSNE.PNG" align="center" width="500">
+
+_Figura 12. Agrupamento de séries temporais para a variável Humidex nos anos 2017,2018 e 2020. As curvas vermelhas representam os dias da classe 0 (desconforto) e o azul da classe 1 (sem desconforto)._
+
 
 
 ## 8. Conclusões
