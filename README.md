@@ -228,11 +228,14 @@ Após clusterizar os dados de temperatura e umidade, foi realizado o treinamento
 
 
 
-[1] As cidades que queremos Disponível em : <https://www.isglobal.org/es/ciudadesquequeremos?gclid=Cj0KCQjw1Iv0BRDaARIsAGTWD1s8PaszWCMZQG9CKFIHkiV-2PVh2Q8oZ8vWFKcxVEHfRHLJwXDFVOQaAvi8EALw_wcB#efectossalud>
-
-[2] W. H. ORGANIZATION, ed., Climate Change and Human Health - Risks and Responses, Genève, 2004.
+[1] W. H. ORGANIZATION, ed., Climate Change and Human Health - Risks and Responses, Genève, 2004.
 OCLC: 254297040.
 Disponível em < https://apps.who.int/iris/bitstream/handle/10665/44133/9789241598187_eng.pdf;jsessionid=F45966ED878C58D6CC7129FFE87DF3B0?sequence=1>
+
+[2] As cidades que queremos Disponível em : <https://www.isglobal.org/es/ciudadesquequeremos?gclid=Cj0KCQjw1Iv0BRDaARIsAGTWD1s8PaszWCMZQG9CKFIHkiV-2PVh2Q8oZ8vWFKcxVEHfRHLJwXDFVOQaAvi8EALw_wcB#efectossalud>
+
+
+
 
 [3] S. RUSSO, A. DOSIO, R. G. GRAVERSEN, J. SILLMANN, H. CARRAO, M. B. DUNBAR, A. SINGLETON,
 P. MONTAGNA, P. BARBOLA, AND J. V. VOGT, Magnitude of extreme heat waves in present climate and
