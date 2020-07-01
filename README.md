@@ -22,6 +22,7 @@ After finding the indicators, clustering algorithms were applied to identify hea
 
 ## Equipe :
 Daniel Filipe Vieira RA : 262720
+
 Ruben Hernan Alcivar Ullon RA: 262729
 
 
@@ -94,6 +95,7 @@ A partir do cálculo destes indicadores realizar a classificação (clusterizaç
 
 
 * 4.2 Ferramentas
+
 Toda a análise foi feita na ferramenta de notebook jupyter na linguagem de programação Python (Versão 3.6), no entanto, vale mencionar as bibliotecas externas usadas no projeto:
 
 | bibliotecas  | Endereço web  | Descrição de uso  |
@@ -111,10 +113,11 @@ E pode ser ilustrada na figura 3
 
                                  Figura 3 - Processo de estração do conhecimento a partir do processo KDD 
 
-Com base nessa metodologia, técnicas estatísticas como histogramas e medidas de dispersão foram utilizadas nas etapas de seleção e pré-processamento, com o objetivo de conhecer e manipular o conjunto de dados da melhor maneira. Além disso, técnicas matemáticas e de visualização seriam aplicadas no estágio de pré-processamento para evitar todos os tipos de valores ausentes ou a presença de discrepâncias.
+Com base nessa metodologia, __técnicas estatísticas__ como histogramas e medidas de dispersão foram utilizadas nas etapas de seleção e pré-processamento, com o objetivo de conhecer e manipular o conjunto de dados da melhor maneira. Além disso, __técnicas matemáticas e de visualização__ seriam aplicadas no estágio de pré-processamento para evitar todo tipo de missing data ou a presença de outliers.
 
 Posteriormente, já em fase de transformação, novos parâmetros foram calculados, como os índices Humidex e as ondas de calor. Para os quais foram considerados os seguintes critérios:
-O humidex foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar  [6].
+
+O __Humidex__ foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar  [6].
 
 O humidex é definido pela fórmula:
 H = T + (0:555:[E - 10]); (2)
@@ -138,7 +141,7 @@ Ele pode ser classificado conforme a tabela 1
   Acima de 45          |  Perigo                     |
   Acima de 54          |  Insolação iminente         |
 
-Como as informações que temos são definidas em função do tempo, os algoritmos de aprendizado de máquina foram adaptados para reconhecer padrões e comportamentos na forma de séries temporais.
+Como as informações que temos são definidas em função do tempo, os algoritmos de __aprendizado de máquina__ foram adaptados para reconhecer padrões e comportamentos na forma de __séries temporais__.
 
 ## 5. Detalhamento do projeto
 
@@ -147,10 +150,25 @@ Etapa 1 -  Entendimento do problema - Nesta etapa o objetivo principal é entend
 Etapa 2 - Selection (Seleção)  - Nesta etapa foi feita a seleção do período do dataset que seria utilizado para realizar a análise.
 Para o dataset fornecido pela Cepagri foram  escolhidos os meses de janeiro a dezembro para os anos de 2017 e 2018 , já para o dataset da Cetesb foram escolhido os meses de janeiro, fevereiro, março, abril e maio e as variáveis selecionadas em ambas as bases  foram temperatura e umidade
 
+\begin{center}
+![Figura 5 Base de dados da Cepagri](./figuras/DB_cepagri.PNG)
+![Figura 6 Base de dados da Cetesb](./figuras/DB_cetesb.PNG)
+\end{center}
 
-Etapa 3 - Preprocess - Após a etapa de seleção dos datasets foi realizado um pré processamento utilizando a técnica de interpolação dos valores no ano de 2017 e 2018 para completar os valores faltantes de temperatura e umidade da base fornecida
-pelo Cepagri.
-Foi implementado um algoritmo para apresentar a data em um formato adequado como por exemplo 26/06/2020 já que no dataset o formato da data era Dia Juliano                       103025 non-null int64.
+Link de notebook 1 [Selection]
+
+Etapa 3 - Preprocess - Para uma análise de séries temporais, é muito importante que cada um dos registros tenha sua data e hora em que essas informações foram registradas. O formato da data e hora do conjunto de dados foi dividido em três campos: Ano, Dia Juliano e Hora-Minuto. Portanto, foi necessário aplicar um algoritmo que alterasse esse formato para: __AAAA/mm/dd HH:MM__, a técnica utilizada foi baseada no seguente codigo:
+~~~python
+from datetime import datetime
+jdate = year+'-'+julian_day+'-'+hour+'-'+minute
+fmt = '%Y-%j-%H-%M'
+date_time = datetime.strptime(jdate, fmt)
+~~~
+Após foi realizado um pré processamento utilizando a técnica de interpolação dos valores no ano de 2017 e 2018 para completar os valores faltantes de temperatura e umidade da base fornecida pelo Cepagri. Um exemplo da perda de dados é amostrada na Figura 4.
+
+![Figura 5](./figuras/missing_data.PNG)
+
+
 Foi plotado em um gráfico as variaveis de temperatura e umidade para visualização da distribuição destas variáveis, foram cálculadas algumas estatisticas dos dados como média, desvio padrão.
 
 Etapa 4 - Transformation - 
