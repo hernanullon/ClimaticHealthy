@@ -167,7 +167,7 @@ Como as informações que temos são definidas em função do tempo, os algoritm
 
 __Etapa 1 -__  Entendimento do problema - Nesta etapa o objetivo principal é entender o motivo que justifica a escolha do processo KDD, portanto a pergunta de pesquisa é quem guiará o processo  do ponto de vista do que ou quem utilizará esse conhecimento. Neste projeto esta etapa foi cumprida por meio de reuniões da dupla e pesquisas na literatura para encontrar bases teóricas sobre os problemas ocasionados pelas mudanças climáticas na saúde humana.
 
-__Etapa 2 - Selection (Seleção)  -__ Nesta etapa foi feita a seleção do período do dataset que seria utilizado para realizar a análise.
+__Etapa 2 - [Selection](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/1%20%5BSelection%5D.ipynb)  -__ Nesta etapa foi feita a seleção do período do dataset que seria utilizado para realizar a análise.
 Para o dataset fornecido pela Cepagri foram  escolhidos os meses de janeiro a dezembro para os anos de 2017 e 2018 , já para o dataset da Cetesb foram escolhido os meses de janeiro, fevereiro, março, abril e maio e as variáveis selecionadas em ambas as bases  foram temperatura e umidade
 
 ![Figura 5 Base de dados da Cepagri](./figuras/DB_cepagri.PNG)
@@ -175,7 +175,7 @@ Para o dataset fornecido pela Cepagri foram  escolhidos os meses de janeiro a de
 
 Link de notebook 1 [Selection]
 
-__Etapa 3 - Preprocess -__ Para uma análise de séries temporais, é muito importante que cada um dos registros tenha sua data e hora em que essas informações foram registradas. O formato da data e hora do conjunto de dados foi dividido em três campos: Ano, Dia Juliano e Hora-Minuto. Portanto, foi necessário aplicar um algoritmo que alterasse esse formato para: __AAAA/mm/dd HH:MM__, a técnica utilizada foi baseada no seguente codigo:
+__Etapa 3 - [Preprocess](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/2%20%5BPreprocess%5D.ipynb) -__ Para uma análise de séries temporais, é muito importante que cada um dos registros tenha sua data e hora em que essas informações foram registradas. O formato da data e hora do conjunto de dados foi dividido em três campos: Ano, Dia Juliano e Hora-Minuto. Portanto, foi necessário aplicar um algoritmo que alterasse esse formato para: __AAAA/mm/dd HH:MM__, a técnica utilizada foi baseada no seguente codigo:
 ~~~python
 from datetime import datetime
 jdate = year+'-'+julian_day+'-'+hour+'-'+minute
@@ -188,7 +188,7 @@ Após foi realizado um pré processamento utilizando a técnica de interpolaçã
 
 Por outro lado, a detecção de outliers foi realizada apenas para dados extremamente anômalos, pois se nosso estudo se basear na busca por condições climáticas extremas incomuns, um processo como o boxplot nos deixaria sem informações relevantes. Portanto, apenas através de estatisticas como a visualização da distribuição das variáveis, média e desvio padrão, tais problemas foram identificados.
 
-__Etapa 4 - Transformation -__ Essa etapa começou com a integração dos 2 conjuntos de dados mencionados anteriormente, já pensando no que seriam os grupos de treinamento e teste dos algoritmos de aprendizado de máquina. Na Figura 6, podemos visualizar a integração.
+__Etapa 4 - [Transformation](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/3%20%5BTransformation%5D.ipynb) -__ Essa etapa começou com a integração dos 2 conjuntos de dados mencionados anteriormente, já pensando no que seriam os grupos de treinamento e teste dos algoritmos de aprendizado de máquina. Na Figura 6, podemos visualizar a integração.
 
 <center>
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/transformation_integration.PNG" align="middle" width="700">
@@ -205,7 +205,7 @@ A partir desse cálculo foi possível classificar a condição climática em fun
 ![Figura 6](./figuras/transformation_humidex.PNG)
 
 
-__Etapa 5 - Data mining -__ Nesta etapa após realizar o pré processamento e a transformação dos dados dos datasets colocando esses dados num formato mais adequado para realizar a análise, a técnica de clusterização foi aplicada de acordo com o indicador Humidex.
+__Etapa 5 - [Datamining](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/4%20%5BData%20Mining%5D.ipynb) -__ Nesta etapa após realizar o pré processamento e a transformação dos dados dos datasets colocando esses dados num formato mais adequado para realizar a análise, a técnica de clusterização foi aplicada de acordo com o indicador Humidex.
 
 O algoritmo de agrupamento escolhido para esse processo foi o K-Means adaptado para séries temporais. Onde sua implementação será descrita nas seguintes etapas:
 
@@ -228,7 +228,7 @@ O algoritmo K-Means precisa ajustar certos parâmetros, como métrica de distân
 
 Eles garantiram o melhor desempenho no conjunto de dados, com um coeficiente de silhueta de 0.7351. 
 
-__Etapa 6 - Extract Knowledge -__ Esta etapa usou o conhecimento adquirido com o agrupamento para fazer uma classificação precoce do tipo de dia que as pessoas experimentariam. O processo de treinamento desse algoritmo utilizou os dados rotulados dos anos de 2017 e 2018 e foi testado com os dias de 2020. Esse algoritmo consiste em dois parâmetros de ajuste: lambda e cost, com a combinação destes foi procurado o Trade-off de sacrificar a precisão pelo tempo mínimo (t) para classificar uma série temporal corretamente. 
+__Etapa 6 - [Extract Knowledge](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/5%20%5BExtract%20Knowledge%5D.ipynb) -__ Esta etapa usou o conhecimento adquirido com o agrupamento para fazer uma classificação precoce do tipo de dia que as pessoas experimentariam. O processo de treinamento desse algoritmo utilizou os dados rotulados dos anos de 2017 e 2018 e foi testado com os dias de 2020. Esse algoritmo consiste em dois parâmetros de ajuste: lambda e cost, com a combinação destes foi procurado o Trade-off de sacrificar a precisão pelo tempo mínimo (t) para classificar uma série temporal corretamente. 
 
 O processo para determinar a classificação temprana de uma série temporal é mostrado na Figura 9.
 
@@ -280,7 +280,7 @@ TimeSeriesKMeans(init='random', max_iter=20, metric='softdtw',
 
 _Figura 12. Agrupamento de séries temporais para a variável Humidex nos anos 2017,2018 e 2020. As curvas vermelhas representam os dias da classe 0 (desconforto) e o azul da classe 1 (sem desconforto)._
 
-Como parte da validação desse processo de clusterização, foi aplicado o algoritmo de redução de dimensionalidade t-SNE, para o qual o dataframe mostrado na parte inicial do estágio de [DataMining](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/3%20%5BTransformation%5D.ipynb) foi usado em conjunto com as previsões obtidas pelo K-Means. A partir da Figura 13, podemos reconhecer que os grupos obtidos estão bem agrupados, talvez com dificuldades na região de fronteira, para a qual o coeficiente de silhueta obtido (0,73514) faz sentido.
+Como parte da validação desse processo de clusterização, foi aplicado o algoritmo de redução de dimensionalidade t-SNE, para o qual o dataframe mostrado na parte inicial do estágio de [DataMining](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/4%20%5BData%20Mining%5D.ipynb) foi usado em conjunto com as previsões obtidas pelo K-Means. A partir da Figura 13, podemos reconhecer que os grupos obtidos estão bem agrupados, talvez com dificuldades na região de fronteira, para a qual o coeficiente de silhueta obtido (0,73514) faz sentido.
 
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/TSNE.PNG" align="center" width="500">
 
