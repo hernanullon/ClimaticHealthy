@@ -42,7 +42,7 @@ Partindo desse principio que as mudanças climáticas afetam diretamente a saúd
 
 
 
-![Figura 1](https://github.com/hernanullon/ClimaticHealthy/blob/master/ambiente%20.png)
+![Figura 1](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ambiente%20.png)
 
 
                                        Figura 1 - Ambiente
@@ -54,7 +54,7 @@ Partindo desse principio que as mudanças climáticas afetam diretamente a saúd
 Na figura 2 é possível visualizar os principais problemas ocasionados pelas ondas de calor.
 
 
-![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/ilhas%20de%20calor.jpg)
+![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ilhas%20de%20calor.jpg)
 
 
 
@@ -64,7 +64,7 @@ Partindo deste contexto este projeto utiliza duas bases de dados, a base princip
 E uma segunda base de dados disponível no site da  Companhia Ambiental do Estado de São Paulo (Cetesb) também foi utilizada para comparar os dados de temperatura e umidade nos meses de março a maio de 2020 com os dados referentes a estas mesmas variáveis no periodo de 2017 a 2018.
 
 A escolha do período de janeiro a maio de 2020 para analisar  se houve alterações climáticas, justifica-se  em virtude do isolamento social devido a pandemia causada pelo Covid 19.
-Após a escolha dos datasets para o projeto foram estudadas e aplicadas técnicas para limpeza destes dados e por fim, aplicou -se a metodologia KDD (Knowledge Discovery in Databases – KDD) para obter conhecimento a partir dos dados (tais como níveis de temperatura e umidade ) e assim  calcular três principais indicadores de condições climáticas: Humidex, ilhas de calor, ilhas de frio.
+Após a escolha dos datasets para o projeto foram estudadas e aplicadas técnicas para limpeza destes dados e por fim, aplicou -se a metodologia KDD (Knowledge Discovery in Databases – KDD) para obter conhecimento a partir dos dados (tais como níveis de temperatura e umidade ) e assim  calcular os dois principais indicadores de condições climáticas: Humidex, ilhas de calor.
 
 A partir do cálculo destes indicadores realizar a classificação (clusterização) dos dados utilizados para se identificar condições climáticas saudáveis a partir de dados de temperatura e umidade e assim poder fazer recomendações para as pessoas dos cuidados que devem ser considerados para evitar que condições climáticas desfavoráveis como a presença de ondas de calor , ondas de frio e umidade relativa do ar baixa afetem a saúde das pessoas .
 
