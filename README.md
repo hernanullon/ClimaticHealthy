@@ -287,6 +287,8 @@ Como parte da validação desse processo de clusterização, foi aplicado o algo
 _Figura 13. Redução de dimensionalidade com t-SNE do dataframe de 48 colunas para 2, onde os pontos vermelhos representam os dias de desconforto e o azul de conforto._
 
 
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/humidex_max_mes_comfort.png" align="center" width="600">
+
 ## 8. Conclusões
 
 ## 9. Trabalhos futuros
