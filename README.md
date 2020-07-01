@@ -293,6 +293,12 @@ Outro dos padrões encontrados na clusterização foi a progressiva diminuição
 _Figura 14. Gráfico de barras representando os dias de conforto com a cor azul e vermelho para aqueles de desconforto nos anos 2017,2018 e 2020._
 
 
+
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/early_classification.PNG" width="600">
+
+_Figura 14. Gráfico._
+
+
 ## 8. Conclusões
 
 ## 9. Trabalhos futuros
