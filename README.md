@@ -286,6 +286,7 @@ _Figura 12. Agrupamento de séries temporais para a variável Humidex nos anos 2
 _Figura 12. Agrupamento de séries temporais para a variável Humidex nos anos 2017,2018 e 2020. As curvas vermelhas representam os dias da classe 0 (desconforto) e o azul da classe 1 (sem desconforto)._
 
 
+[Transformation](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/3%20%5BTransformation%5D.ipynb)
 
 ## 8. Conclusões
 
