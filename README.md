@@ -1,6 +1,4 @@
- # Projeto < Clima e saúde>
-
-## Project < Climatic and Healthy>
+## Projeto <Clima e saúde>
 
 ## Descrição resumida do projeto :
 
@@ -24,8 +22,7 @@ After finding the indicators, clustering algorithms were applied to identify hea
 
 ## Equipe :
 Daniel Filipe Vieira RA : 262720
-
-Ruben Hernan Alcivar Ullon
+Ruben Hernan Alcivar Ullon RA: 262729
 
 
 ## Video do projeto
@@ -40,7 +37,7 @@ Um tema muito recorrente atualmente são as mudanças climáticas que o mundo ve
 polares são efeitos associados ao tema em questão [1].
 A atividade humana está  diretamente ligada á essas alterações climáticas aumentando a concentração de gases tóxicos como dióxido de carbono na atmosfera devido a queima de combustíveis fósseis e de florestas  contribuindo para o aumento do efeito estufa [2].
 Por outro lado essas mudanças climáticas afetam diretamente a saúde das pessoas como por exemplo em períodos de maior estresse térmico (longos períodos com temperaturas muito baixas ou muito altas) ou acidentes naturais como enchentes e tempestades e também de forma indireta afetando a qualidade do ar , da água , interferindo nos vetores de transmissão de doenças [3].
-Partindo desse principio que as mudanças climáticas afetam diretamente a saúde humana o presente projeto pretende calcular três indicadores principais através das medidas coletadas de temperatura e umidade : Humidex, ondas de calor, ondas de frio.
+Partindo desse principio que as mudanças climáticas afetam diretamente a saúde humana o presente projeto pretende calcular indicadores através das medidas coletadas de temperatura e umidade : Humidex, ondas de calor.
 
 
 
@@ -53,7 +50,7 @@ Partindo desse principio que as mudanças climáticas afetam diretamente a saúd
 
 
 
-Na figura 2 é possível visualizar os principais problemas ocasionados pelas ondas de calor 
+Na figura 2 é possível visualizar os principais problemas ocasionados pelas ondas de calor.
 
 
 ![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/ilhas%20de%20calor.jpg)
@@ -80,10 +77,9 @@ A partir do cálculo destes indicadores realizar a classificação (clusterizaç
 
 * Realizar a análise exploratória dos dados de temperatura e umidade da base de dados do Cepagri e da Cetesb utilizando a técnica KDD
 
-* Cálculo dos indicadores como humidex, ondas de calor, ondas de frio.
+* Cálculo dos indicadores como humidex e ondas de calor.
 
-* Realizar a clusterização dos dados de acordo com os indicadores calculados e assim poder fazer recomendações de hábitos saudáveis para os dias de condições climáticas 
-desfavoráveis.
+* Identificar condições climáticas desfavoráveis de acordo com os indicadores calculados, para fazer recomendações de hábitos saudáveis nas pessoas.
 
 
 ## 4. Recursos e métodos
@@ -98,12 +94,12 @@ desfavoráveis.
 
 
 * 4.2 Ferramentas
+Toda a análise foi feita na ferramenta de notebook jupyter na linguagem de programação Python (Versão 3.6), no entanto, vale mencionar as bibliotecas externas usadas no projeto:
 
-
-| Ferramenta  | Endereço web  | Descrição de uso  |
+| bibliotecas  | Endereço web  | Descrição de uso  |
 |---|---|---|
-|   |   |   |
-|   |   |   |
+| tslearn  | https://tslearn.readthedocs.io/en/stable/index.html  |   |
+| scikit-learn  | https://scikit-learn.org/stable/  |   |
 
 * 4.3. Metodologia
 
@@ -114,6 +110,37 @@ E pode ser ilustrada na figura 3
 
 
                                  Figura 3 - Processo de estração do conhecimento a partir do processo KDD 
+
+Com base nessa metodologia, técnicas estatísticas como histogramas e medidas de dispersão foram utilizadas nas etapas de seleção e pré-processamento, com o objetivo de conhecer e manipular o conjunto de dados da melhor maneira. Além disso, técnicas matemáticas e de visualização seriam aplicadas no estágio de pré-processamento para evitar todos os tipos de valores ausentes ou a presença de discrepâncias.
+
+Posteriormente, já em fase de transformação, novos parâmetros foram calculados, como os índices Humidex e as ondas de calor. Para os quais foram considerados os seguintes critérios:
+O humidex foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar  [6].
+
+O humidex é definido pela fórmula:
+H = T + (0:555:[E - 10]); (2)
+onde T é a temperatura em Graus Celsius e E é a pressão de vapor de água em milibars.
+A pressão de vapor é descrita pela fórmula:
+E = 6:11.e^5417:7530:( 1 /273.16 -  1 /td+ 273.16)
+
+água para que haja condensação em unidades de graus Celsius.
+Utilizamos uma aproximação para o ponto de orvalho (td) que leva em consideração a temperatura e
+a umidade relativa, descrita em [7].
+td = T - 100 - RH/5
+Onde T é a temperatura e RH é a umidade relativa
+
+Ele pode ser classificado conforme a tabela 1
+
+|Valor de humidex    |Sensação térmica             |   
+|---                 |---                          |
+| Menor que 29       |Sem desconforto              |   
+| De 30 a 39         |Desconforto ameno            |   
+  De 40 a 45           |Desconforto, evitar esforço  |
+  Acima de 45          |  Perigo                     |
+  Acima de 54          |  Insolação iminente         |
+
+Como as informações que temos são definidas em função do tempo, os algoritmos de aprendizado de máquina foram adaptados para reconhecer padrões e comportamentos na forma de séries temporais.
+
+## 5. Detalhamento do projeto
 
 Etapa 1 -  Entendimento do problema - Nesta etapa o objetivo principal é entender o motivo que justifica a escolha do processo KDD, portanto a pergunta de pesquisa é quem guiará o processo  do ponto de vista do que ou quem utilizará esse conhecimento. Neste projeto esta etapa foi cumprida por meio de reuniões da dupla e pesquisas na literatura para encontrar bases teóricas sobre os problemas ocasionados pelas mudanças climáticas na saúde humana.
 
@@ -129,55 +156,10 @@ Foi plotado em um gráfico as variaveis de temperatura e umidade para visualiza�
 Etapa 4 - Transformation - 
 Nesta etapa foi realizada uma transformação dos dados, realizou -se o cálculo do indicador Humidex, e a partir desse cálculo foi possível classificar a condição climática em função desse indicador como : Confortable (confortável ) , some disconfort (algum desconforto)
 
-O humidex foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar  [6].
-
-O humidex é definido pela fórmula:
-H = T + (0:555:[E - 10]); (2)
-onde T é a temperatura em Graus Celsius e E é a pressão de vapor de água em milibars.
-A pressão de vapor é descrita pela fórmula:
-E = 6:11.e^5417:7530:( 1 /273.16 -  1 /td+ 273.16)
-
-
-água para que haja condensação em unidades de graus Celsius.
-Utilizamos uma aproximação para o ponto de orvalho (td) que leva em consideração a temperatura e
-a umidade relativa, descrita em [7].
-td = T - 100 - RH/5
-Onde T é a temperatura e RH é a umidade relativa
-
- 
- 
- 
- 
-
- 
-
-
-Ele pode ser classificado conforme a tabela 1
-
-|Valor de humidex    |Sensação térmica             |   
-|---                 |---                          |
-| Menor que 29       |Sem desconforto              |   
-| De 30 a 39         |Desconforto ameno            |   
-  De 40 a 45           |Desconforto, evitar esforço  |
-  Acima de 45          |  Perigo                     |
-  Acima de 54          |  Insolação iminente         |
-
-
-
- 
- 
- 
-
-
-
-
-
 Etapa 5 - Data mining - Nesta etapa após realizar o pré processamento e a transformação dos dados dos datasets colocando esses dados num formato mais adequado para realizar a análise, foi criado atributos para clusterizar os dados de acordo com cada um dos  indicadores calculados humidex, ondas de frio e ondas de calor.
 Após clusterizar os dados de temperatura e umidade, foi realizado o treinamento do aprendizado de máquina com 70 % dos dados e 30 % dos dados foi usado para testar a aprendizagem de máquina.
 
 Etapa 6 - Knowledge Discovery - Nesta etapa utilizou -se  o conhecimento obtido a partir do dataset para classificar os dados de temperatura e umidade conforme o aprendizado na etapa de data mining.
-
-## 5. Detalhamento do projeto
 
 ## 6. Evolução do projeto
 
