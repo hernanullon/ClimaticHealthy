@@ -183,18 +183,47 @@ A partir desse cálculo foi possível classificar a condição climática em fun
 ![Figura 6](./figuras/transformation_humidex.PNG)
 
 
-__Etapa 5 - Data mining -__ Nesta etapa após realizar o pré processamento e a transformação dos dados dos datasets colocando esses dados num formato mais adequado para realizar a análise, foi criado atributos para clusterizar os dados de acordo com o indicador humidex.
+__Etapa 5 - Data mining -__ Nesta etapa após realizar o pré processamento e a transformação dos dados dos datasets colocando esses dados num formato mais adequado para realizar a análise, a técnica de clusterização foi aplicada de acordo com o indicador Humidex.
 
-![Figura 7](./figuras/elbow_silhouette.PNG)
+O algoritmo de agrupamento escolhido para esse processo foi o K-Means adaptado para séries temporais. Onde sua implementação será descrita nas seguintes etapas:
 
+O algoritmo K-Means precisa ajustar certos parâmetros, como métrica de distância, inicialização e número do cluster Apriori.
 
-![Figura 8](./figuras/clustering_series_temporales.PNG)
+1. A métrica de distância foi escolhida com base em seu desempenho no final da clusterização, onde a métrica Soft-DTW superou as demais. Uma ilustração de como essa métrica funciona é mostrada abaixo.
+
+![Figura 7](./figuras/soft_dtw.PNG)
+
+2. Uma vez escolhida a métrica, a inicialização acordada para este estudo foi aleatória.
+3. Para definir o número ideal de grupos (K), a técnica do cotovelo foi utilizada com base na soma dos quadrados dos erros em que foi escolhido um K = 2. No entanto, essa etapa não terminaria até a escolha do parâmetro de aprendizado da métrica Soft-DTW, para a qual foi utilizado o critério do maior coeficiente de silhueta.
+
+![Figura 8](./figuras/elbow_silhouette.PNG)
+
+4. Finalmente, o algoritmo K-Means foi executado com os seguentes parâmetros:
+* K = 2
+* metric = softdtw
+* gamma = 1e-4
+* init = random
+
+Eles garantiram o melhor desempenho no conjunto de dados, com um coeficiente de silhueta de 0.7351. 
 
 ## 6. Evolução do projeto
 
 Inicialmente  nossa intenção era de realizar o projeto com dados de poluição do ar atmosférico e classificar o ar de acordo com a quantidade de polentes no ar, porém diante da dificuldade em achar datasets com esse tipo de dados, optamos por trabalhar com dados de temperatura e umidade, uma vez que estão disponíveis pela Cepagri e no site da Cetesb.
 
+Em seguida, foram realizadas pesquisas sobre indicadores baseados em temperatura e umidade que ajudariam a identificar condições climáticas que afetam a saúde das pessoas. Inicialmente, escolhemos Humidex, ondas de calor e frio, mas como a região de análise era a cidade de Campinas, os resultados para ondas de frio nos anos escolhidos não eram tão relevantes, portanto, focamos em altas temperaturas e sensações térmicas(Humidex).
+
+De acordo com a escala dos valores Humidex, esperávamos encontrar 4 grupos no processo de agrupamento, mas percebemos que os valores Humidex foram encontrados nas 2 faixas menores (Menos de 29, Sem desconforto)(De 30 a 39, Desconforto ameno), poucos valores permaneceram em (De 40 a 45, Desconforto, evitar esforço) e nenhum (Acima de 45, Perigo). Por isso, entendemos que nas avaliações do melhor valor de K, a clusterização com dois grupos superou os demais.
+
+Quando obtivemos os resultados do agrupamento, tentamos ir além do simples reconhecimento de padrões e procurar uma maneira de ajudar as pessoas no futuro de uma maneira mais eficiente. Por isso, decidimos usar o conhecimento obtido pelo processo de agrupamento para criar um classificador inicial que nos permitisse rotular o tipo de dia que as pessoas experimentariam com base nas temperaturas e umidade das primeiras 12 horas do dia. Esse resultado seria de grande importância para as pessoas se conscientizarem quando saírem para fazer algum esforço físico.
+
+Acreditamos que o estudo é relevante devido à sua capacidade de adaptação a qualquer outra região ou cidade, utilizando apenas dados de temperatura e umidade.
+
+
 ## 7. Resultados e discussões
+
+Um resultado da clusterização é mostrado na Figura 9.
+
+![Figura 9](./figuras/clustering_series_temporales.PNG)
 
 __Etapa 6 - Extract Knowledge -__ Nesta etapa utilizou -se  o conhecimento obtido a partir do dataset para classificar os dados de temperatura e umidade conforme o aprendizado na etapa de data mining.
 
