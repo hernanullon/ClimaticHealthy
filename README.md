@@ -142,9 +142,7 @@ Ele pode ser classificado conforme a tabela 1
   Acima de 54          |  Insolação iminente         |
   
   
-  ## Ondas de calor 
-  
-Na literatura não existe um consenso na definição de ondas de calor , podendo ser definida como temperaturas que excedem 35 ºC . ou de forma mais flexivel como um período de dias consecutivos com temperaturas acima do percentil 95.
+Respeito as __Ondas de calor__ na literatura não existe um consenso na definição de ondas de calor , podendo ser definida como temperaturas que excedem 35 ºC . ou de forma mais flexivel como um período de dias consecutivos com temperaturas acima do percentil 95.
 
 Para o estudo em questão utilizaremos o indice CTXP90  (valor do corte a partir do P90 de temperaturas máximas em um intervalo de 15 dias e o Heat Wave Magnitude Index (HWMI) 
 Com base nos indices CTXP90 e HDWI apresentados , respectivamente em [3] e [9] adotou - se como definição de onda de calor um período de 2 ou mais dias consecutivos com temperaturas máximas acima do percentil 90 de temperaturas em uma janela de 30 dias centrada no dia de avaliação  calculada no histórico de 22 anos disponiveis Para a marcação de dias de calor  seguiu -se o seguinte algoritmo:
@@ -154,7 +152,7 @@ Com base nos indices CTXP90 e HDWI apresentados , respectivamente em [3] e [9] a
 2 - Percorre -se todas as observações da base até que se chegue a condição:
 
 Se a temperatura máxima dos dias d, d +1 e d +2 forem maiores que P90(d), P90 (d+1) e P90(d+2) , entao em d inicia -se uma onda de calor.
-
+ 
 
 
 3 - Encontrado um inicio de onda de calor define -se i = 0
@@ -261,17 +259,26 @@ Para entrar em contexto com os resultados do estudo, mostraremos o conjunto de d
 
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/dataset_2017_2018.png" align="center" width="2000">
 
+
 Já nesta primeira visualização, podemos ver certo comportamento repetitivo entre esses dois anos. Portanto, esse grupo de dados foi transferido para um formato de série temporal, onde realizamos um diagrama em espiral, que demonstrou um padrão repetitivo das horas com as temperaturas mais altas nos dois anos.
 
 <figure>
-  <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/spiralogra_temperatura.png" align="center" width="500">
+  <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/spiralogra_temperatura.png" align="center" width="400">
 </figure>
 
-_Figura 11 - Espiralograma de los anos 2017 y 2018, para las temperaturas máximas en cada hora del día,  con las temperaturas más altas durante el día en el intervalo de 13h hasta 17h._
+_Figura 11. Spiralogram dos anos de 2017 e 2018, para as temperaturas máximas a cada hora do dia, com as temperaturas mais altas durante o dia no intervalo das 13:00 às 17:00._
 
+Após as primeiras análises em nosso conjunto de dados e a implementação do algoritmo de clusterização K-Means descrito no capítulo anterior, mostraremos o agrupamento das séries temporais obtidas pelo algoritmo:
 
+~~~python
+TimeSeriesKMeans(init='random', max_iter=20, metric='softdtw',
+                 metric_params={'gamma': 0.0001}, n_clusters=2, random_state=0,
+                 verbose=True)
+~~~
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/clustering_series_temporales.PNG" align="center" width="1000">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/clustering_series_temporales.PNG" align="center" width="700">
+
+_Figura 12. Agrupamento de séries temporais para a variável Humidex nos anos 2017,2018 e 2020. As curvas vermelhas representam os dias da classe 0 (desconforto) e o azul da classe 1 (sem desconforto)._
 
 
 ## 8. Conclusões
