@@ -6,7 +6,7 @@ Este projeto consiste na análise de dados de temperatura e umidade para mapear 
 o bem estar das pessoas que vivem na cidade de Campinas SP.
 Para realização deste projeto foram utilizadas duas bases de dados principais : A base de dados da Cepagri que possui dados de temperatura e umidade
 no período de 1997 a 2018 e a base de dados da Cetesb nos meses de janeiro a maio de 2020.
-Foi realizado  o pré processamento dos dados  para correção os dados faltantes em ambas as bases e foram realizados cálculos para encontrar três
+Foi realizado  o pré processamento dos dados  para correção os dados faltantes em ambas as bases e foram realizados cálculos para encontrar dois
 indicadores que caracterizam o conforto térmico de uma pessoa com relação ao ambiente, são eles : humidex, ondas de calor.
 Após ter encontrado os indicadores foram aplicados algoritmos de clusterização para identificar condições saudáveis de clima que contribuam para o bem estar das pessoas.
 
@@ -16,7 +16,7 @@ This project consists of analyzing temperature and humidity data to map healthy 
 the welfare of people living in the city of Campinas SP.
 To carry out this project, two main databases were used: The Cepagri database, which has temperature and humidity data
 from 1997 to 2018 and the Cetesb database from January to May 2020.
-Pre-processing of data was performed to correct missing data in both databases and calculations were performed to find three
+Pre-processing of data was performed to correct missing data in both databases and calculations were performed to find two
 Indicators that characterize a person's thermal comfort in relation to the environment are: humidex, heat waves.
 After finding the indicators, clustering algorithms were applied to identify healthy climate conditions that contribute to people's well-being.
 
@@ -61,7 +61,7 @@ Na figura 2 é possível visualizar os principais problemas ocasionados pelas on
                      Figura 2 - Problemas ocasionados pela presença das ilhas de calor
                      
 Partindo deste contexto este projeto utiliza duas bases de dados, a base principal do projeto foi cedida pelo Centro de Pesquisas Meteorológicas e Climáticas aplicada a Agricultura (Cepagri), a Cepagri coleta dados de temperatura, umidade, direção do vento, intensidade de radição solar através de uma estação meteorológica que fica localizada dentro do Campus da Universidade Estadual de Campinas (Unicamp), na cidade de Campinas SP .
-E uma segunda base de dados disponível no site da  Companhia Ambiental do Estado de São Paulo (Cetesb) também foi utilizada para comparar os dados de temperatura e umidade nos meses de março a maio de 2020 com os dados referentes a estas mesmas variáveis no periodo de 2017 a 2018.
+E uma segunda base de dados disponível no site da  Companhia Ambiental do Estado de São Paulo (Cetesb) também foi utilizada para comparar os dados de temperatura e umidade nos meses de janeiro a maio de 2020 com os dados referentes a estas mesmas variáveis no periodo de 2017 a 2018.
 
 A escolha do período de janeiro a maio de 2020 para analisar  se houve alterações climáticas, justifica-se  em virtude do isolamento social devido a pandemia causada pelo Covid 19.
 Após a escolha dos datasets para o projeto foram estudadas e aplicadas técnicas para limpeza destes dados e por fim, aplicou -se a metodologia KDD (Knowledge Discovery in Databases – KDD) para obter conhecimento a partir dos dados (tais como níveis de temperatura e umidade ) e assim  calcular os dois principais indicadores de condições climáticas: Humidex, ilhas de calor.
