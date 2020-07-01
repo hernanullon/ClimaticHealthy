@@ -233,9 +233,13 @@ Acreditamos que o estudo é relevante devido à sua capacidade de adaptação a 
 
 ## 7. Resultados e discussões
 
+Para entrar em contexto com os resultados do estudo, mostraremos o conjunto de dados com as informações dos anos de 2017 e 2018 das temperaturas em função do tempo, adicionando uma classificação de cores para os intervalos de umidade.
+
+![Figura 10](./figuras/dataset_2017_2018.png)
+
 Um resultado da clusterização é mostrado na Figura 9.
 
-![Figura 9](./figuras/clustering_series_temporales.PNG)
+![Figura 11](./figuras/clustering_series_temporales.PNG)
 
 
 ## 8. Conclusões
