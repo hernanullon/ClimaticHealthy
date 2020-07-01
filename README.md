@@ -42,7 +42,7 @@ Partindo desse principio que as mudanças climáticas afetam diretamente a saúd
 
 
 
-![Figura 1](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ambiente%20.png)
+![Figura 1](./figuras/ambiente .png)
 
 
                                        Figura 1 - Ambiente
@@ -54,7 +54,7 @@ Partindo desse principio que as mudanças climáticas afetam diretamente a saúd
 Na figura 2 é possível visualizar os principais problemas ocasionados pelas ondas de calor.
 
 
-![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ilhas%20de%20calor.jpg)
+![Figura 2](./figuras/ilhas de calor.jpg)
 
 
 
@@ -108,7 +108,7 @@ Toda a análise foi feita na ferramenta de notebook jupyter na linguagem de prog
 A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados[7].
 E pode ser ilustrada na figura 3
 
-![Figura 3](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/Processo%20KDD%20.jpg)
+![Figura 3](./figuras/Processo KDD .jpg)
 
 
                                  Figura 3 - Processo de estração do conhecimento a partir do processo KDD 
@@ -220,7 +220,11 @@ Em seguida, foram realizadas pesquisas sobre indicadores baseados em temperatura
 
 De acordo com a escala dos valores Humidex, esperávamos encontrar 4 grupos no processo de agrupamento, mas percebemos que os valores Humidex foram encontrados nas 2 faixas menores (Menos de 29, Sem desconforto)(De 30 a 39, Desconforto ameno), poucos valores permaneceram em (De 40 a 45, Desconforto, evitar esforço) e nenhum (Acima de 45, Perigo). Por isso, entendemos que nas avaliações do melhor valor de K, a clusterização com dois grupos superou os demais.
 
-![Figura 9](./figuras/humidex_labels.PNG)
+|Nivel    |Quantidade             |   
+|---      |---                    | 
+|comfortable       |  14717|
+|great discomfort  |    199|
+|some discomfort   |   6252|
 
 Quando obtivemos os resultados do agrupamento, tentamos ir além do simples reconhecimento de padrões e procurar uma maneira de ajudar as pessoas no futuro de uma maneira mais eficiente. Por isso, decidimos usar o conhecimento obtido pelo processo de agrupamento para criar um classificador inicial que nos permitisse rotular o tipo de dia que as pessoas experimentariam com base nas temperaturas e umidade das primeiras 12 horas do dia. Esse resultado seria de grande importância para as pessoas se conscientizarem quando saírem para fazer algum esforço físico.
 
