@@ -263,11 +263,10 @@ Para entrar em contexto com os resultados do estudo, mostraremos o conjunto de d
 
 Já nesta primeira visualização, podemos ver certo comportamento repetitivo entre esses dois anos. Portanto, esse grupo de dados foi transferido para um formato de série temporal, onde realizamos um diagrama em espiral, que demonstrou um padrão repetitivo das horas com as temperaturas mais altas nos dois anos.
 
-<figure class="image">
+<figure>
   <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/spiralogra_temperatura.png" align="center" width="500">
-  <figcaption>{{Figura 11 - Espiralograma de los anos 2017 y 2018, para las temperaturas máximas en cada hora del día,  con las temperaturas más altas durante el día en el intervalo de 13h hasta 17h.}}
-  </figcaption>
 </figure>
+_Figura 11 - Espiralograma de los anos 2017 y 2018, para las temperaturas máximas en cada hora del día,  con las temperaturas más altas durante el día en el intervalo de 13h hasta 17h._
 
 
 
