@@ -183,12 +183,23 @@ A partir desse cálculo foi possível classificar a condição climática em fun
 ![Figura 6](./figuras/transformation_humidex.PNG)
 
 
-__Etapa 5 - Data mining -__ Nesta etapa após realizar o pré processamento e a transformação dos dados dos datasets colocando esses dados num formato mais adequado para realizar a análise, foi criado atributos para clusterizar os dados de acordo com o indicador humidex.
+__Etapa 5 - Data mining -__ Nesta etapa após realizar o pré processamento e a transformação dos dados dos datasets colocando esses dados num formato mais adequado para realizar a análise, a técnica de clusterização foi aplicada de acordo com o indicador Humidex.
 
-![Figura 7](./figuras/elbow_silhouette.PNG)
+O algoritmo de agrupamento escolhido para esse processo foi o K-Means adaptado para séries temporais. Onde sua implementação será descrita nas seguintes etapas:
 
+O algoritmo K-Means precisa ajustar certos parâmetros, como métrica de distância, inicialização e número do cluster Apriori.
+1. A métrica de distância foi escolhida com base em seu desempenho no final da clusterização, onde a métrica Soft-DTW superou as demais. Uma ilustração de como essa métrica funciona é mostrada abaixo.
 
-![Figura 8](./figuras/clustering_series_temporales.PNG)
+![Figura 7](./figuras/soft_dtw.PNG)
+
+2. Uma vez escolhida a métrica, a inicialização acordada para este estudo foi aleatória.
+3. Para definir o número ideal de grupos (K), a técnica do cotovelo foi utilizada com base na soma dos quadrados dos erros em que foi escolhido um K = 2. No entanto, essa etapa não terminaria até a escolha do parâmetro de aprendizado da métrica Soft-DTW, para a qual foi utilizado o critério do maior coeficiente de silhueta.
+
+![Figura 8](./figuras/elbow_silhouette.PNG)
+
+4. Finalmente, o algoritmo K-Means foi executado com os parâmetros que garantiriam o melhor desempenho no conjunto de dados. Um resultado da clusterização é mostrado na Figura 9.
+
+![Figura 9](./figuras/clustering_series_temporales.PNG)
 
 ## 6. Evolução do projeto
 
