@@ -6,8 +6,8 @@ Este projeto consiste na análise de dados de temperatura e umidade para mapear 
 o bem estar das pessoas que vivem na cidade de Campinas SP.
 Para realização deste projeto foram utilizadas duas bases de dados principais : A base de dados da Cepagri que possui dados de temperatura e umidade
 no período de 1997 a 2018 e a base de dados da Cetesb nos meses de janeiro a maio de 2020.
-Foi realizado  o pré processamento dos dados  para correção os dados faltantes em ambas as bases e foram realizados cálculos para encontrar dois
-indicadores que caracterizam o conforto térmico de uma pessoa com relação ao ambiente, são eles : humidex, ondas de calor.
+Foi realizado  o pré processamento dos dados  para correção os dados faltantes em ambas as bases e foram realizados cálculos para encontrar três
+indicadores que caracterizam o conforto térmico de uma pessoa com relação ao ambiente, são eles : humidex, ondas de calor, ondas de frio.
 Após ter encontrado os indicadores foram aplicados algoritmos de clusterização para identificar condições saudáveis de clima que contribuam para o bem estar das pessoas.
 
 ## Abstract :
@@ -16,8 +16,8 @@ This project consists of analyzing temperature and humidity data to map healthy 
 the welfare of people living in the city of Campinas SP.
 To carry out this project, two main databases were used: The Cepagri database, which has temperature and humidity data
 from 1997 to 2018 and the Cetesb database from January to May 2020.
-Pre-processing of data was performed to correct missing data in both databases and calculations were performed to find two
-Indicators that characterize a person's thermal comfort in relation to the environment are: humidex, heat waves.
+Pre-processing of data was performed to correct missing data in both databases and calculations were performed to find three
+Indicators that characterize a person's thermal comfort in relation to the environment are: humidex, heat waves, cold waves.
 After finding the indicators, clustering algorithms were applied to identify healthy climate conditions that contribute to people's well-being.
 
 ## Equipe :
@@ -42,7 +42,7 @@ Partindo desse principio que as mudanças climáticas afetam diretamente a saúd
 
 
 
-![Figura 1](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ambiente%20.png)
+![Figura 1](https://github.com/hernanullon/ClimaticHealthy/blob/master/ambiente%20.png)
 
 
                                        Figura 1 - Ambiente
@@ -54,19 +54,19 @@ Partindo desse principio que as mudanças climáticas afetam diretamente a saúd
 Na figura 2 é possível visualizar os principais problemas ocasionados pelas ondas de calor.
 
 
-![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ilhas%20de%20calor.jpg)
+![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/ilhas%20de%20calor.jpg)
 
 
 
                      Figura 2 - Problemas ocasionados pela presença das ilhas de calor
                      
 Partindo deste contexto este projeto utiliza duas bases de dados, a base principal do projeto foi cedida pelo Centro de Pesquisas Meteorológicas e Climáticas aplicada a Agricultura (Cepagri), a Cepagri coleta dados de temperatura, umidade, direção do vento, intensidade de radição solar através de uma estação meteorológica que fica localizada dentro do Campus da Universidade Estadual de Campinas (Unicamp), na cidade de Campinas SP .
-E uma segunda base de dados disponível no site da  Companhia Ambiental do Estado de São Paulo (Cetesb) também foi utilizada para comparar os dados de temperatura e umidade nos meses de janeiro a maio de 2020 com os dados referentes a estas mesmas variáveis no periodo de 2017 a 2018.
+E uma segunda base de dados disponível no site da  Companhia Ambiental do Estado de São Paulo (Cetesb) também foi utilizada para comparar os dados de temperatura e umidade nos meses de março a maio de 2020 com os dados referentes a estas mesmas variáveis no periodo de 2017 a 2018.
 
 A escolha do período de janeiro a maio de 2020 para analisar  se houve alterações climáticas, justifica-se  em virtude do isolamento social devido a pandemia causada pelo Covid 19.
-Após a escolha dos datasets para o projeto foram estudadas e aplicadas técnicas para limpeza destes dados e por fim, aplicou -se a metodologia KDD (Knowledge Discovery in Databases – KDD) para obter conhecimento a partir dos dados (tais como níveis de temperatura e umidade ) e assim  calcular os dois principais indicadores de condições climáticas: Humidex, ilhas de calor.
+Após a escolha dos datasets para o projeto foram estudadas e aplicadas técnicas para limpeza destes dados e por fim, aplicou -se a metodologia KDD (Knowledge Discovery in Databases – KDD) para obter conhecimento a partir dos dados (tais como níveis de temperatura e umidade ) e assim  calcular três principais indicadores de condições climáticas: Humidex, ilhas de calor, ilhas de frio.
 
-A partir do cálculo destes indicadores realizar a classificação (clusterização) dos dados utilizados para se identificar condições climáticas saudáveis a partir de dados de temperatura e umidade e assim poder fazer recomendações para as pessoas dos cuidados que devem ser considerados para evitar que condições climáticas desfavoráveis como a presença de ondas de calor e  do humidex afetem a saúde das pessoas .
+A partir do cálculo destes indicadores realizar a classificação (clusterização) dos dados utilizados para se identificar condições climáticas saudáveis a partir de dados de temperatura e umidade e assim poder fazer recomendações para as pessoas dos cuidados que devem ser considerados para evitar que condições climáticas desfavoráveis como a presença de ondas de calor , ondas de frio e umidade relativa do ar baixa afetem a saúde das pessoas .
 
 
 
@@ -91,25 +91,24 @@ A partir do cálculo destes indicadores realizar a classificação (clusterizaç
 |Base de dados   |Endereço na web   |Resumo e descrição de uso    |
 |---|---|---|
 | Base 1 - Cepagri da Unicamp  |  |Essa foi a principal base de dados utilizada no projeto, nessa base foram aplicadas técnicas para completar os dados faltantes, foram realizados cálculos para encontrar os indicadores humidex, onda de calor, onda de frio.   |
-| Base 2  - Cetesb  |https://cetesb.sp.gov.br/ar/dados-horarios/  | Esta base de dados foi utilizada para efeitos de comparações entre os meses de janeiro  maio de 2020  e os
-anos de 2017 e 2018|
+| Base 2  - Cetesb  |https://cetesb.sp.gov.br/ar/dados-horarios/  | Esta base de dados foi utilizada para efeitos de comparações entre os meses de janeiro  maio de 2020  e o mesmo período do ano passado  |
 
 
 * 4.2 Ferramentas
 
 Toda a análise foi feita na ferramenta de notebook jupyter na linguagem de programação Python (Versão 3.6), no entanto, vale mencionar as bibliotecas externas usadas no projeto:
 
-| Bibliotecas  | Endereço web  | Descrição de uso  |
+| bibliotecas  | Endereço web  | Descrição de uso  |
 |---|---|---|
 | tslearn  | https://tslearn.readthedocs.io/en/stable/index.html  |   |
 | scikit-learn  | https://scikit-learn.org/stable/  |   |
 
 * 4.3. Metodologia
 
-A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados[6].
+A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados[7].
 E pode ser ilustrada na figura 3
 
-![Figura 3](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/Processo%20KDD%20.jpg)
+![Figura 3](https://github.com/hernanullon/ClimaticHealthy/blob/master/Processo%20KDD%20.jpg)
 
 
                                  Figura 3 - Processo de estração do conhecimento a partir do processo KDD 
@@ -118,7 +117,7 @@ Com base nessa metodologia, __técnicas estatísticas__ como histogramas e medid
 
 Posteriormente, já em fase de transformação, novos parâmetros foram calculados, como os índices Humidex e as ondas de calor. Para os quais foram considerados os seguintes critérios:
 
-O __Humidex__ foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar  [5].
+O __Humidex__ foi proposto em 2016 e é descrito como uma métrica do desconforto térmico de uma pessoa em uma determinada condição de temperatura e umidade relativa do ar  [6].
 
 O humidex é definido pela fórmula:
 H = T + (0:555:[E - 10]); (2)
@@ -141,26 +140,6 @@ Ele pode ser classificado conforme a tabela 1
   De 40 a 45           |Desconforto, evitar esforço  |
   Acima de 45          |  Perigo                     |
   Acima de 54          |  Insolação iminente         |
-
-Ondas de calor 
-
-Na literatura não existe um consenso na definição de ondas de calor , podendo ser definida como temperaturas que excedem 35 ºC . ou de forma mais flexivel como um período de dias consecutivos com temperaturas acima do percentil 95.
-
-Para o estudo em questão utilizaremos o indice CTXP90  (valor do corte a partir do P90 de temperaturas máximas em um intervalo de 15 dias e o Heat Wave Magnitude Index (HWMI) 
-Com base nos indices CTXP90 e HDWI apresentados , respectivamente em [3] e [9] adotou - se como definição de onda de calor um período de 2 ou mais dias consecutivos com temperaturas máximas acima do percentil 90 de temperaturas em uma janela de 30 dias centrada no dia de avaliação  calculada no histórico de 22 anos disponiveis Para a marcação de dias de calor  seguiu -se o seguinte algoritmo:
-
-1 - Para cada dia d calcula -se o percentil 90 (P90(d)) das temperaturas máximas situadas no intervalo de dias [d -15, d+15] para todos os anos da base.
-
-2 - Percorre -se todas as observações da base até que se chegue a condição:
-
-Se a temperatura máxima dos dias d, d +1 e d +2 forem maiores que P90(d), P90 (d+1) e P90(d+2) , entao em d inicia -se uma onda de calor.
-
-
-
-3 - Encontrado um inicio de onda de calor define -se i = 0
-Enquanto a temperatura máxima em d+2 +i for maior que  P90(d + 2 + i ) marca -se d+2 + i como uma onda de calor e incrementa -se i (i = i+1)
-
-4 - OS passos 2 e 3 são repetidos até que todas as observações da base estejam marcadas como ondas de calor ou não.
 
 Como as informações que temos são definidas em função do tempo, os algoritmos de __aprendizado de máquina__ foram adaptados para reconhecer padrões e comportamentos na forma de __séries temporais__.
 
@@ -199,20 +178,27 @@ def get_humidex(T,H):
     z = 6.112*(10**((7.5*T)/(237.7+T)))*(H/100)
     return T+((5/9)*(z-10))
 ~~~
-A partir desse cálculo foi possível classificar a condição climática em função desse indicador como : Confortable (confortável ) , some disconfort (algum desconforto). No entanto, os dados do Humidex precisavam ser preparados para um processo posterior de aprendizado de máquina, em que cada linha do Dataframe representaria uma data e cada coluna o valor para cada hora ao longo do dia, ou seja, cada linha formaria uma série temporal. Um exemplo é amostrado na Figura 7.
+A partir desse cálculo foi possível classificar a condição climática em função desse indicador como : Confortable (confortável ) , some disconfort (algum desconforto). No entanto, os dados do Humidex precisavam ser preparados para um processo posterior de aprendizado de máquina, em que cada linha do Dataframe representaria uma data e cada coluna o valor para cada hora ao longo do dia, ou seja, cada linha formaria uma série temporal. Um exemplo é amostrado na Figura 6.
 
 ![Figura 6](./figuras/transformation_humidex.PNG)
 
-Etapa 5 - Data mining - Nesta etapa após realizar o pré processamento e a transformação dos dados dos datasets colocando esses dados num formato mais adequado para realizar a análise, foi criado atributos para clusterizar os dados de acordo com cada um dos  indicadores calculados humidex, ondas de frio e ondas de calor.
-Após clusterizar os dados de temperatura e umidade, foi realizado o treinamento do aprendizado de máquina com 70 % dos dados e 30 % dos dados foi usado para testar a aprendizagem de máquina.
 
-Etapa 6 - Knowledge Discovery - Nesta etapa utilizou -se  o conhecimento obtido a partir do dataset para classificar os dados de temperatura e umidade conforme o aprendizado na etapa de data mining.
+__Etapa 5 - Data mining -__ Nesta etapa após realizar o pré processamento e a transformação dos dados dos datasets colocando esses dados num formato mais adequado para realizar a análise, foi criado atributos para clusterizar os dados de acordo com o indicador humidex.
+
+![Figura 7](./figuras/elbow_silhouette.PNG)
+
+
+![Figura 8](./figuras/clustering_series_temporales.PNG)
 
 ## 6. Evolução do projeto
 
 Inicialmente  nossa intenção era de realizar o projeto com dados de poluição do ar atmosférico e classificar o ar de acordo com a quantidade de polentes no ar, porém diante da dificuldade em achar datasets com esse tipo de dados, optamos por trabalhar com dados de temperatura e umidade, uma vez que estão disponíveis pela Cepagri e no site da Cetesb.
 
 ## 7. Resultados e discussões
+
+__Etapa 6 - Extract Knowledge -__ Nesta etapa utilizou -se  o conhecimento obtido a partir do dataset para classificar os dados de temperatura e umidade conforme o aprendizado na etapa de data mining.
+
+Após clusterizar os dados de temperatura e umidade, foi realizado o treinamento do aprendizado de máquina com 70 % dos dados e 30 % dos dados foi usado para testar a aprendizagem de máquina.
 
 ## 8. Conclusões
 
@@ -234,26 +220,21 @@ P. MONTAGNA, P. BARBOLA, AND J. V. VOGT, Magnitude of extreme heat waves in pres
 their projection in a warming world, Journal of Geophysical Research: Atmospheres, 119 (2014),
 pp. 12,500–12,512.
 
-[4] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
+[3] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
 on Climate Change Geneva, IPCC Secretariat, (2001).
 
 
 
-[5] J. A. OROSA, M. COSTA, RODRÍGUEZ-FERNÁNDEZ, AND G. ROSHAN, Effect of climate change on outdoor
+[4] J. A. OROSA, M. COSTA, RODRÍGUEZ-FERNÁNDEZ, AND G. ROSHAN, Effect of climate change on outdoor
 thermal comfort in humid climates, Journal of Environmental Health Science and Engineering,
 12 (2014), p. 46
 
 
-[6] U. FAYYAD, G. PIATETSKY-SHAPIRO, AND P. SMYTH, From data mining to knowledge discovery in
+[5] U. FAYYAD, G. PIATETSKY-SHAPIRO, AND P. SMYTH, From data mining to knowledge discovery in
 databases, AI magazine, 17 (1996), pp. 37–37.
 
-[7] Ueda  Hideki Lucas  Projeto Clima e saúde : Análise de dados climáticos
+[6] Ueda  Hideki Lucas  Projeto Clima e saúde : Análise de dados climáticos
 
-[8] M. G. LAWRENCE, The Relationship between Relative Humidity and the Dewpoint Temperature in Moist
+[7] M. G. LAWRENCE, The Relationship between Relative Humidity and the Dewpoint Temperature in Moist
 Air: A Simple Conversion and Applications, Bulletin of the American Meteorological Society, 86
 (2005), pp. 225–234.
-
-[9] J. L. GEIRINHAS, R. M. TRIGO, R. LIBONATI, AND L. F. PERES, Climatic Characterization of Heat
-Waves in Brazil, Anuário do Instituto de Geociências - UFRJ, 41 (2018), pp. 333–350.
-
-
