@@ -257,7 +257,7 @@ Acreditamos que o estudo é relevante devido à sua capacidade de adaptação a 
 
 Para entrar em contexto com os resultados do estudo, mostraremos o conjunto de dados com as informações dos anos de 2017 e 2018 das temperaturas em função do tempo, adicionando uma classificação de cores para os intervalos de umidade.
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/dataset_2017_2018.png" align="center" width="480">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/dataset_2017_2018.png" width="200">
 
 Um resultado da clusterização é mostrado na Figura 9.
 
