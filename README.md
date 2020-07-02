@@ -40,26 +40,16 @@ A atividade humana está  diretamente ligada á essas alterações climáticas a
 Por outro lado essas mudanças climáticas afetam diretamente a saúde das pessoas como por exemplo em períodos de maior estresse térmico (longos períodos com temperaturas muito baixas ou muito altas) ou acidentes naturais como enchentes e tempestades e também de forma indireta afetando a qualidade do ar , da água , interferindo nos vetores de transmissão de doenças [4].
 Partindo desse principio que as mudanças climáticas afetam diretamente a saúde humana o presente projeto pretende calcular indicadores através das medidas coletadas de temperatura e umidade : Humidex, ondas de calor.
 
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ambiente%20.png" align="middle" width="500">
 
-
-![Figura 1](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ambiente%20.png)
-
-
-                                       Figura 1 - Ambiente
-
-
-
-
+ _Figura 1. Ambiente._
 
 Na figura 2 é possível visualizar os principais problemas ocasionados pelas ondas de calor.
 
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ilhas%20de%20calor.jpg" align="middle" width="600">
 
-![Figura 2](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ilhas%20de%20calor.jpg)
+ _Figura 2. Problemas ocasionados pela presença das ilhas de calor._
 
-
-
-                     Figura 2 - Problemas ocasionados pela presença das ilhas de calor
-                     
 Partindo deste contexto este projeto utiliza duas bases de dados, a base principal do projeto foi cedida pelo Centro de Pesquisas Meteorológicas e Climáticas aplicada a Agricultura (Cepagri), a Cepagri coleta dados de temperatura, umidade, direção do vento, intensidade de radição solar através de uma estação meteorológica que fica localizada dentro do Campus da Universidade Estadual de Campinas (Unicamp), na cidade de Campinas SP .
 E uma segunda base de dados disponível no site da  Companhia Ambiental do Estado de São Paulo (Cetesb) também foi utilizada para comparar os dados de temperatura e umidade nos meses de março a maio de 2020 com os dados referentes a estas mesmas variáveis no periodo de 2017 a 2018.
 
@@ -67,8 +57,6 @@ A escolha do período de janeiro a maio de 2020 para analisar  se houve alteraç
 Após a escolha dos datasets para o projeto foram estudadas e aplicadas técnicas para limpeza destes dados e por fim, aplicou -se a metodologia KDD (Knowledge Discovery in Databases – KDD) para obter conhecimento a partir dos dados (tais como níveis de temperatura e umidade ) e assim  calcular três principais indicadores de condições climáticas: Humidex, ilhas de calor, ilhas de frio.
 
 A partir do cálculo destes indicadores realizar a classificação (clusterização) dos dados utilizados para se identificar condições climáticas saudáveis a partir de dados de temperatura e umidade e assim poder fazer recomendações para as pessoas dos cuidados que devem ser considerados para evitar que condições climáticas desfavoráveis como a presença de ondas de calor , ondas de frio e umidade relativa do ar baixa afetem a saúde das pessoas .
-
-
 
 ## 2. Pergunta de pesquisa
 
@@ -153,7 +141,6 @@ Com base nos indices CTXP90 e HDWI apresentados , respectivamente em [3] e [9] a
 Se a temperatura máxima dos dias d, d +1 e d +2 forem maiores que P90(d), P90 (d+1) e P90(d+2) , entao em d inicia -se uma onda de calor.
  
 
-
 3 - Encontrado um inicio de onda de calor define -se i = 0
 Enquanto a temperatura máxima em d+2 +i for maior que  P90(d + 2 + i ) marca -se d+2 + i como uma onda de calor e incrementa -se i (i = i+1)
 
@@ -169,9 +156,7 @@ __Etapa 1 -__  Entendimento do problema - Nesta etapa o objetivo principal é en
 __Etapa 2 - [Selection](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/1%20%5BSelection%5D.ipynb)  -__ Nesta etapa foi feita a seleção do período do dataset que seria utilizado para realizar a análise.
 Para o dataset fornecido pela Cepagri foram  escolhidos os meses de janeiro a dezembro para os anos de 2017 e 2018 , já para o dataset da Cetesb foram escolhido os meses de janeiro, fevereiro, março, abril e maio e as variáveis selecionadas em ambas as bases  foram temperatura e umidade
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/DB_cepagri.PNG" align="middle" width="400">
-
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/DB_cetesb.PNG" align="middle" width="400">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/DB_cepagri_cetesb.PNG" align="middle" width="400">
 
 _Figura 4. Dataset da cepagri e cetesb com seus respectivos os parametros._
 
