@@ -40,13 +40,13 @@ A atividade humana está  diretamente ligada á essas alterações climáticas a
 Por outro lado essas mudanças climáticas afetam diretamente a saúde das pessoas como por exemplo em períodos de maior estresse térmico (longos períodos com temperaturas muito baixas ou muito altas) ou acidentes naturais como enchentes e tempestades e também de forma indireta afetando a qualidade do ar , da água , interferindo nos vetores de transmissão de doenças [4].
 Partindo desse principio que as mudanças climáticas afetam diretamente a saúde humana o presente projeto pretende calcular indicadores através das medidas coletadas de temperatura e umidade : Humidex, ondas de calor.
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ambiente%20.png" align="middle" width="500">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ambiente%20.png" align="middle" width="700">
 
  _Figura 1. Ambiente._
 
 Na figura 2 é possível visualizar os principais problemas ocasionados pelas ondas de calor.
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ilhas%20de%20calor.jpg" align="middle" width="600">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ilhas%20de%20calor.jpg" align="middle" width="400">
 
  _Figura 2. Problemas ocasionados pela presença das ilhas de calor._
 
