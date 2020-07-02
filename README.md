@@ -29,7 +29,7 @@ Daniel Filipe Vieira RA : 262720
 Ruben Hernan Alcivar Ullon RA: 262729
 
 
-## Video do projeto
+## Video da proposta de  projeto
 
 https://drive.google.com/file/d/162rskPRvc0Ap1H90L5hTd58whU9q7zAJ/view?usp=sharing
 
