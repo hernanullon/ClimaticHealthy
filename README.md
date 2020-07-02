@@ -217,7 +217,7 @@ O algoritmo K-Means precisa ajustar certos parâmetros, como métrica de distân
 
 1. A métrica de distância foi escolhida com base em seu desempenho no final da clusterização, onde a métrica Soft-DTW superou as demais. Uma ilustração de como essa métrica funciona é mostrada abaixo.
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/soft_dtw.PNG" align="center" width="500">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/soft_dtw.PNG" align="center" width="1000">
 
 _Figura 8. Ilustração do cálculo de alinhamentos para distância euclidiana e Soft-DTW._
 
@@ -225,7 +225,7 @@ _Figura 8. Ilustração do cálculo de alinhamentos para distância euclidiana e
 2. Uma vez escolhida a métrica, a inicialização acordada para este estudo foi aleatória.
 3. Para definir o número ideal de grupos (K), a técnica do cotovelo foi utilizada com base na soma dos quadrados dos erros em que foi escolhido um K = 2. No entanto, essa etapa não terminaria até a escolha do parâmetro de aprendizado da métrica Soft-DTW, para a qual foi utilizado o critério do maior coeficiente de silhueta.
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/elbow_silhouette.PNG" align="center" width="600">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/elbow_silhouette.PNG" align="center" width="1000">
 
 _Figura 9. Resultados das técnicas de cotovelo e coeficiente de silhueta, para o gráfico de cotovelo, K = 2 foi definido como o número ideal de grupos. No gráfico do coeficiente de silhueta, o gamma com o desempenho mais alto foi 1e-4._
 
@@ -239,7 +239,7 @@ Eles garantiram o melhor desempenho no conjunto de dados, com um coeficiente de 
 
 __Etapa 6 - [Extract Knowledge](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/5%20%5BExtract%20Knowledge%5D.ipynb) -__ Esta etapa usou o conhecimento adquirido com o agrupamento para fazer uma classificação precoce do tipo de dia que as pessoas experimentariam. O processo de treinamento desse algoritmo utilizou os dados rotulados dos anos de 2017 e 2018 e foi testado com os dias de 2020. Esse algoritmo consiste em dois parâmetros de ajuste: lambda e cost, com a combinação destes foi procurado o Trade-off de sacrificar a precisão pelo tempo mínimo (t) para classificar uma série temporal corretamente. O processo para determinar a classificação temprana de uma série temporal é mostrado na Figura 10.
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/algorithm_EC.PNG" align="center" width="1500">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/algorithm_EC.PNG" align="center" width="1300">
 
 _Figura 10. O processo iterativo usado para rotular cada uma das séries temporais de acordo com seu comportamento no modelo de Classificação Temprana, t=12h._
 
@@ -251,7 +251,7 @@ Em seguida, foram realizadas pesquisas sobre indicadores baseados em temperatura
 
 De acordo com a escala dos valores Humidex, esperávamos encontrar 4 grupos no processo de agrupamento, mas percebemos que os valores Humidex foram encontrados nas 2 faixas menores (Menos de 29, Sem desconforto)(De 30 a 39, Desconforto ameno), poucos valores permaneceram em (De 40 a 45, Desconforto, evitar esforço) e nenhum (Acima de 45, Perigo). Por isso, entendemos que nas avaliações do melhor valor de K, a clusterização com dois grupos superou os demais.
 
-_Tabela 2. Matriz de confusão para os dias de conforto(0) e desconforto(1) no ano 2020._
+_Tabela 2. Matriz de número de dias encontrado para as classificações de Humidex._
 |Nivel    |Quantidade             |   
 |---      |---                    | 
 |Sem desconforto       |  14717|
