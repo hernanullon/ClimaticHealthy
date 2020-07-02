@@ -307,6 +307,12 @@ _Tabela 2. Matriz de confusão para os dias de conforto(0) e desconforto(1) no a
 |Positive (1)|     80        |      14     |
 |Negative (0)|      1        |      57     |
 
+Por outro lado, foram calculadas ondas de calor para os anos de 2017 e 2018, das quais foram extraídas mais informações descritivas, dada a complexidade da identificação de um padrão repetitivo em apenas 2 anos. A Figura 16 mostra a série temporal das temperaturas máximas e dos percentis 90 para cada dia do ano.
+
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/onda_calor_2017.PNG" width="600">
+
+_Figura 16. ._
+
 ## 8. Conclusões
 
 ## 9. Trabalhos futuros
