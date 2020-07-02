@@ -317,7 +317,13 @@ As ondas de calor mais extensas foram encontradas nos meses de dezembro, janeiro
 
 ## 8. Conclusões
 
+* A literatura de agrupamento de séries temporais apresenta a métrica de distância Soft-DTW como uma das mais opcionais para agrupar séries temporais com comportamentos diferentes de forma eficiente, embora sua velocidade de processamento seja mais lenta, seu desempenho compensa isso.
 
+* A validação do algoritmo de agrupamento obteve um resultado aceitável com um coeficiente de silhueta = 0,7, no entanto, consideramos que um conjunto de dados composto por dias com valores mais altos de Humidex ajudaria a eficácia do algoritmo na criação de novos grupos.
+
+* A Classificação Temprana promete ser um algoritmo com resultados relevantes para poder recomendar às pessoas que tomem precauções contra altas sensações térmicas (Humidex), particularmente às 14:00, onde foram encontrados os maiores valores de Humidex.
+
+* O número de anos escolhido limitou bastante os estudos de ondas de calor; nenhuma identificação de padrões foi possível ou confiável a partir dos resultados encontrados para esse indicador.
 
 
 ## 9. Trabalhos futuros
