@@ -292,12 +292,19 @@ Outro dos padrões encontrados na clusterização foi a progressiva diminuição
 
 _Figura 14. Gráfico de barras representando os dias de conforto com a cor azul e vermelho para aqueles de desconforto nos anos 2017,2018 e 2020._
 
+Com base no classificador temprano treinado com o conhecimento gerado pelo clustering, a Figura 15 mostra o desempenho do algoritmo para alguns dias de teste do ano 2020, nos quais o algoritmo conseguiu rotular os dias do ano 2020 com uma Taxa de classificação correta = 0.901315789, e uma janela de tempo máximo de 12h.
 
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/early_classification.PNG" width="450">
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/early_classification.PNG" width="600">
+_Figura 15. Classificação temprana das série temporais correspondente aos dias do ano de teste de 2020, com um limite de tempo para predição às 12 horas._
 
-_Figura 14. Gráfico._
+No entanto, uma métrica importante quando se trata de classificadores é a matriz de confusão, para a qual obtivemos os seguintes resultados mostrados na tabela.
 
+_Tabela 2. Matriz de confusão para os dias de conforto e desconforto no ano 2020._
+
+|            |Positive (1)   | Negative (0)|
+|Positive (1)|     80        |      14     |
+|Negative (0)|      1        |      57     |
 
 ## 8. Conclusões
 
