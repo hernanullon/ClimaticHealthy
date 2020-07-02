@@ -108,7 +108,7 @@ Toda a análise foi feita na ferramenta de notebook jupyter na linguagem de prog
 A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados[6].
 E pode ser ilustrada na figura 3.
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/Processo%20KDD%20.jpg" align="middle" width="500">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/Processo%20KDD%20.jpg" align="middle" width="1000">
 
  _Figura 3. Processo de estração do conhecimento a partir do processo KDD._
 
