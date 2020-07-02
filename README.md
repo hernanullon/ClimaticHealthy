@@ -101,17 +101,16 @@ Toda a análise foi feita na ferramenta de notebook jupyter na linguagem de prog
 | bibliotecas  | Endereço web  | Descrição de uso  |
 |---|---|---|
 | tslearn  | https://tslearn.readthedocs.io/en/stable/index.html  |  Aprendizado de maquina para series temporais |
-| scikit-learn  | https://scikit-learn.org/stable/  | Aprendizado de maquina  |
+| scikit-learn  | https://scikit-learn.org/stable/  | Preprocessamento de data y avaliação de algoritmos |
 
 * 4.3. Metodologia
 
 A metodologia adotada neste projeto foi a Knowledge Discovery in Data (KDD) , que é a descoberta de conhecimento a partir de uma base de dados[6].
-E pode ser ilustrada na figura 3
+E pode ser ilustrada na figura 3.
 
-![Figura 3](https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/Processo%20KDD%20.jpg)
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/Processo%20KDD%20.jpg" align="middle" width="500">
 
-
-                                 Figura 3 - Processo de estração do conhecimento a partir do processo KDD 
+ _Figura 3. Processo de estração do conhecimento a partir do processo KDD._
 
 Com base nessa metodologia, __técnicas estatísticas__ como histogramas e medidas de dispersão foram utilizadas nas etapas de seleção e pré-processamento, com o objetivo de conhecer e manipular o conjunto de dados da melhor maneira. Além disso, __técnicas matemáticas e de visualização__ seriam aplicadas no estágio de pré-processamento para evitar todo tipo de missing data ou a presença de outliers.
 
@@ -170,8 +169,9 @@ __Etapa 1 -__  Entendimento do problema - Nesta etapa o objetivo principal é en
 __Etapa 2 - [Selection](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/1%20%5BSelection%5D.ipynb)  -__ Nesta etapa foi feita a seleção do período do dataset que seria utilizado para realizar a análise.
 Para o dataset fornecido pela Cepagri foram  escolhidos os meses de janeiro a dezembro para os anos de 2017 e 2018 , já para o dataset da Cetesb foram escolhido os meses de janeiro, fevereiro, março, abril e maio e as variáveis selecionadas em ambas as bases  foram temperatura e umidade
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/DB_cepagri.PNG)" align="middle" width="400">
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/DB_cetesb.PNG)" align="middle" width="400">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/DB_cepagri.PNG" align="middle" width="400">
+
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/DB_cetesb.PNG" align="middle" width="400">
 
 _Figura 4. Dataset da cepagri e cetesb com seus respectivos os parametros._
 
@@ -239,7 +239,7 @@ Eles garantiram o melhor desempenho no conjunto de dados, com um coeficiente de 
 
 __Etapa 6 - [Extract Knowledge](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/5%20%5BExtract%20Knowledge%5D.ipynb) -__ Esta etapa usou o conhecimento adquirido com o agrupamento para fazer uma classificação precoce do tipo de dia que as pessoas experimentariam. O processo de treinamento desse algoritmo utilizou os dados rotulados dos anos de 2017 e 2018 e foi testado com os dias de 2020. Esse algoritmo consiste em dois parâmetros de ajuste: lambda e cost, com a combinação destes foi procurado o Trade-off de sacrificar a precisão pelo tempo mínimo (t) para classificar uma série temporal corretamente. O processo para determinar a classificação temprana de uma série temporal é mostrado na Figura 10.
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/algorithm_EC.PNG" align="center" width="1300">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/algorithm_EC.PNG" align="center" width="1000">
 
 _Figura 10. O processo iterativo usado para rotular cada uma das séries temporais de acordo com seu comportamento no modelo de Classificação Temprana, t=12h._
 
