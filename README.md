@@ -303,6 +303,7 @@ No entanto, uma métrica importante quando se trata de classificadores é a matr
 _Tabela 2. Matriz de confusão para os dias de conforto e desconforto no ano 2020._
 
 |            |Positive (1)   | Negative (0)|
+| -----------| ------------- |------------- |
 |Positive (1)|     80        |      14     |
 |Negative (0)|      1        |      57     |
 
