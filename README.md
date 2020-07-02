@@ -89,10 +89,12 @@ A partir do cálculo destes indicadores realizar a classificação (clusterizaç
 
 Toda a análise foi feita na ferramenta de notebook jupyter na linguagem de programação Python (Versão 3.6), no entanto, vale mencionar as bibliotecas externas usadas no projeto:
 
-| bibliotecas  | Endereço web  | Descrição de uso  |
+| Bibliotecas  | Endereço web  | Descrição de uso  |
 |---|---|---|
 | tslearn  | https://tslearn.readthedocs.io/en/stable/index.html  |  Aprendizado de maquina para series temporais |
 | scikit-learn  | https://scikit-learn.org/stable/  | Preprocessamento de data y avaliação de algoritmos |
+
+Foi utilizado também o software Orange para plotagem de algumas variáveis como a umidade utilizando o classificador desenvolvido.
 
 * 4.3. Metodologia
 
