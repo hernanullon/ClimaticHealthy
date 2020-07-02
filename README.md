@@ -156,7 +156,7 @@ __Etapa 1 -__  Entendimento do problema - Nesta etapa o objetivo principal é en
 __Etapa 2 - [Selection](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/1%20%5BSelection%5D.ipynb)  -__ Nesta etapa foi feita a seleção do período do dataset que seria utilizado para realizar a análise.
 Para o dataset fornecido pela Cepagri foram  escolhidos os meses de janeiro a dezembro para os anos de 2017 e 2018 , já para o dataset da Cetesb foram escolhido os meses de janeiro, fevereiro, março, abril e maio e as variáveis selecionadas em ambas as bases  foram temperatura e umidade
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/DB_cepagri_cetesb.PNG" align="middle" width="400">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/DB_cepagri_cetesb.PNG" align="middle" width="1000">
 
 _Figura 4. Dataset da cepagri e cetesb com seus respectivos os parametros._
 
