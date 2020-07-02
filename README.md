@@ -46,7 +46,7 @@ Partindo desse principio que as mudanças climáticas afetam diretamente a saúd
 
 Na figura 2 é possível visualizar os principais problemas ocasionados pelas ondas de calor.
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ilhas%20de%20calor.jpg" align="middle" width="400">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/ilhas%20de%20calor.jpg" align="middle" width="600">
 
  _Figura 2. Problemas ocasionados pela presença das ilhas de calor._
 
