@@ -158,7 +158,7 @@ Para o dataset fornecido pela Cepagri foram  escolhidos os meses de janeiro a de
 
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/DB_cepagri_cetesb.PNG" align="middle" width="1000">
 
-_Figura 4. Dataset da cepagri e cetesb com seus respectivos os parametros._
+_Figura 4. Dataset da cepagri(a) e cetesb(b) com seus respectivos os parametros._
 
 __Etapa 3 - [Preprocess](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/2%20%5BPreprocess%5D.ipynb) -__ Para uma análise de séries temporais, é muito importante que cada um dos registros tenha sua data e hora em que essas informações foram registradas. O formato da data e hora do conjunto de dados foi dividido em três campos: Ano, Dia Juliano e Hora-Minuto. Portanto, foi necessário aplicar um algoritmo que alterasse esse formato para: __AAAA/mm/dd HH:MM__, a técnica utilizada foi baseada no seguente codigo:
 ~~~python
