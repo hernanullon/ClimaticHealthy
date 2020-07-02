@@ -100,8 +100,8 @@ Toda a análise foi feita na ferramenta de notebook jupyter na linguagem de prog
 
 | bibliotecas  | Endereço web  | Descrição de uso  |
 |---|---|---|
-| tslearn  | https://tslearn.readthedocs.io/en/stable/index.html  |   |
-| scikit-learn  | https://scikit-learn.org/stable/  |   |
+| tslearn  | https://tslearn.readthedocs.io/en/stable/index.html  |  Aprendizado de maquina para series temporais |
+| scikit-learn  | https://scikit-learn.org/stable/  | Aprendizado de maquina  |
 
 * 4.3. Metodologia
 
@@ -228,11 +228,10 @@ O algoritmo K-Means precisa ajustar certos parâmetros, como métrica de distân
 
 Eles garantiram o melhor desempenho no conjunto de dados, com um coeficiente de silhueta de 0.7351. 
 
-__Etapa 6 - [Extract Knowledge](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/5%20%5BExtract%20Knowledge%5D.ipynb) -__ Esta etapa usou o conhecimento adquirido com o agrupamento para fazer uma classificação precoce do tipo de dia que as pessoas experimentariam. O processo de treinamento desse algoritmo utilizou os dados rotulados dos anos de 2017 e 2018 e foi testado com os dias de 2020. Esse algoritmo consiste em dois parâmetros de ajuste: lambda e cost, com a combinação destes foi procurado o Trade-off de sacrificar a precisão pelo tempo mínimo (t) para classificar uma série temporal corretamente. 
-
-O processo para determinar a classificação temprana de uma série temporal é mostrado na Figura 9.
+__Etapa 6 - [Extract Knowledge](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/5%20%5BExtract%20Knowledge%5D.ipynb) -__ Esta etapa usou o conhecimento adquirido com o agrupamento para fazer uma classificação precoce do tipo de dia que as pessoas experimentariam. O processo de treinamento desse algoritmo utilizou os dados rotulados dos anos de 2017 e 2018 e foi testado com os dias de 2020. Esse algoritmo consiste em dois parâmetros de ajuste: lambda e cost, com a combinação destes foi procurado o Trade-off de sacrificar a precisão pelo tempo mínimo (t) para classificar uma série temporal corretamente. O processo para determinar a classificação temprana de uma série temporal é mostrado na Figura 9.
 
 ![Figura 9](./figuras/algorithm_EC.PNG)
+
 
 ## 6. Evolução do projeto
 
@@ -259,12 +258,12 @@ Para entrar em contexto com os resultados do estudo, mostraremos o conjunto de d
 
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/dataset_2017_2018.png" align="center" width="2000">
 
+_Figura 10. Dataset dos anos de 2017 e 2018, ._
+
 
 Já nesta primeira visualização, podemos ver certo comportamento repetitivo entre esses dois anos. Portanto, esse grupo de dados foi transferido para um formato de série temporal, onde realizamos um diagrama em espiral, que demonstrou um padrão repetitivo das horas com as temperaturas mais altas nos dois anos.
 
-<figure>
-  <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/spiralogra_temperatura.png" align="center" width="500">
-</figure>
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/spiralogra_temperatura.png" align="center" width="500">
 
 _Figura 11. Spiralogram dos anos de 2017 e 2018, para as temperaturas máximas a cada hora do dia, com as temperaturas mais altas durante o dia no intervalo das 13:00 às 17:00._
 
