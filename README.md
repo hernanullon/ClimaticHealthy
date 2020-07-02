@@ -227,7 +227,7 @@ _Figura 9. Resultados das técnicas de cotovelo e coeficiente de silhueta, para 
 
 Eles garantiram o melhor desempenho no conjunto de dados, com um coeficiente de silhueta de 0.7351. 
 
-__Etapa 6 - [Extract Knowledge](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/5%20%5BExtract%20Knowledge%5D.ipynb) -__ Esta etapa usou o conhecimento adquirido com o agrupamento para fazer uma classificação precoce do tipo de dia que as pessoas experimentariam. O processo de treinamento desse algoritmo utilizou os dados rotulados dos anos de 2017 e 2018 e foi testado com os dias de 2020. Esse algoritmo consiste em dois parâmetros de ajuste: lambda e cost, com a combinação destes foi procurado o Trade-off de sacrificar a precisão pelo tempo mínimo (t) para classificar uma série temporal corretamente. O processo para determinar a classificação temprana de uma série temporal é mostrado na Figura 10.
+__Etapa 6 - [Extract Knowledge](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/5%20%5BExtract%20Knowledge%5D.ipynb) -__ Esta etapa usou o conhecimento adquirido com o agrupamento para fazer uma Classificação Temprana do tipo de dia que as pessoas experimentariam. O processo de treinamento desse algoritmo utilizou os dados rotulados dos anos de 2017 e 2018 e foi testado com os dias de 2020. Esse algoritmo consiste em dois parâmetros de ajuste: lambda e cost, com a combinação destes foi procurado o Trade-off de sacrificar a precisão pelo tempo mínimo (t) para classificar uma série temporal corretamente. O processo para determinar a classificação temprana de uma série temporal é mostrado na Figura 10.
 
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/algorithm_EC.PNG" align="center" width="900">
 
