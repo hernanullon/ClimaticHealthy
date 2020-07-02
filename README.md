@@ -300,10 +300,10 @@ _Figura 15. Classificação temprana das série temporais correspondente aos dia
 
 No entanto, uma métrica importante quando se trata de classificadores é a matriz de confusão, para a qual obtivemos os seguintes resultados mostrados na tabela.
 
-_Tabela 2. Matriz de confusão para os dias de conforto e desconforto no ano 2020._
+_Tabela 2. Matriz de confusão para os dias de conforto(0) e desconforto(1) no ano 2020._
 
 |            |Positive (1)   | Negative (0)|
-| -----------| ------------- |------------- |
+| -----------| ------------- |-------------|
 |Positive (1)|     80        |      14     |
 |Negative (0)|      1        |      57     |
 
