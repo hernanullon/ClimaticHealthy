@@ -317,24 +317,22 @@ As ondas de calor mais extensas foram encontradas nos meses de dezembro, janeiro
 
 ## 8. Conclusões
 
-* A literatura de agrupamento de séries temporais apresenta a métrica de distância Soft-DTW como uma das mais opcionais para agrupar séries temporais com comportamentos diferentes de forma eficiente, embora sua velocidade de processamento seja mais lenta, seu desempenho compensa isso.
+* A literatura de clusterização de séries temporais apresenta a métrica de distância Soft-DTW como uma das mais populares para agrupar séries temporais com comportamentos diferentes de forma eficiente, embora sua velocidade de processamento seja mais lenta, seu desempenho compensa isso.
 
-* A validação do algoritmo de agrupamento obteve um resultado aceitável com um coeficiente de silhueta = 0,7, no entanto, consideramos que um conjunto de dados composto por dias com valores mais altos de Humidex ajudaria a eficácia do algoritmo na criação de novos grupos.
+* A validação do algoritmo de clusterização obteve um resultado aceitável com um coeficiente de silhueta = 0.7354, no entanto, consideramos que um conjunto de dados composto por dias com valores mais altos de Humidex ajudaria a eficácia do algoritmo na criação de novos grupos.
 
-* A Classificação Temprana promete ser um algoritmo com resultados relevantes para poder recomendar às pessoas que tomem precauções contra altas sensações térmicas (Humidex), particularmente às 14:00, onde foram encontrados os maiores valores de Humidex.
+* A Classificação Temprana promete ser um algoritmo com resultados relevantes para poder recomendar às pessoas que tomem precauções contra altas sensações térmicas (Humidex), particularmente às 14h, onde foram encontrados os maiores valores de Humidex.
 
 * O número de anos escolhido limitou bastante os estudos de ondas de calor; nenhuma identificação de padrões foi possível ou confiável a partir dos resultados encontrados para esse indicador.
 
 
 ## 9. Trabalhos futuros
 
-Para trabalhos futuros pretendemos aplicar o algoritmo de clusterização para encontrar condições saudáveis a partir de dados coletados de concentrações de CO2, CO emitidos por  um ônibus convencional e por um ônibus elétrico para se realizar a comparação das condições do ar atmosférico de uma região a partir da substituição de um ônibus convencional 
-por um ônibus elétrico.
+Para trabalhos futuros, pretendemos aplicar a mesma metodologia nas etapas de mineração de dados e extração de conhecimento aplicadas neste estudo, mas a partir de outros tipos de variáveis que também ameaçam a saúde das pessoas, como concentrações de gases poluentes, ruído entre outros.
+
+Neste momento, está sendo implementado um projeto de pesquisa sobre mobilidade elétrica, para o qual planejamos realizar a coleta dessas variáveis dentro e fora dos ônibus convencionais e um elétrico, para analisar o impacto que o uso de ônibus convencionais pode estar causando na saúde da comunidade na UNICAMP.
   
 ## 10.  Referências
-
-
-
 
 [1] As cidades que queremos Disponível em : <https://www.isglobal.org/es/ciudadesquequeremos?gclid=Cj0KCQjw1Iv0BRDaARIsAGTWD1s8PaszWCMZQG9CKFIHkiV-2PVh2Q8oZ8vWFKcxVEHfRHLJwXDFVOQaAvi8EALw_wcB#efectossalud>
 
@@ -350,12 +348,9 @@ pp. 12,500–12,512.
 [4] I. P. O. C. CHANGE, Climate change 2001 ipcc third assessment report, Intergovernamental Panel
 on Climate Change Geneva, IPCC Secretariat, (2001).
 
-
-
 [5] J. A. OROSA, M. COSTA, RODRÍGUEZ-FERNÁNDEZ, AND G. ROSHAN, Effect of climate change on outdoor
 thermal comfort in humid climates, Journal of Environmental Health Science and Engineering,
 12 (2014), p. 46
-
 
 [6] U. FAYYAD, G. PIATETSKY-SHAPIRO, AND P. SMYTH, From data mining to knowledge discovery in
 databases, AI magazine, 17 (1996), pp. 37–37.
@@ -368,3 +363,11 @@ Air: A Simple Conversion and Applications, Bulletin of the American Meteorologic
 
 [9] J. L. GEIRINHAS, R. M. TRIGO, R. LIBONATI, AND L. F. PERES, Climatic Characterization of Heat
 Waves in Brazil, Anuário do Instituto de Geociências - UFRJ, 41 (2018), pp. 333–350.
+
+[10] Aghabozorgi, S., Shirkhorshidi, A. S., & Wah, T. Y. (2015). Time-series clustering–a decade review. 
+Information Systems, 53, 16-38.
+
+[11] Cuturi, M., & Blondel, M. (2017). Soft-DTW: a differentiable loss function for time-series. 
+arXiv preprint arXiv:1703.01541.
+
+[12] Wattenberg, M., Viégas, F., & Johnson, I. (2016). How to use t-sne effectively. Distill, 2016.
