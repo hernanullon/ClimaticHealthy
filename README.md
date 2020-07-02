@@ -170,10 +170,10 @@ __Etapa 1 -__  Entendimento do problema - Nesta etapa o objetivo principal é en
 __Etapa 2 - [Selection](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/1%20%5BSelection%5D.ipynb)  -__ Nesta etapa foi feita a seleção do período do dataset que seria utilizado para realizar a análise.
 Para o dataset fornecido pela Cepagri foram  escolhidos os meses de janeiro a dezembro para os anos de 2017 e 2018 , já para o dataset da Cetesb foram escolhido os meses de janeiro, fevereiro, março, abril e maio e as variáveis selecionadas em ambas as bases  foram temperatura e umidade
 
-![Figura 5 Base de dados da Cepagri](./figuras/DB_cepagri.PNG)
-![Figura 6 Base de dados da Cetesb](./figuras/DB_cetesb.PNG)
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/DB_cepagri.PNG)" align="middle" width="400">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/DB_cetesb.PNG)" align="middle" width="400">
 
-Link de notebook 1 [Selection]
+_Figura 4. Dataset da cepagri e cetesb com seus respectivos os parametros._
 
 __Etapa 3 - [Preprocess](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/2%20%5BPreprocess%5D.ipynb) -__ Para uma análise de séries temporais, é muito importante que cada um dos registros tenha sua data e hora em que essas informações foram registradas. O formato da data e hora do conjunto de dados foi dividido em três campos: Ano, Dia Juliano e Hora-Minuto. Portanto, foi necessário aplicar um algoritmo que alterasse esse formato para: __AAAA/mm/dd HH:MM__, a técnica utilizada foi baseada no seguente codigo:
 ~~~python
@@ -182,17 +182,19 @@ jdate = year+'-'+julian_day+'-'+hour+'-'+minute
 fmt = '%Y-%j-%H-%M'
 date_time = datetime.strptime(jdate, fmt)
 ~~~
-Após foi realizado um pré processamento utilizando a técnica de interpolação dos valores no ano de 2017 e 2018 para completar os valores faltantes de temperatura e umidade da base fornecida pelo Cepagri. Um exemplo da perda de dados é amostrada na Figura 4.
+Após foi realizado um pré processamento utilizando a técnica de interpolação dos valores no ano de 2017 e 2018 para completar os valores faltantes de temperatura e umidade da base fornecida pelo Cepagri. Um exemplo da perda de dados é amostrada na Figura 5.
 
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/missing_data.PNG" align="middle" width="700">
+
+_Figura 5. Identificação de missing data, para o ano de 2017 nos meses de março e maio._
 
 Por outro lado, a detecção de outliers foi realizada apenas para dados extremamente anômalos, pois se nosso estudo se basear na busca por condições climáticas extremas incomuns, um processo como o boxplot nos deixaria sem informações relevantes. Portanto, apenas através de estatisticas como a visualização da distribuição das variáveis, média e desvio padrão, tais problemas foram identificados.
 
 __Etapa 4 - [Transformation](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/3%20%5BTransformation%5D.ipynb) -__ Essa etapa começou com a integração dos 2 conjuntos de dados mencionados anteriormente, já pensando no que seriam os grupos de treinamento e teste dos algoritmos de aprendizado de máquina. Na Figura 6, podemos visualizar a integração.
 
-<center>
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/transformation_integration.PNG" align="middle" width="700">
-</center>
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/transformation_integration.PNG" align="center" width="700">
+
+_Figura 6. Medições de temperatura para a integração do dataset da cepagri para os anos de 2017 e 2018 e o dataset da cetesb para o ano 2020._
 
 Posteriormente, novos parâmetros, como o índice Humidex, foram calculados para cada medição de temperatura e umidade, usando o seguinte segmento de código:
 ~~~python
@@ -200,9 +202,11 @@ def get_humidex(T,H):
     z = 6.112*(10**((7.5*T)/(237.7+T)))*(H/100)
     return T+((5/9)*(z-10))
 ~~~
-A partir desse cálculo foi possível classificar a condição climática em função desse indicador como : Confortable (confortável ) , some disconfort (algum desconforto). No entanto, os dados do Humidex precisavam ser preparados para um processo posterior de aprendizado de máquina, em que cada linha do Dataframe representaria uma data e cada coluna o valor para cada hora ao longo do dia, ou seja, cada linha formaria uma série temporal. Um exemplo é amostrado na Figura 6.
+A partir desse cálculo foi possível classificar a condição climática em função desse indicador como : Confortable (confortável ) , some disconfort (algum desconforto). No entanto, os dados do Humidex precisavam ser preparados para um processo posterior de aprendizado de máquina, em que cada linha do Dataframe representaria uma data e cada coluna o valor para cada hora ao longo do dia, ou seja, cada linha formaria uma série temporal. Um exemplo é amostrado na Figura 7.
 
-![Figura 6](./figuras/transformation_humidex.PNG)
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/transformation_humidex.PNG" align="center" width="600">
+
+_Figura 7. Dataframe dos valores de Humidex para cada hora ao longo de um día._
 
 
 __Etapa 5 - [Datamining](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/4%20%5BData%20Mining%5D.ipynb) -__ Nesta etapa após realizar o pré processamento e a transformação dos dados dos datasets colocando esses dados num formato mais adequado para realizar a análise, a técnica de clusterização foi aplicada de acordo com o indicador Humidex.
@@ -213,12 +217,17 @@ O algoritmo K-Means precisa ajustar certos parâmetros, como métrica de distân
 
 1. A métrica de distância foi escolhida com base em seu desempenho no final da clusterização, onde a métrica Soft-DTW superou as demais. Uma ilustração de como essa métrica funciona é mostrada abaixo.
 
-![Figura 7](./figuras/soft_dtw.PNG)
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/soft_dtw.PNG" align="center" width="500">
+
+_Figura 8. Ilustração do cálculo de alinhamentos para distância euclidiana e Soft-DTW._
+
 
 2. Uma vez escolhida a métrica, a inicialização acordada para este estudo foi aleatória.
 3. Para definir o número ideal de grupos (K), a técnica do cotovelo foi utilizada com base na soma dos quadrados dos erros em que foi escolhido um K = 2. No entanto, essa etapa não terminaria até a escolha do parâmetro de aprendizado da métrica Soft-DTW, para a qual foi utilizado o critério do maior coeficiente de silhueta.
 
-![Figura 8](./figuras/elbow_silhouette.PNG)
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/elbow_silhouette.PNG" align="center" width="600">
+
+_Figura 9. Resultados das técnicas de cotovelo e coeficiente de silhueta, para o gráfico de cotovelo, K = 2 foi definido como o número ideal de grupos. No gráfico do coeficiente de silhueta, o gamma com o desempenho mais alto foi 1e-4._
 
 4. Finalmente, o algoritmo K-Means foi executado com os seguentes parâmetros:
 * K = 2
@@ -228,10 +237,11 @@ O algoritmo K-Means precisa ajustar certos parâmetros, como métrica de distân
 
 Eles garantiram o melhor desempenho no conjunto de dados, com um coeficiente de silhueta de 0.7351. 
 
-__Etapa 6 - [Extract Knowledge](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/5%20%5BExtract%20Knowledge%5D.ipynb) -__ Esta etapa usou o conhecimento adquirido com o agrupamento para fazer uma classificação precoce do tipo de dia que as pessoas experimentariam. O processo de treinamento desse algoritmo utilizou os dados rotulados dos anos de 2017 e 2018 e foi testado com os dias de 2020. Esse algoritmo consiste em dois parâmetros de ajuste: lambda e cost, com a combinação destes foi procurado o Trade-off de sacrificar a precisão pelo tempo mínimo (t) para classificar uma série temporal corretamente. O processo para determinar a classificação temprana de uma série temporal é mostrado na Figura 9.
+__Etapa 6 - [Extract Knowledge](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/5%20%5BExtract%20Knowledge%5D.ipynb) -__ Esta etapa usou o conhecimento adquirido com o agrupamento para fazer uma classificação precoce do tipo de dia que as pessoas experimentariam. O processo de treinamento desse algoritmo utilizou os dados rotulados dos anos de 2017 e 2018 e foi testado com os dias de 2020. Esse algoritmo consiste em dois parâmetros de ajuste: lambda e cost, com a combinação destes foi procurado o Trade-off de sacrificar a precisão pelo tempo mínimo (t) para classificar uma série temporal corretamente. O processo para determinar a classificação temprana de uma série temporal é mostrado na Figura 10.
 
-![Figura 9](./figuras/algorithm_EC.PNG)
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/algorithm_EC.PNG" align="center" width="1500">
 
+_Figura 10. O processo iterativo usado para rotular cada uma das séries temporais de acordo com seu comportamento no modelo de Classificação Temprana, t=12h._
 
 ## 6. Evolução do projeto
 
@@ -241,11 +251,12 @@ Em seguida, foram realizadas pesquisas sobre indicadores baseados em temperatura
 
 De acordo com a escala dos valores Humidex, esperávamos encontrar 4 grupos no processo de agrupamento, mas percebemos que os valores Humidex foram encontrados nas 2 faixas menores (Menos de 29, Sem desconforto)(De 30 a 39, Desconforto ameno), poucos valores permaneceram em (De 40 a 45, Desconforto, evitar esforço) e nenhum (Acima de 45, Perigo). Por isso, entendemos que nas avaliações do melhor valor de K, a clusterização com dois grupos superou os demais.
 
+_Tabela 2. Matriz de confusão para os dias de conforto(0) e desconforto(1) no ano 2020._
 |Nivel    |Quantidade             |   
 |---      |---                    | 
-|comfortable       |  14717|
-|great discomfort  |    199|
-|some discomfort   |   6252|
+|Sem desconforto       |  14717|
+|Desconforto ameno    |    199|
+|Desconforto, evitar esforço  |   6252|
 
 Quando obtivemos os resultados do agrupamento, tentamos ir além do simples reconhecimento de padrões e procurar uma maneira de ajudar as pessoas no futuro de uma maneira mais eficiente. Por isso, decidimos usar o conhecimento obtido pelo processo de agrupamento para criar um classificador inicial que nos permitisse rotular o tipo de dia que as pessoas experimentariam com base nas temperaturas e umidade das primeiras 12 horas do dia. Esse resultado seria de grande importância para as pessoas se conscientizarem quando saírem para fazer algum esforço físico.
 
@@ -258,14 +269,14 @@ Para entrar em contexto com os resultados do estudo, mostraremos o conjunto de d
 
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/dataset_2017_2018.png" align="center" width="2000">
 
-_Figura 10. Dataset dos anos de 2017 e 2018, ._
+_Figura 11. Dataset de valores de temperatura em função do tempo, para cada uma das faixas coloridas de acordo com a porcentagem de umidade, nos anos de 2017 e 2018._
 
 
 Já nesta primeira visualização, podemos ver certo comportamento repetitivo entre esses dois anos. Portanto, esse grupo de dados foi transferido para um formato de série temporal, onde realizamos um diagrama em espiral, que demonstrou um padrão repetitivo das horas com as temperaturas mais altas nos dois anos.
 
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/spiralogra_temperatura.png" align="center" width="500">
 
-_Figura 11. Spiralogram dos anos de 2017 e 2018, para as temperaturas máximas a cada hora do dia, com as temperaturas mais altas durante o dia no intervalo das 13:00 às 17:00._
+_Figura 12. Spiralogram dos anos de 2017 e 2018, para as temperaturas máximas a cada hora do dia, com as temperaturas mais altas durante o dia no intervalo das 13:00 às 17:00._
 
 Após as primeiras análises em nosso conjunto de dados e a implementação do algoritmo de clusterização K-Means descrito no capítulo anterior, mostraremos o agrupamento das séries temporais obtidas pelo algoritmo:
 
@@ -277,40 +288,40 @@ TimeSeriesKMeans(init='random', max_iter=20, metric='softdtw',
 
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/clustering_series_temporales.PNG" align="center" width="700">
 
-_Figura 12. Agrupamento de séries temporais para a variável Humidex nos anos 2017,2018 e 2020. As curvas vermelhas representam os dias da classe 0 (desconforto) e o azul da classe 1 (sem desconforto)._
+_Figura 13. Agrupamento de séries temporais para a variável Humidex nos anos 2017,2018 e 2020. As curvas vermelhas representam os dias da classe 0 (desconforto) e o azul da classe 1 (sem desconforto)._
 
-Como parte da validação desse processo de clusterização, foi aplicado o algoritmo de redução de dimensionalidade t-SNE, para o qual o dataframe mostrado na parte inicial do estágio de [DataMining](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/4%20%5BData%20Mining%5D.ipynb) foi usado em conjunto com as previsões obtidas pelo K-Means. A partir da Figura 13, podemos reconhecer que os grupos obtidos estão bem agrupados, talvez com dificuldades na região de fronteira, para a qual o coeficiente de silhueta obtido (0,73514) faz sentido.
+Como parte da validação desse processo de clusterização, foi aplicado o algoritmo de redução de dimensionalidade t-SNE, para o qual o dataframe mostrado na parte inicial do estágio de [DataMining](https://github.com/hernanullon/ClimaticHealthy/blob/master/notebooks/4%20%5BData%20Mining%5D.ipynb) foi usado em conjunto com as previsões obtidas pelo K-Means. A partir da Figura 14, podemos reconhecer que os grupos obtidos estão bem agrupados, talvez com dificuldades na região de fronteira, para a qual o coeficiente de silhueta obtido (0.73514) faz sentido.
 
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/TSNE.PNG" align="center" width="500">
 
-_Figura 13. Redução de dimensionalidade com t-SNE do dataframe de 48 colunas para 2, onde os pontos vermelhos representam os dias de desconforto e o azul de conforto._
+_Figura 14. Redução de dimensionalidade com t-SNE do dataframe de 48 colunas para 2, onde os pontos vermelhos representam os dias de desconforto e o azul de conforto._
 
 Outro dos padrões encontrados na clusterização foi a progressiva diminuição e aumento dos dias com desconforto ao longo de um ano, mas o mais importante a destacar foi o comportamento desses dias no ano 2020, onde podemos ver que o número de dias confortável cresceu rapidamente nos meses de abril e maio, onde talvez possamos relacionar esse comportamento devido ao isolamento social devido à pandemia.
 
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/humidex_max_mes_comfort.png" width="600">
 
-_Figura 14. Gráfico de barras representando os dias de conforto com a cor azul e vermelho para aqueles de desconforto nos anos 2017,2018 e 2020._
+_Figura 15. Gráfico de barras representando os dias de conforto com a cor azul e vermelho para aqueles de desconforto nos anos 2017,2018 e 2020._
 
-Com base no classificador temprano treinado com o conhecimento gerado pelo clustering, a Figura 15 mostra o desempenho do algoritmo para alguns dias de teste do ano 2020, nos quais o algoritmo conseguiu rotular os dias do ano 2020 com uma Taxa de classificação correta = 0.901315789, e uma janela de tempo máximo de 12h.
+Com base no classificador temprano treinado com o conhecimento gerado pelo clustering, a Figura 16 mostra o desempenho do algoritmo para alguns dias de teste do ano 2020, nos quais o algoritmo conseguiu rotular os dias do ano 2020 com uma Taxa de classificação correta = 0.901315789, e uma janela de tempo máximo de 12h.
 
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/early_classification.PNG" width="450">
 
-_Figura 15. Classificação temprana das série temporais correspondente aos dias do ano de teste de 2020, com um limite de tempo para predição às 12 horas._
+_Figura 16. Classificação temprana das série temporais correspondente aos dias do ano de teste de 2020, com um limite de tempo para predição às 12 horas._
 
-No entanto, uma métrica importante quando se trata de classificadores é a matriz de confusão, para a qual obtivemos os seguintes resultados mostrados na tabela.
+No entanto, uma métrica importante quando se trata de classificadores é a matriz de confusão, para a qual obtivemos os seguintes resultados mostrados na tabela 3.
 
-_Tabela 2. Matriz de confusão para os dias de conforto(0) e desconforto(1) no ano 2020._
+_Tabela 3. Matriz de confusão para os dias de conforto(0) e desconforto(1) no ano 2020._
 
 |            |Positive (1)   | Negative (0)|
 | -----------| ------------- |-------------|
 |Positive (1)|     80        |      14     |
 |Negative (0)|      1        |      57     |
 
-Por outro lado, foram calculadas ondas de calor para os anos de 2017 e 2018, das quais foram extraídas mais informações descritivas, dada a complexidade da identificação de um padrão repetitivo em apenas 2 anos. A Figura 16 mostra a série temporal das temperaturas máximas e dos percentis 90 para cada dia do ano. 
+Por outro lado, foram calculadas ondas de calor para os anos de 2017 e 2018, das quais foram extraídas mais informações descritivas, dada a complexidade da identificação de um padrão repetitivo em apenas 2 anos. A Figura 17 mostra a série temporal das temperaturas máximas e dos percentis 90 para cada dia do ano. 
 
 <img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/onda_calor_2017.PNG" width="600">
 
-_Figura 16. Representação das ondas de calor ao longo do ano de 2017, composta pelas séries temporais de temperaturas máximas(verde) e percentis 90(vermelho) para cada um dos dias._
+_Figura 17. Representação das ondas de calor ao longo do ano de 2017, composta pelas séries temporais de temperaturas máximas(verde) e percentis 90(vermelho) para cada um dos dias._
 
 As ondas de calor mais extensas foram encontradas nos meses de dezembro, janeiro e fevereiro de cada ano, atingindo até 14 dias consecutivos.
 
