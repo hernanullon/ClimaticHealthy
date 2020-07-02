@@ -189,7 +189,7 @@ def get_humidex(T,H):
 ~~~
 A partir desse cálculo foi possível classificar a condição climática em função desse indicador como : Confortable (confortável ) , some disconfort (algum desconforto). No entanto, os dados do Humidex precisavam ser preparados para um processo posterior de aprendizado de máquina, em que cada linha do Dataframe representaria uma data e cada coluna o valor para cada hora ao longo do dia, ou seja, cada linha formaria uma série temporal. Um exemplo é amostrado na Figura 7.
 
-<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/transformation_humidex.PNG" align="center" width="600">
+<img src="https://github.com/hernanullon/ClimaticHealthy/blob/master/figuras/transformation_humidex.PNG" align="center" width="900">
 
 _Figura 7. Dataframe dos valores de Humidex para cada hora ao longo de um día._
 
